@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green-primary: #2f7d4e;
+  --yellow-primary: #edc920;
+  --cream: #fcfaf2;
+  --light-yellow: #fff3bc;
+  --text-dark: #2c2c2c;
+  --text-heading: #1a1a1a;
+  --text-gray: #6b6b6b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--text-dark);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* Noto Serif JP for display headings */
+.font-serif-jp {
+  font-family: 'Noto Serif JP', serif;
+}
