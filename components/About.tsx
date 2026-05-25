@@ -1,33 +1,37 @@
-const img2 =
-  "https://www.figma.com/api/mcp/asset/b90ac9d2-bfac-4d84-9b5f-e4d5fa156923";
-const imgScene =
-  "https://www.figma.com/api/mcp/asset/ca3974d8-1af1-46ae-9f3b-c21c7b58e12e";
+// 画像URLはFigma CDNから取得（7日間有効）。本番運用前にpublic/へ移行すること
+const imgRight =
+  "https://www.figma.com/api/mcp/asset/83ae37f1-3c3c-4ba8-a00d-71ca5a89142f";
+const imgLeft =
+  "https://www.figma.com/api/mcp/asset/6805e1cd-c0e9-48b7-9914-0dacf7fdc26f";
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative bg-[#fcfaf2] overflow-hidden"
-      style={{ minHeight: "749px" }}
+      className="relative w-full bg-[#fcfaf2] overflow-hidden"
+      style={{ height: "749px" }}
     >
-      <div className="max-w-[1440px] mx-auto relative" style={{ height: "749px" }}>
-        {/* Image 1 – right side */}
-        <div className="absolute right-[0px] top-[35px] w-[327px] h-[426px]">
+
+        {/* ── 画像1: 右上 (1279:656) ── left=1113px top=35px w=327px h=426px */}
+        <div className="absolute right-0 top-[35px] w-[327px] h-[426px]">
+          {/* 緑グラデーション背景: inset top=32 right=32 bottom=0 left=0 */}
           <div
-            className="absolute inset-[32px_0_0_32px]"
+            className="absolute inset-[32px_32px_0_0]"
             style={{
               background:
                 "linear-gradient(to bottom, rgba(70,147,97,0.3), rgba(70,147,97,0.4))",
             }}
           />
+          {/* 写真: left=32px top=0 w=295px h=394px */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={img2}
+            src={imgRight}
             alt="五福石材の施工風景"
             className="absolute left-[32px] top-0 w-[295px] h-[394px] object-cover"
           />
+          {/* 白グラデーションオーバーレイ: inset top=0 right=0 bottom=32 left=32 */}
           <div
-            className="absolute inset-[0_32px_32px_0]"
+            className="absolute inset-[0_0_32px_32px]"
             style={{
               background:
                 "linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.4))",
@@ -35,8 +39,9 @@ export default function About() {
           />
         </div>
 
-        {/* Image 2 – bottom left */}
-        <div className="absolute left-0 bottom-[0px] w-[268px] h-[348px]">
+        {/* ── 画像2: 左中 (1279:657) ── left=0 top=348px w=268px h=348px */}
+        <div className="absolute left-0 top-[348px] w-[268px] h-[348px]">
+          {/* 緑グラデーション背景: inset top=0 right=0 bottom=20 left=0 */}
           <div
             className="absolute inset-[0_0_20px_0]"
             style={{
@@ -44,12 +49,14 @@ export default function About() {
                 "linear-gradient(to bottom, rgba(70,147,97,0.3), rgba(70,147,97,0.4))",
             }}
           />
+          {/* 写真: left=0 top=28px w=240px h=320px */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={imgScene}
-            alt="作業風景"
+            src={imgLeft}
+            alt="施工事例"
             className="absolute left-0 top-[28px] w-[240px] h-[320px] object-cover"
           />
+          {/* 白グラデーションオーバーレイ: inset top=28 right=28 bottom=0 left=0 */}
           <div
             className="absolute inset-[28px_28px_0_0]"
             style={{
@@ -59,39 +66,79 @@ export default function About() {
           />
         </div>
 
-        {/* Text content */}
-        <div className="absolute left-[170px] right-[170px] top-[160px]">
-          {/* Section label */}
-          <p
-            className="text-center text-[20px] font-bold text-[#2f7d4e] tracking-[8px] uppercase mb-2"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
-            - 五福石材について -
-          </p>
+        {/* ── テキストコンテナ (1278:206) ── left=170px right=170px top=160px h=635px */}
+        <div className="absolute left-[170px] right-[170px] top-[160px] h-[635px] text-center">
 
-          {/* Main heading */}
-          <h2
-            className="text-center text-[33px] font-medium text-[#2c2c2c] tracking-[8px] leading-[56px] mt-6"
-            style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+          {/* セクションラベル (1278:212): center-y=63px h=28px */}
+          <div
+            className="absolute left-0 right-0 flex flex-col justify-center"
+            style={{ top: "63px", height: "28px", transform: "translateY(-50%)" }}
           >
-            ご先祖様の安らかな
-            <br />
-            お眠りをサポートさせていただきます。
-          </h2>
+            <p
+              className="font-bold tracking-[8px]"
+              style={{
+                fontFamily:
+                  "var(--font-noto-sans-jp), var(--font-inter), sans-serif",
+                fontSize: "40px",
+                lineHeight: "39.2px",
+              }}
+            >
+              <span className="text-[#2c2c2c]">-</span>
+              <span className="text-[#2f7d4e]">{" 五福石材"}</span>
+              <span className="text-[#2c2c2c]">{"について -"}</span>
+            </p>
+          </div>
 
-          {/* Body text */}
-          <p
-            className="text-center text-[18px] text-[#2c2c2c] tracking-[2.24px] leading-[37.5px] mt-10 whitespace-pre-line"
-            style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+          {/* メイン見出し (1278:207): center=(50%, 163.19px) w=867.58px h=96px */}
+          <div
+            className="absolute flex flex-col justify-center"
+            style={{
+              left: "50%",
+              top: "163.19px",
+              width: "867.58px",
+              height: "96px",
+              transform: "translate(-50%, -50%)",
+              fontFamily: "var(--font-noto-sans-jp), sans-serif",
+              fontSize: "33px",
+              fontWeight: "500",
+              color: "#2c2c2c",
+              letterSpacing: "8px",
+              lineHeight: "56px",
+              textAlign: "center",
+            }}
           >
-            五福石材は、墓石クリーニング・造園を通じて、
-            {"\n"}地域の皆さまの暮らしに寄り添ってまいりました。
-            {"\n"}ご先祖様を大切にする想い、住まいを美しく保ちたいという願い、人生の節目に寄り添う心。
-            {"\n"}私たちはその一つひとつに丁寧に向き合い、信頼と安心をお届けしています。
-            {"\n"}「頼んでよかった」――そう言っていただける仕事を、これからも。
-          </p>
+            <p>ご先祖様の安らかな</p>
+            <p>お眠りをサポートさせていただきます。</p>
+          </div>
+
+          {/* 本文 (1278:208): center=(549.5px, 385.5px) w=919px h=225px */}
+          <div
+            className="absolute flex flex-col justify-center"
+            style={{
+              left: "549.5px",
+              top: "385.5px",
+              width: "919px",
+              height: "225px",
+              transform: "translate(-50%, -50%)",
+              fontFamily: "var(--font-noto-sans-jp), sans-serif",
+              fontSize: "18px",
+              fontWeight: "400",
+              color: "#2c2c2c",
+              letterSpacing: "2.24px",
+              lineHeight: "37.5px",
+              textAlign: "center",
+            }}
+          >
+            <p>五福石材は、墓石クリーニング・造園を通じて、</p>
+            <p>
+              地域の皆さまの暮らしに寄り添ってまいりました。
+              <br />
+              ご先祖様を大切にする想い、住まいを美しく保ちたいという願い、人生の節目に寄り添う心。{" "}
+            </p>
+            <p>私たちはその一つひとつに丁寧に向き合い、信頼と安心をお届けしています。</p>
+            <p>「頼んでよかった」――そう言っていただける仕事を、これからも。</p>
+          </div>
         </div>
-      </div>
     </section>
   );
 }
