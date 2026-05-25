@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// 白枠：文字を囲む8方向の白シャドウ＋Figmaの元シャドウ
+// 白枠：Figmaの不透明度(0.55)に合わせた8方向白シャドウ＋元のFigmaシャドウ
 const whiteBorder =
-  "-1px -1px 0 rgba(255,255,255,0.9), 0px -1px 0 rgba(255,255,255,0.9), 1px -1px 0 rgba(255,255,255,0.9), -1px 0px 0 rgba(255,255,255,0.9), 1px 0px 0 rgba(255,255,255,0.9), -1px 1px 0 rgba(255,255,255,0.9), 0px 1px 0 rgba(255,255,255,0.9), 1px 1px 0 rgba(255,255,255,0.9), 0px 4px 4px rgba(255,255,255,0.55)";
+  "-1px -1px 0 rgba(255,255,255,0.55), 0px -1px 0 rgba(255,255,255,0.55), 1px -1px 0 rgba(255,255,255,0.55), -1px 0px 0 rgba(255,255,255,0.55), 1px 0px 0 rgba(255,255,255,0.55), -1px 1px 0 rgba(255,255,255,0.55), 0px 1px 0 rgba(255,255,255,0.55), 1px 1px 0 rgba(255,255,255,0.55), 0px 4px 4px rgba(255,255,255,0.55)";
 
 export default function Hero() {
   return (
