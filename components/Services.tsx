@@ -1,177 +1,282 @@
-const bgImage =
-  "https://www.figma.com/api/mcp/asset/2c5dcdba-937f-4acd-8a63-5bd4de29979b";
-const maskImage =
-  "https://www.figma.com/api/mcp/asset/d6b47d1b-aefd-436a-9d97-cc38edfe2a71";
-const graveCleaning =
-  "https://www.figma.com/api/mcp/asset/6555ad0a-e6db-4836-8d37-eeb206587475";
-const landscaping =
-  "https://www.figma.com/api/mcp/asset/b1c662f4-8f7a-4738-a620-fa153ad063b4";
+// Figma CDN URLs（7日間有効。本番前にpublic/へ移行すること）
+const imgBg   = "https://www.figma.com/api/mcp/asset/a593d140-66b8-45b9-b447-504ed90dbf62";
+const imgMask  = "https://www.figma.com/api/mcp/asset/358cb449-27d5-40e6-b9b4-c24f3000d1be";
+const imgGrave  = "https://www.figma.com/api/mcp/asset/a8316665-7aae-456e-b1db-a83af6609afc";
+const imgGarden = "https://www.figma.com/api/mcp/asset/e5f041db-cc2c-4e1e-9463-c36ef881c3e1";
+
+const greenUnderline = "linear-gradient(to bottom, rgba(70,147,97,0) 50%, rgba(70,147,97,0.4) 50%)";
+
+const maskStyle = {
+  maskImage: `url(${imgMask})`,
+  WebkitMaskImage: `url(${imgMask})`,
+  maskSize: "512px 349px",
+  WebkitMaskSize: "512px 349px",
+  maskPosition: "6.742px 0.438px",
+  WebkitMaskPosition: "6.742px 0.438px",
+  maskRepeat: "no-repeat" as const,
+  WebkitMaskRepeat: "no-repeat",
+};
 
 export default function Services() {
   return (
     <section
       id="services"
       className="relative w-full overflow-hidden"
-      style={{ minHeight: "1599px" }}
+      style={{ height: "1599px" }}
     >
-      {/* Full-page background image */}
-      <div className="absolute inset-0">
+      {/* ── 背景画像 (1278:544): left=-24.03% w=148.06% h=1599px ── */}
+      <div className="absolute inset-0 h-[1599px]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={bgImage}
+          src={imgBg}
           alt=""
-          className="w-full h-full object-cover"
-          style={{ marginLeft: "-24.03%", width: "148.06%" }}
+          className="absolute top-0 h-full max-w-none"
+          style={{ left: "-24.03%", width: "148.06%" }}
         />
       </div>
 
-      {/* Wave top */}
-      <div className="absolute top-0 left-0 right-0 h-[54px] rotate-180 overflow-hidden">
-        <svg viewBox="0 0 1440 54" className="w-full h-full" preserveAspectRatio="none">
-          <path d="M0,27 C360,54 1080,0 1440,27 L1440,54 L0,54 Z" fill="#fcfaf2" />
-        </svg>
-      </div>
+      {/* ── コンテナ (1278:545): left=170 right=170 top=126 h=1369 ── */}
+      <div className="absolute left-[170px] right-[170px] top-[126px] h-[1369px]">
 
-      <div className="max-w-[1440px] mx-auto relative px-[170px] pt-[126px]">
-        {/* Section label */}
-        <p
-          className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase mb-2"
-          style={{ fontFamily: "var(--font-inter)" }}
+        {/* Service ラベル (1278:546): center-y=12px */}
+        <div
+          className="absolute left-0 right-0 flex justify-center"
+          style={{ top: "12px", transform: "translateY(-50%)" }}
         >
-          Service
-        </p>
-
-        {/* Section heading */}
-        <div className="flex flex-col items-center mb-4">
-          <h2
-            className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
-            style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+          <p
+            className="font-medium uppercase text-[#2f7d4e] tracking-[1.6px]"
+            style={{ fontFamily: "var(--font-inter)", fontSize: "20px", lineHeight: "19.6px" }}
           >
-            事業内容
-          </h2>
-          <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-2" />
+            {"Service "}
+          </p>
         </div>
 
-        {/* Description */}
-        <p
-          className="text-center text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] mt-8 max-w-[589px] mx-auto"
-          style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+        {/* 見出し (1278:547): center-x, top=36 h=85 w=215 */}
+        <div
+          className="absolute h-[85px] w-[215px]"
+          style={{ left: "50%", top: "36px", transform: "translateX(-50%)" }}
         >
-          暮らしの中で気になるお墓やお庭のお悩みに、丁寧にお応えします。
-          <br />
-          お墓の汚れや劣化のケアから、お庭の整備まで幅広く対応。
-          <br />
-          ご先祖様への想いを大切に、一つひとつ心を込めて仕上げます。
-          <br />
-          どんな小さなことでも、まずはお気軽にご相談ください。
-        </p>
+          {/* 事業内容 text: center at (50%, 35px) */}
+          <div
+            className="absolute flex flex-col justify-center text-center"
+            style={{
+              left: "50%",
+              top: "35px",
+              width: "181px",
+              height: "46px",
+              transform: "translate(-50%, -50%)",
+              fontFamily: "var(--font-noto-sans-jp), sans-serif",
+              fontSize: "40px",
+              fontWeight: "500",
+              color: "#1a1a1a",
+              letterSpacing: "4.8px",
+              lineHeight: "64px",
+            }}
+          >
+            <p>事業内容</p>
+          </div>
+          {/* 緑アンダーライン */}
+          <div
+            className="absolute bg-[#2f7d4e] h-[2px] w-[40px]"
+            style={{ left: "50%", top: "76px", transform: "translateX(-50%)" }}
+          />
+        </div>
 
-        {/* Service 1: 墓石クリーニング */}
-        <div className="mt-[295px] flex gap-[82px] items-start">
-          {/* Image with mask */}
-          <div className="shrink-0 w-[512px] h-[349px] relative overflow-hidden rounded-[20px]">
+        {/* 説明文 (1278:550): center=(50%, 217.5px) w=589 h=131 */}
+        <div
+          className="absolute flex flex-col justify-center text-center"
+          style={{
+            left: "50%",
+            top: "217.5px",
+            width: "589px",
+            height: "131px",
+            transform: "translate(-50%, -50%)",
+            fontFamily: "var(--font-noto-sans-jp), sans-serif",
+            fontSize: "18px",
+            fontWeight: "400",
+            color: "#2c2c2c",
+            letterSpacing: "0.8px",
+            lineHeight: "33px",
+          }}
+        >
+          <p>
+            暮らしの中で気になるお墓やお庭のお悩みに、丁寧にお応えします。
+            <br />
+            {" お墓の汚れや劣化のケアから、お庭の整備まで幅広く対応。"}
+            <br />
+            {" ご先祖様への想いを大切に、一つひとつ心を込めて仕上げます。"}
+            <br />
+            {" どんな小さなことでも、まずはお気軽にご相談ください。"}
+          </p>
+        </div>
+
+        {/* ── 墓石クリーニングセクション (1280:661): left=0 top=420 w=full h=349 ── */}
+        <div className="absolute left-0 top-[420px] w-full h-[349px]">
+
+          {/* 写真（マスク付き）: left=-6.74 top=-0.44 w=563 h=385 */}
+          <div
+            className="absolute"
+            style={{ left: "-6.74px", top: "-0.44px", width: "563px", height: "385px", ...maskStyle }}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={graveCleaning}
+              src={imgGrave}
               alt="墓石クリーニング"
-              className="w-full h-full object-cover"
-              style={{
-                WebkitMaskImage: `url(${maskImage})`,
-                maskImage: `url(${maskImage})`,
-                WebkitMaskSize: "512px 349px",
-                maskSize: "512px 349px",
-                WebkitMaskPosition: "center",
-                maskPosition: "center",
-                WebkitMaskRepeat: "no-repeat",
-                maskRepeat: "no-repeat",
-              }}
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
-          {/* Text */}
-          <div className="flex-1 pt-0">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-[5px] h-[35px] bg-[#2f7d4e]" />
-              <h3
-                className="text-[35.5px] font-normal text-[#2c2c2c]"
-                style={{ fontFamily: "var(--font-noto-sans-jp)" }}
-              >
-                墓石クリーニング
-              </h3>
-            </div>
-            <div className="w-[154px] h-[2px] mb-4" style={{ background: "linear-gradient(to bottom, rgba(70,147,97,0) 50%, rgba(70,147,97,0.4) 50%)" }} />
-            <p
-              className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[36px]"
-              style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+
+          {/* テキストコンテナ (1280:671): left=582 right=0 top=0 h=374 overflow-clip */}
+          <div className="absolute left-[582px] right-0 top-0 h-[374px] overflow-hidden">
+
+            {/* 見出し: border-l-[5px] top=0 left=0 right=224 h=35 */}
+            <div
+              className="absolute top-0 left-0 h-[35px] border-l-[5px] border-[#2f7d4e] border-solid"
+              style={{ right: "224px" }}
             >
-              年月とともに蓄積した汚れやコケ、水垢を丁寧に除去し、
-              <br />
-              お墓本来の美しさを取り戻します。
-              <br />
-              手作業によるやさしい洗浄と細部まで行き届いた仕上げで、
-              <br />
-              ご先祖様への感謝の気持ちを形にするお手伝いをいたします。
-              <br />
-              また、ご希望に応じて女性作業員の同行も可能です。
-              <br />
-              墓石クリーニング以外のお墓に関するお悩みも、
-              <br />
-              お気軽にご相談ください。
-            </p>
+              <div
+                className="absolute flex flex-col justify-center"
+                style={{
+                  left: "5px",
+                  top: "18.5px",
+                  width: "288px",
+                  height: "37px",
+                  transform: "translateY(-50%)",
+                  fontFamily: "var(--font-noto-sans-jp), sans-serif",
+                  fontSize: "35.5px",
+                  fontWeight: "400",
+                  color: "#2c2c2c",
+                  lineHeight: "26px",
+                }}
+              >
+                <p>墓石クリーニング</p>
+              </div>
+            </div>
+
+            {/* 緑アンダーライン1: top=151 left=0 right=71.26% */}
+            <div
+              className="absolute h-[15px] left-0"
+              style={{ right: "71.26%", top: "151px", background: greenUnderline }}
+            />
+
+            {/* 説明文: center-y=225.5 w=535 h=231 */}
+            <div
+              className="absolute flex flex-col justify-center"
+              style={{
+                left: 0,
+                top: "225.5px",
+                width: "535px",
+                height: "231px",
+                transform: "translateY(-50%)",
+                fontFamily: "var(--font-noto-sans-jp), sans-serif",
+                fontSize: "18px",
+                fontWeight: "400",
+                color: "#2c2c2c",
+                letterSpacing: "0.8px",
+                lineHeight: "36px",
+              }}
+            >
+              <p>年月とともに蓄積した汚れやコケ、水垢を丁寧に除去し、</p>
+              <p>
+                お墓本来の美しさを取り戻します。
+                <br />
+                手作業によるやさしい洗浄と細部まで行き届いた仕上げで、
+              </p>
+              <p>ご先祖様への感謝の気持ちを形にするお手伝いをいたします。</p>
+              <p>
+                また、ご希望に応じて女性作業員の同行も可能です。
+                <br />
+                墓石クリーニング以外のお墓に関するお悩みも、
+              </p>
+              <p>お気軽にご相談ください。</p>
+            </div>
+
+            {/* 緑アンダーライン2: top=259 left=36.02% right=34.67% */}
+            <div
+              className="absolute h-[15px]"
+              style={{ left: "36.02%", right: "34.67%", top: "259px", background: greenUnderline }}
+            />
           </div>
         </div>
 
-        {/* Service 2: 造園 */}
-        <div className="mt-[100px] flex gap-[82px] items-start">
-          {/* Text */}
-          <div className="flex-1 pt-0">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-[5px] h-[35px] bg-[#2f7d4e]" />
-              <h3
-                className="text-[35.5px] font-normal text-[#2c2c2c]"
-                style={{ fontFamily: "var(--font-noto-sans-jp)" }}
-              >
-                造園
-              </h3>
-            </div>
-            <div className="w-[155px] h-[2px] mb-4" style={{ background: "linear-gradient(to bottom, rgba(70,147,97,0) 50%, rgba(70,147,97,0.4) 50%)" }} />
-            <p
-              className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[36px]"
-              style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+        {/* ── 造園セクション (1280:660): left=0 top=918 w=full h=349 ── */}
+        <div className="absolute left-0 top-[918px] w-full h-[349px]">
+
+          {/* テキストコンテナ (1281:682): left=0 right=582 top=0 h=218 overflow-clip */}
+          <div className="absolute left-0 top-0 h-[218px] overflow-hidden" style={{ right: "582px" }}>
+
+            {/* 見出し: border-l-[5px] top=0 left=0 right=441 h=35 */}
+            <div
+              className="absolute top-0 left-0 h-[35px] border-l-[5px] border-[#2f7d4e] border-solid"
+              style={{ right: "441px" }}
             >
-              女性作業員が丁寧に対応し、
-              <br />
-              お庭のお手入れ・草刈り・除草作業を承ります。
-              <br />
-              どんな小さなお悩みでも、お気軽にご相談ください。
-            </p>
+              <div
+                className="absolute flex flex-col justify-center"
+                style={{
+                  left: "5px",
+                  top: "18.5px",
+                  width: "71px",
+                  height: "37px",
+                  transform: "translateY(-50%)",
+                  fontFamily: "var(--font-noto-sans-jp), sans-serif",
+                  fontSize: "35.5px",
+                  fontWeight: "400",
+                  color: "#2c2c2c",
+                  lineHeight: "26px",
+                }}
+              >
+                <p>造園</p>
+              </div>
+            </div>
+
+            {/* 造園説明 (1280:659): left=0 top=110 w=517 h=108 */}
+            <div className="absolute left-0 top-[110px] w-[517px] h-[108px]">
+              {/* 緑アンダーライン: top=17 left=0 right=70.41% */}
+              <div
+                className="absolute h-[15px] left-0"
+                style={{ right: "70.41%", top: "17px", background: greenUnderline }}
+              />
+              {/* 説明文: center-y=54 w=517 h=108 */}
+              <div
+                className="absolute flex flex-col justify-center"
+                style={{
+                  left: 0,
+                  top: "54px",
+                  width: "517px",
+                  height: "108px",
+                  transform: "translateY(-50%)",
+                  fontFamily: "var(--font-noto-sans-jp), sans-serif",
+                  fontSize: "18px",
+                  fontWeight: "400",
+                  color: "#2c2c2c",
+                  letterSpacing: "0.8px",
+                  lineHeight: "36px",
+                }}
+              >
+                <p>女性作業員が丁寧に対応し、</p>
+                <p>
+                  お庭のお手入れ・草刈り・除草作業を承ります。
+                  <br />
+                  どんな小さなお悩みでも、お気軽にご相談ください。
+                </p>
+              </div>
+            </div>
           </div>
-          {/* Image with mask */}
-          <div className="shrink-0 w-[512px] h-[349px] relative overflow-hidden rounded-[20px]">
+
+          {/* 写真（マスク付き）: left=585.26 top=-0.44 w=575 h=384 */}
+          <div
+            className="absolute"
+            style={{ left: "585.26px", top: "-0.44px", width: "575px", height: "384px", ...maskStyle }}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={landscaping}
+              src={imgGarden}
               alt="造園"
-              className="w-full h-full object-cover"
-              style={{
-                WebkitMaskImage: `url(${maskImage})`,
-                maskImage: `url(${maskImage})`,
-                WebkitMaskSize: "512px 349px",
-                maskSize: "512px 349px",
-                WebkitMaskPosition: "center",
-                maskPosition: "center",
-                WebkitMaskRepeat: "no-repeat",
-                maskRepeat: "no-repeat",
-              }}
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
         </div>
-      </div>
 
-      {/* Wave bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-[54px] overflow-hidden">
-        <svg viewBox="0 0 1440 54" className="w-full h-full" preserveAspectRatio="none">
-          <path d="M0,27 C360,54 1080,0 1440,27 L1440,54 L0,54 Z" fill="#fcfaf2" />
-        </svg>
       </div>
     </section>
   );

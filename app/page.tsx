@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import WaveDivider from "@/components/WaveDivider";
 import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
 import Works from "@/components/Works";
@@ -16,6 +17,7 @@ export default function Home() {
       <div className="pt-[100px]">
         <Hero />
         <About />
+        <WaveDivider />
         <Services />
         <WhyUs />
         <Works />
