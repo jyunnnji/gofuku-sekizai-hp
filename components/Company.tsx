@@ -15,15 +15,14 @@ export default function Company() {
   return (
     <section
       id="company"
-      className="relative overflow-hidden py-20"
+      className="relative pt-[130px] pb-20"
       style={{ background: "#fff3bc" }}
     >
-      {/* Wave top */}
-      <div className="absolute top-0 left-0 right-0 h-[54px] overflow-hidden">
-        <svg viewBox="0 0 1440 54" className="w-full h-full" preserveAspectRatio="none">
-          <path d="M0,27 C360,0 1080,54 1440,27 L1440,0 L0,0 Z" fill="#fcfaf2" />
-        </svg>
-      </div>
+      {/* Decorative circle peaking above section top (cream = previous section bg) */}
+      <div
+        className="absolute left-1/2 bg-[#fff3bc] rounded-full w-[160px] h-[160px] pointer-events-none"
+        style={{ top: 0, transform: "translate(-50%, -50%)" }}
+      />
 
       <div className="max-w-[1440px] mx-auto px-[165px]">
         {/* Section label */}
@@ -31,7 +30,7 @@ export default function Company() {
           className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase mb-2"
           style={{ fontFamily: "var(--font-inter)" }}
         >
-          company
+          COMPANY
         </p>
 
         {/* Section heading */}
