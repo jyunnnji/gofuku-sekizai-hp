@@ -1,169 +1,188 @@
-const imgPrayer =
-  "https://www.figma.com/api/mcp/asset/51a6cb04-6f69-4e85-a6ee-be4dc39313d2";
-const imgWater =
-  "https://www.figma.com/api/mcp/asset/3b8d2495-8158-47f6-9941-a09bea4c0e74";
-const imgPolish =
-  "https://www.figma.com/api/mcp/asset/7fba8866-673d-439f-93d2-7921fa4a41c5";
-const imgCaulk =
-  "https://www.figma.com/api/mcp/asset/26c55614-8821-48f8-adb6-c7cc68565b07";
-const imgInk =
-  "https://www.figma.com/api/mcp/asset/8c7cab0d-7457-4e4d-8d3d-3bb8fd162039";
-const imgFinish =
-  "https://www.figma.com/api/mcp/asset/14947602-c9c8-4f05-b299-79a2e0fbbea6";
-const imgArrow =
-  "https://www.figma.com/api/mcp/asset/c95ee2b3-323b-4e37-b2b2-17df09b0762b";
 const imgEllipse1 =
   "https://www.figma.com/api/mcp/asset/32dcc521-873a-4780-9533-9e5e2f257df2";
 const imgEllipse2 =
   "https://www.figma.com/api/mcp/asset/c0030689-181c-44ff-ac11-dbbfc0790863";
+const img01 =
+  "https://www.figma.com/api/mcp/asset/e0d1a00e-9a9e-4665-b491-4130091fea53";
+const img02 =
+  "https://www.figma.com/api/mcp/asset/dab7c62b-c8e8-456c-8e6c-a1acb023d4e1";
+const img03 =
+  "https://www.figma.com/api/mcp/asset/41f8af72-058d-4af7-94d6-91201581372c";
+const img04 =
+  "https://www.figma.com/api/mcp/asset/bdc7e157-2c2f-4a6c-9180-d635e2853045";
+const img05 =
+  "https://www.figma.com/api/mcp/asset/868e877a-2ffb-4fd4-b7bf-70936efee769";
+const img06 =
+  "https://www.figma.com/api/mcp/asset/3007f245-eb7e-4883-94fa-53934373ace7";
+const imgArrowLeft =
+  "https://www.figma.com/api/mcp/asset/5ddc6ea1-c1f8-492f-a010-15a70dfb8b8f";
+const imgArrowRight =
+  "https://www.figma.com/api/mcp/asset/f13ce52a-5d10-49f1-97f4-1b03a104ad56";
 
 const steps = [
   {
     num: "01",
     title: "合掌・線香",
     desc: "まずは線香を炊き、手を合わせてから作業に入ります。",
-    img: imgPrayer,
+    img: img01,
     imgH: 162,
     imgW: 243,
+    imgTop: 55,
+    imgLeft: 62,
+    cellTop: 0,
+    cellLeft: -72,
+    borderRight: true,
   },
   {
     num: "02",
     title: "水を注ぐ",
     desc: "たっぷりの水かけて、大きな汚れを落としていきます。",
-    img: imgWater,
+    img: img02,
     imgH: 162,
     imgW: 243,
+    imgTop: 56,
+    imgLeft: 63,
+    cellTop: 0,
+    cellLeft: 298,
+    borderRight: true,
   },
   {
     num: "03",
     title: "研磨",
     desc: "器具は使用せず、原則、手で研磨を行います。",
-    img: imgPolish,
+    img: img03,
     imgH: 121,
     imgW: 201,
+    imgTop: 65,
+    imgLeft: 84,
+    cellTop: 0,
+    cellLeft: 668,
+    borderRight: false,
   },
   {
     num: "04",
     title: "目地コーキング",
     desc: "コーキングを隙間に入れ直します。",
-    img: imgCaulk,
+    img: img04,
     imgH: 82,
     imgW: 130,
+    imgTop: 97,
+    imgLeft: 120,
+    cellTop: 319,
+    cellLeft: -72,
+    borderRight: true,
   },
   {
     num: "05",
     title: "墨入れ",
     desc: "墨入れの入れ直しを丁寧に行います。",
-    img: imgInk,
+    img: img05,
     imgH: 134,
     imgW: 223,
+    imgTop: 62,
+    imgLeft: 73,
+    cellTop: 319,
+    cellLeft: 298,
+    borderRight: true,
   },
   {
     num: "06",
     title: "仕上げ",
     desc: "最後に仕上げを行い、手を合わせて終了します。",
-    img: imgFinish,
+    img: img06,
     imgH: 134,
     imgW: 223,
+    imgTop: 62,
+    imgLeft: 74,
+    cellTop: 319,
+    cellLeft: 668,
+    borderRight: false,
   },
 ];
 
-const numStyle = {
-  fontFamily: "var(--font-inter)",
-  textShadow:
-    "-1px -1px 1px #575252,1px -1px 1px #575252,-1px 1px 1px #575252,1px 1px 1px #575252",
-};
-
-function StepCell({
-  step,
-  borderRight,
-}: {
-  step: (typeof steps)[0];
-  borderRight: boolean;
-}) {
+function StepItem({ step }: { step: (typeof steps)[number] }) {
   return (
     <div
-      className={`flex flex-col items-center pt-8 pb-8 px-4 ${
-        borderRight ? "border-r border-dashed border-[#ddd]" : ""
-      }`}
+      style={{
+        position: "absolute",
+        top: step.cellTop,
+        left: step.cellLeft,
+        width: 370,
+        height: 319,
+      }}
+      className={step.borderRight ? "border-r border-dashed border-[#ddd]" : ""}
     >
-      {/* Number + Title */}
-      <div className="relative w-full h-[50px] flex items-center justify-center mb-5">
-        <span
-          className="absolute left-4 text-[48px] font-black text-[#edc920] tracking-[-1px] leading-none"
-          style={numStyle}
-        >
-          {step.num}
-        </span>
-        <span
-          className="text-[17.5px] font-bold text-[#2c2c2c] tracking-[0.87px]"
-          style={{ fontFamily: "var(--font-noto-sans-jp)" }}
-        >
-          {step.title}
-        </span>
-      </div>
+      {/* Number */}
+      <span
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 20,
+          fontFamily: "var(--font-inter)",
+          fontSize: 48,
+          fontWeight: 900,
+          color: "#edc920",
+          letterSpacing: -1,
+          lineHeight: 1,
+          textShadow:
+            "-1px -1px 1px #575252,1px -1px 1px #575252,-1px 1px 1px #575252,1px 1px 1px #575252",
+        }}
+      >
+        {step.num}
+      </span>
+
+      {/* Title */}
+      <span
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: 34.5,
+          transform: "translate(-50%, -50%)",
+          fontFamily: "var(--font-noto-sans-jp)",
+          fontSize: 17.5,
+          fontWeight: 700,
+          color: "#2c2c2c",
+          letterSpacing: "0.87px",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {step.title}
+      </span>
 
       {/* Image */}
-      <div className="flex items-center justify-center" style={{ height: 170 }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={step.img}
-          alt={step.title}
-          style={{
-            height: step.imgH,
-            width: step.imgW,
-            objectFit: "contain",
-          }}
-        />
-      </div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={step.img}
+        alt={step.title}
+        style={{
+          position: "absolute",
+          top: step.imgTop,
+          left: step.imgLeft,
+          height: step.imgH,
+          width: step.imgW,
+          objectFit: "contain",
+        }}
+      />
 
       {/* Description */}
       <p
-        className="text-[15px] text-[#2c2c2c] text-center tracking-[2.24px] leading-[37.5px] mt-4"
-        style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: 255,
+          transform: "translate(-50%, -50%)",
+          width: 231,
+          fontFamily: "var(--font-noto-sans-jp)",
+          fontSize: 15,
+          color: "#2c2c2c",
+          textAlign: "center",
+          letterSpacing: "2.24px",
+          lineHeight: "37.5px",
+          margin: 0,
+        }}
       >
         {step.desc}
       </p>
-    </div>
-  );
-}
-
-function StepRow({ rowSteps }: { rowSteps: (typeof steps)[0][] }) {
-  return (
-    <div className="relative grid grid-cols-3">
-      {rowSteps.map((step, col) => (
-        <StepCell key={step.num} step={step} borderRight={col < 2} />
-      ))}
-      {/* Arrow between col1 and col2 */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={imgArrow}
-        alt=""
-        className="absolute pointer-events-none z-10"
-        style={{
-          left: "33.33%",
-          top: "34px",
-          transform: "translateX(-50%) rotate(90deg)",
-          width: 48,
-          height: 48,
-          objectFit: "contain",
-        }}
-      />
-      {/* Arrow between col2 and col3 */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={imgArrow}
-        alt=""
-        className="absolute pointer-events-none z-10"
-        style={{
-          left: "66.67%",
-          top: "34px",
-          transform: "translateX(-50%) rotate(90deg)",
-          width: 48,
-          height: 48,
-          objectFit: "contain",
-        }}
-      />
     </div>
   );
 }
@@ -244,8 +263,11 @@ export default function WhyUs() {
           </p>
         </div>
 
-        {/* Steps white card */}
-        <div className="bg-white rounded-[20px] overflow-hidden relative">
+        {/* Steps white card — 1110px wide (content 1090px + 10px each side) */}
+        <div
+          className="bg-white rounded-[20px] overflow-hidden relative"
+          style={{ height: 713, marginLeft: -10, marginRight: -10 }}
+        >
           {/* POINT badge */}
           <div className="absolute top-[22px] right-[56px] bg-white border-[3px] border-[#ea6d62] rounded-[10px] h-[39px] px-4 flex items-center">
             <span
@@ -264,10 +286,53 @@ export default function WhyUs() {
             />
           </div>
 
-          <div className="px-[72px] pt-[50px] pb-[50px]">
-            <StepRow rowSteps={steps.slice(0, 3)} />
-            <div className="border-t border-dashed border-[#ddd]" />
-            <StepRow rowSteps={steps.slice(3, 6)} />
+          {/* List container: 965px wide at top=50, left=72 within the card */}
+          <div
+            className="absolute"
+            style={{ top: 50, left: 72, right: 73, height: 613 }}
+          >
+            {/* Horizontal divider spanning full card width */}
+            <div
+              className="absolute border-t border-dashed border-[#ddd]"
+              style={{ top: 319, left: -72, right: -73 }}
+            />
+
+            {/* 6 step items */}
+            {steps.map((step) => (
+              <StepItem key={step.num} step={step} />
+            ))}
+
+            {/* Row 1 arrows — 50×47px, rotated 90° to point right */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={imgArrowLeft}
+              alt=""
+              className="absolute pointer-events-none"
+              style={{ top: 112, left: 273, width: 50, height: 47, objectFit: "contain", transform: "rotate(90deg)" }}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={imgArrowRight}
+              alt=""
+              className="absolute pointer-events-none"
+              style={{ top: 112, left: 643, width: 50, height: 47, objectFit: "contain", transform: "rotate(90deg)" }}
+            />
+
+            {/* Row 2 arrows */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={imgArrowLeft}
+              alt=""
+              className="absolute pointer-events-none"
+              style={{ top: 440, left: 273, width: 50, height: 47, objectFit: "contain", transform: "rotate(90deg)" }}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={imgArrowRight}
+              alt=""
+              className="absolute pointer-events-none"
+              style={{ top: 440, left: 643, width: 50, height: 47, objectFit: "contain", transform: "rotate(90deg)" }}
+            />
           </div>
         </div>
       </div>
