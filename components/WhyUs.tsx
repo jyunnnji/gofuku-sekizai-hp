@@ -293,12 +293,6 @@ export default function WhyUs() {
             className="absolute"
             style={{ top: 50, left: 72, right: 73, height: 613 }}
           >
-            {/* Horizontal divider spanning full card width */}
-            <div
-              className="absolute border-t border-dashed border-[#ddd]"
-              style={{ top: 319, left: -72, right: -73 }}
-            />
-
             {/* 6 step items */}
             {steps.map((step) => (
               <StepItem key={step.num} step={step} />
