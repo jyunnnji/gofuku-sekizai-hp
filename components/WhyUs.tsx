@@ -1,23 +1,24 @@
 const imgEllipse1 =
-  "https://www.figma.com/api/mcp/asset/32dcc521-873a-4780-9533-9e5e2f257df2";
+  "https://www.figma.com/api/mcp/asset/554403ee-c83f-434f-a706-cff21a5f6d3d";
 const imgEllipse2 =
-  "https://www.figma.com/api/mcp/asset/c0030689-181c-44ff-ac11-dbbfc0790863";
+  "https://www.figma.com/api/mcp/asset/43498684-25e2-4f00-9b94-9cab14f096d2";
 const img01 =
-  "https://www.figma.com/api/mcp/asset/e0d1a00e-9a9e-4665-b491-4130091fea53";
+  "https://www.figma.com/api/mcp/asset/f036a18a-cefb-456c-a0e5-91175f77823b";
 const img02 =
-  "https://www.figma.com/api/mcp/asset/dab7c62b-c8e8-456c-8e6c-a1acb023d4e1";
+  "https://www.figma.com/api/mcp/asset/239d4896-818a-4d28-a226-029757b55238";
 const img03 =
-  "https://www.figma.com/api/mcp/asset/41f8af72-058d-4af7-94d6-91201581372c";
+  "https://www.figma.com/api/mcp/asset/46c6a949-080f-43af-80de-48f232e91665";
 const img04 =
-  "https://www.figma.com/api/mcp/asset/bdc7e157-2c2f-4a6c-9180-d635e2853045";
+  "https://www.figma.com/api/mcp/asset/9c68a4bf-5488-4e08-bd27-f4ca3c64630a";
 const img05 =
-  "https://www.figma.com/api/mcp/asset/868e877a-2ffb-4fd4-b7bf-70936efee769";
+  "https://www.figma.com/api/mcp/asset/80808cd3-995c-4c81-85b3-d91465cabfc4";
 const img06 =
-  "https://www.figma.com/api/mcp/asset/3007f245-eb7e-4883-94fa-53934373ace7";
-const imgArrowLeft =
-  "https://www.figma.com/api/mcp/asset/5ddc6ea1-c1f8-492f-a010-15a70dfb8b8f";
-const imgArrowRight =
-  "https://www.figma.com/api/mcp/asset/f13ce52a-5d10-49f1-97f4-1b03a104ad56";
+  "https://www.figma.com/api/mcp/asset/3762980d-61a2-4cd2-b213-ad522374321b";
+// Vector1 = left-side arrows (col1→col2), Vector = right-side arrows (col2→col3)
+const imgVector1 =
+  "https://www.figma.com/api/mcp/asset/e5a3610f-a42d-438c-9873-55b007f35989";
+const imgVector =
+  "https://www.figma.com/api/mcp/asset/fb14cb8a-756a-4f44-9367-ba46a6bf484a";
 
 const steps = [
   {
@@ -191,7 +192,7 @@ export default function WhyUs() {
   return (
     <section
       id="why-us"
-      className="relative bg-[#fcfaf2] overflow-hidden py-20"
+      className="relative bg-[#fcfaf2] overflow-hidden pt-[172px] pb-[90px]"
     >
       {/* Decorative ellipses */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -207,7 +208,8 @@ export default function WhyUs() {
         className="absolute right-[-72px] top-[414px] w-[209px] h-[209px] pointer-events-none"
       />
 
-      <div className="max-w-[1440px] mx-auto px-[175px]">
+      {/* Content container: left 175px, right 165px (asymmetric per Figma) */}
+      <div className="max-w-[1440px] mx-auto pl-[175px] pr-[165px]">
         {/* Section label */}
         <p
           className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase"
@@ -217,7 +219,7 @@ export default function WhyUs() {
         </p>
 
         {/* Section heading */}
-        <div className="flex flex-col items-center mt-3 mb-3">
+        <div className="flex flex-col items-center mt-5 mb-0">
           <h2
             className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
@@ -229,7 +231,7 @@ export default function WhyUs() {
 
         {/* Body text */}
         <div
-          className="text-center mt-10 mb-16 text-[18px] text-[#2c2c2c] tracking-[2.24px]"
+          className="text-center mt-[117px] mb-[124px] text-[18px] text-[#2c2c2c] tracking-[2.24px]"
           style={{ fontFamily: "var(--font-noto-sans-jp)" }}
         >
           <p className="leading-[37.5px] mb-0">
@@ -263,10 +265,10 @@ export default function WhyUs() {
           </p>
         </div>
 
-        {/* Steps white card — 1110px wide (content 1090px + 10px each side) */}
+        {/* Steps white card — 1110px wide (content 1100px - 5px each side) */}
         <div
           className="bg-white rounded-[20px] overflow-hidden relative"
-          style={{ height: 713, marginLeft: -10, marginRight: -10 }}
+          style={{ height: 713, marginLeft: -5, marginRight: -5 }}
         >
           {/* POINT badge */}
           <div className="absolute top-[22px] right-[56px] bg-white border-[3px] border-[#ea6d62] rounded-[10px] h-[39px] px-4 flex items-center">
@@ -302,37 +304,55 @@ export default function WhyUs() {
               <StepItem key={step.num} step={step} />
             ))}
 
-            {/* Row 1 arrows — 50×47px, rotated 90° to point right */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={imgArrowLeft}
-              alt=""
-              className="absolute pointer-events-none"
-              style={{ top: 112, left: 273, width: 50, height: 47, objectFit: "contain", transform: "rotate(90deg)" }}
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={imgArrowRight}
-              alt=""
-              className="absolute pointer-events-none"
-              style={{ top: 112, left: 643, width: 50, height: 47, objectFit: "contain", transform: "rotate(90deg)" }}
-            />
-
-            {/* Row 2 arrows */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={imgArrowLeft}
-              alt=""
-              className="absolute pointer-events-none"
-              style={{ top: 440, left: 273, width: 50, height: 47, objectFit: "contain", transform: "rotate(90deg)" }}
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={imgArrowRight}
-              alt=""
-              className="absolute pointer-events-none"
-              style={{ top: 440, left: 643, width: 50, height: 47, objectFit: "contain", transform: "rotate(90deg)" }}
-            />
+            {/* Arrows — container-query wrapper for correct rotated fill */}
+            {/* Row 1: col1→col2 (Vector1) */}
+            <div
+              className="absolute flex items-center justify-center"
+              style={{ top: "18.27%", bottom: "74.06%", left: "28.29%", right: "66.53%", containerType: "size" } as React.CSSProperties}
+            >
+              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90">
+                <div className="relative size-full">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector1} />
+                </div>
+              </div>
+            </div>
+            {/* Row 1: col2→col3 (Vector) */}
+            <div
+              className="absolute flex items-center justify-center"
+              style={{ top: "18.27%", bottom: "74.06%", left: "66.63%", right: "28.19%", containerType: "size" } as React.CSSProperties}
+            >
+              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90">
+                <div className="relative size-full">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector} />
+                </div>
+              </div>
+            </div>
+            {/* Row 2: col1→col2 (Vector1) */}
+            <div
+              className="absolute flex items-center justify-center"
+              style={{ top: "71.78%", bottom: "20.55%", left: "28.29%", right: "66.53%", containerType: "size" } as React.CSSProperties}
+            >
+              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90">
+                <div className="relative size-full">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector1} />
+                </div>
+              </div>
+            </div>
+            {/* Row 2: col2→col3 (Vector) */}
+            <div
+              className="absolute flex items-center justify-center"
+              style={{ top: "71.78%", bottom: "20.55%", left: "66.63%", right: "28.19%", containerType: "size" } as React.CSSProperties}
+            >
+              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90">
+                <div className="relative size-full">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
