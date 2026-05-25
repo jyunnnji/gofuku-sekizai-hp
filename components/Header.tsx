@@ -96,8 +96,8 @@ export default function Header() {
       >
         {[
           { label: "事業内容", href: "#services" },
-          { label: "施工事例", href: "#works" },
           { label: "選ばれる理由", href: "#why-us" },
+          { label: "施工事例", href: "#works" },
           { label: "会社概要", href: "#company" },
           { label: "お知らせ", href: "#news" },
         ].map((item) => (
