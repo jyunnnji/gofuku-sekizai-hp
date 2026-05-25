@@ -191,10 +191,10 @@ export default function Services() {
               <p>お気軽にご相談ください。</p>
             </div>
 
-            {/* 緑アンダーライン2: top=259 left=36.02% right=34.67% */}
+            {/* 緑アンダーライン2: top=259 left=32% right=34.67% */}
             <div
               className="absolute h-[15px]"
-              style={{ left: "36.02%", right: "34.67%", top: "259px", background: greenUnderline }}
+              style={{ left: "34%", right: "38%", top: "259px", background: greenUnderline }}
             />
           </div>
         </div>
