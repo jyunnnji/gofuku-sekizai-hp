@@ -59,14 +59,13 @@ export default function News() {
         {/* White card — top=210px (170+2+38=210), h=433px */}
         <div className="bg-white rounded-[30px] overflow-hidden h-[433px] pt-[76px]">
           {newsItems.map((item, i) => (
-            <Link
-              key={i}
-              href={item.href}
-              className="flex pl-[176px] pr-[174px] group"
-            >
-              <div className={`flex items-center w-full h-[97px] border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors mx-[-30px] px-[30px] ${
-                i === 0 ? "border-t border-b" : "border-b"
-              }`}>
+            <div key={i} className="flex pl-[176px] pr-[174px]">
+              <Link
+                href={item.href}
+                className={`group flex items-center w-full h-[97px] border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors mx-[-30px] px-[30px] ${
+                  i === 0 ? "border-t border-b" : "border-b"
+                }`}
+              >
                 {/* Date — left=0, w=102px */}
                 <span
                   className="text-[15px] text-[#6b6b6b] tracking-[1.3px] leading-[26px] whitespace-nowrap w-[102px] shrink-0"
@@ -97,8 +96,8 @@ export default function News() {
                 <div className="shrink-0 w-[28px] h-[28px] rounded-full bg-[#edc920] border border-[#6d6c6a] flex items-center justify-center transition-colors group-hover:bg-[#d4b31e] text-[#1a1a1a] group-hover:text-white">
                   <ArrowIcon />
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
 
