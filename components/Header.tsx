@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const imgPhone =
   "https://www.figma.com/api/mcp/asset/2e464737-6571-4b9b-bebe-7964fc69ec33";
@@ -8,6 +9,7 @@ const imgPhone =
 export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const [showPhoneDialog, setShowPhoneDialog] = useState(false);
   const navHref = (hash: string) => isHome ? hash : `/${hash}`;
 
   return (
@@ -153,8 +155,8 @@ export default function Header() {
       </nav>
 
       {/* お電話はこちらから: absolute, 右上起点, h-150px で下にはみ出す */}
-      <Link
-        href="tel:0909406-2085"
+      <button
+        onClick={() => setShowPhoneDialog(true)}
         className="absolute top-0 right-0 bg-[#edc920] hover:bg-[#d4b31e] transition-colors"
         style={{
           width: "155px",
@@ -202,7 +204,96 @@ export default function Header() {
           <p>お電話は</p>
           <p>こちらから</p>
         </div>
-      </Link>
+      </button>
+
+      {/* 電話番号ダイアログ */}
+      {showPhoneDialog && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          onClick={() => setShowPhoneDialog(false)}
+        >
+          <div
+            className="relative bg-white rounded-[24px] w-[560px] overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* ヘッダー部 */}
+            <div className="pt-[40px] pb-[28px] px-[48px] text-center border-b border-[#e8e8e8]">
+              <p
+                className="text-[13px] text-[#2f7d4e] tracking-[3px] uppercase mb-[6px]"
+                style={{ fontFamily: "var(--font-inter)" }}
+              >
+                Contact
+              </p>
+              <h2
+                className="text-[22px] font-medium text-[#1a1a1a] tracking-[1.5px]"
+                style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+              >
+                お電話でのお問い合わせ
+              </h2>
+              {/* 閉じるボタン */}
+              <button
+                onClick={() => setShowPhoneDialog(false)}
+                className="absolute top-[16px] right-[16px] w-[36px] h-[36px] rounded-full bg-[#f0f0f0] flex items-center justify-center hover:bg-[#e0e0e0] transition-colors"
+                aria-label="閉じる"
+              >
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M1 1L13 13M13 1L1 13" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </button>
+            </div>
+
+            {/* 電話番号リスト */}
+            <div className="px-[40px] py-[28px] flex flex-col gap-[12px]">
+              <a
+                href="tel:090-9406-2085"
+                className="flex items-center gap-[16px] px-[24px] h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group"
+              >
+                <span
+                  className="w-[48px] shrink-0 text-[14px] font-medium text-[#6b6b6b] tracking-[1px]"
+                  style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+                >
+                  携帯
+                </span>
+                <div className="w-[1px] h-[24px] bg-[#d9d9d9]" />
+                <span
+                  className="text-[28px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] transition-colors"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  090-9406-2085
+                </span>
+              </a>
+              <a
+                href="tel:093-614-6573"
+                className="flex items-center gap-[16px] px-[24px] h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group"
+              >
+                <span
+                  className="w-[48px] shrink-0 text-[14px] font-medium text-[#6b6b6b] tracking-[1px]"
+                  style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+                >
+                  固定
+                </span>
+                <div className="w-[1px] h-[24px] bg-[#d9d9d9]" />
+                <span
+                  className="text-[28px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] transition-colors"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  093-614-6573
+                </span>
+              </a>
+            </div>
+
+            {/* フッター */}
+            <div className="px-[40px] pb-[28px]">
+              <p
+                className="text-center text-[13px] text-[#6b6b6b] tracking-[0.8px] py-[16px] border-t border-[#e8e8e8]"
+                style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+              >
+                受付時間：9:00〜17:00（不定休）
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
