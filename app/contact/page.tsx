@@ -249,6 +249,20 @@ export default function ContactPage() {
 
                 </form>
               </div>
+
+              {/* Back to top */}
+              <div className="flex justify-center mt-[48px]">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-[10px] text-[16px] text-[#2f7d4e] hover:text-[#235e3a] tracking-[0.8px] transition-colors"
+                  style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+                >
+                  <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
+                    <path d="M7 1L2 6L7 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  トップページへ戻る
+                </Link>
+              </div>
             </>
           )}
 
