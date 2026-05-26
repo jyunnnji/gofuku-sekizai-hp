@@ -64,7 +64,7 @@ export default function News() {
               href={item.href}
               className="flex pl-[176px] pr-[174px] group"
             >
-              <div className={`flex items-center w-full h-[97px] border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors ${
+              <div className={`flex items-center w-full h-[97px] border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors mx-[-30px] px-[30px] ${
                 i === 0 ? "border-t border-b" : "border-b"
               }`}>
                 {/* Date — left=0, w=102px */}
