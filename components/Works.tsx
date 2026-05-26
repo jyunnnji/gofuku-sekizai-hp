@@ -148,7 +148,7 @@ export default function Works() {
           <div className="flex justify-center mt-[33px]">
             <Link
               href="#works-all"
-              className="relative inline-flex items-center gap-3 bg-[#edc920] border border-black rounded-full px-8 h-[68px] hover:bg-[#d4b31e] transition-colors"
+              className="group relative inline-flex items-center gap-3 bg-[#edc920] border border-black rounded-full px-8 h-[68px] hover:bg-[#d4b31e] transition-colors"
             >
               <span
                 className="text-[20px] font-bold text-black tracking-[1.1px]"
@@ -156,9 +156,10 @@ export default function Works() {
               >
                 もっと見る
               </span>
-              <span className="w-[30px] h-[30px] rounded-[50px] bg-[#edc920] border border-black flex items-center justify-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={imgButtonArrow} alt="" className="w-[8px] h-[12px]" />
+              <span className="w-[30px] h-[30px] rounded-[50px] bg-[#edc920] border border-black flex items-center justify-center transition-colors group-hover:bg-[#d4b31e] text-[#1a1a1a] group-hover:text-white">
+                <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 4.5L1 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </span>
             </Link>
           </div>

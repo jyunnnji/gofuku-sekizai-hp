@@ -24,7 +24,7 @@ const newsItems = [
 function ArrowIcon() {
   return (
     <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1 1L5 4.5L1 8" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M1 1L5 4.5L1 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -94,7 +94,7 @@ export default function News() {
                 </span>
 
                 {/* Arrow — right=0, size=28px */}
-                <div className="shrink-0 w-[28px] h-[28px] rounded-full bg-[#edc920] border border-[#6d6c6a] flex items-center justify-center group-hover:bg-[#d4b31e] transition-colors">
+                <div className="shrink-0 w-[28px] h-[28px] rounded-full bg-[#edc920] border border-[#6d6c6a] flex items-center justify-center transition-colors group-hover:bg-[#d4b31e] text-[#1a1a1a] group-hover:text-white">
                   <ArrowIcon />
                 </div>
               </div>
@@ -106,7 +106,7 @@ export default function News() {
         <div className="flex justify-end mt-[42px] pr-[29px]">
           <Link
             href="#news-all"
-            className="inline-flex items-center gap-[13px] bg-[#edc920] border border-black rounded-full pl-[29px] pr-[25px] h-[44px] hover:bg-[#d4b31e] transition-colors"
+            className="group inline-flex items-center gap-[13px] bg-[#edc920] border border-black rounded-full pl-[29px] pr-[25px] h-[44px] hover:bg-[#d4b31e] transition-colors"
           >
             <span
               className="text-[15px] font-bold text-black tracking-[1.1px] leading-[16.22px]"
@@ -114,7 +114,7 @@ export default function News() {
             >
               もっと見る
             </span>
-            <span className="w-[20.8px] h-[20.8px] rounded-[10.4px] bg-[#edc920] border border-black flex items-center justify-center shrink-0">
+            <span className="w-[20.8px] h-[20.8px] rounded-[10.4px] bg-[#edc920] border border-black flex items-center justify-center shrink-0 transition-colors group-hover:bg-[#d4b31e] text-[#1a1a1a] group-hover:text-white">
               <ArrowIcon />
             </span>
           </Link>
