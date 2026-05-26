@@ -45,12 +45,12 @@ export default function Footer() {
           {/* Nav links */}
           <nav className="flex items-center justify-center gap-8 flex-wrap mb-8">
             {[
+              { label: "事業内容", href: "#services" },
               { label: "選ばれる理由", href: "#why-us" },
               { label: "施工事例", href: "#works" },
-              { label: "事業内容", href: "#services" },
+              { label: "会社概要", href: "#company" },
               { label: "お知らせ", href: "#news" },
               { label: "お問い合わせ", href: "#contact" },
-              { label: "会社概要", href: "#company" },
             ].map((item) => (
               <Link
                 key={item.label}
