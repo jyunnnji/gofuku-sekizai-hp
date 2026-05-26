@@ -20,7 +20,7 @@ export default function Header() {
           borderTop: "1px solid black",
           borderLeft: "1px solid black",
           borderBottom: "1px solid black",
-          borderRight: "none",
+          borderRight: "1px solid black",
           zIndex: 10,
         }}
       >
@@ -80,18 +80,19 @@ export default function Header() {
         </Link>
       </div>
 
-      {/* ナビエリア: ロゴ(338px)〜電話(155px)の間を満たす */}
+      {/* ナビエリア: ロゴ右ボーダーをヘッダー内で隠すためleft:337pxにしbg-whiteで上書き */}
       <nav
-        className="flex items-center justify-center"
+        className="flex items-center justify-center bg-white"
         style={{
           position: "absolute",
           top: 0,
-          left: "338px",
+          left: "337px",
           right: "155px",
           height: "100px",
           gap: "52px",
           borderTop: "1px solid black",
           borderBottom: "1px solid black",
+          zIndex: 10,
         }}
       >
         {[
