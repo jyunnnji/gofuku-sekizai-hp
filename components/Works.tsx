@@ -60,6 +60,7 @@ export default function Works() {
               </h3>
               <div className="w-[159px] h-[2px] bg-[#2f7d4e] mb-[29px]" />
               {/* Image frame: 484×453 per Figma node 1261:57 */}
+              <div className="transition-transform duration-300 ease-out hover:scale-[1.03]">
               <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[20px] overflow-hidden h-[453px]">
                 {/* 1261:58 — Before image: 347×462 at (52, 29) within frame */}
                 <div className="absolute left-[52px] top-[29px] w-[347px] h-[462px]">
@@ -84,6 +85,7 @@ export default function Works() {
                   }}
                 />
               </div>
+              </div>
               <p
                 className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] mt-[14px]"
                 style={{ fontFamily: "var(--font-noto-sans-jp)" }}
@@ -107,6 +109,7 @@ export default function Works() {
               </h3>
               <div className="w-[159px] h-[2px] bg-[#2f7d4e] mb-[27px]" />
               {/* Image frame: 478×453 per Figma node 1261:61 */}
+              <div className="transition-transform duration-300 ease-out hover:scale-[1.03]">
               <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[20px] overflow-hidden h-[453px]">
                 {/* 1261:62 — After image: 308×403 at (103, 25), rotated 1.74deg */}
                 <div className="absolute left-[103px] top-[25px] w-[308px] h-[403px] rotate-[1.74deg]">
@@ -130,6 +133,7 @@ export default function Works() {
                     backgroundColor: "rgba(170,178,167,0.1)",
                   }}
                 />
+              </div>
               </div>
               <p
                 className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] mt-[14px]"
