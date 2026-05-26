@@ -22,10 +22,13 @@ export default function Company() {
         style={{ top: -40, transform: "translateX(-50%)" }}
       />
 
-      {/* Bottom wave */}
+      {/* Bottom wave — pixel-traced from Figma node 1394:190 */}
       <div className="absolute bottom-0 left-0 right-0 h-[54px] overflow-hidden pointer-events-none">
         <svg viewBox="0 0 1440 54" className="w-full h-full" preserveAspectRatio="none">
-          <path d="M0,27 C360,54 1080,0 1440,27 L1440,54 L0,54 Z" fill="#fcfaf2" />
+          <path
+            d="M0,10 C150,10 350,38 600,38 C850,38 1200,3 1440,3 L1440,54 L0,54 Z"
+            fill="#fcfaf2"
+          />
         </svg>
       </div>
 
