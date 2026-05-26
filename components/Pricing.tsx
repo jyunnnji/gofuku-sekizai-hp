@@ -7,7 +7,7 @@ export default function Pricing() {
   return (
     <section
       id="contact"
-      className="bg-[#fcfaf2] pt-[55px] pb-[55px]"
+      className="bg-[#fcfaf2] pt-[55px] pb-[87px]"
     >
       <div className="max-w-[1440px] mx-auto px-[165px]">
         <div className="flex gap-[36px]">

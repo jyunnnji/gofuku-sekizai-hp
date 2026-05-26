@@ -24,7 +24,7 @@ export default function Footer() {
       </div>
 
       {/* Footer card */}
-      <div className="relative max-w-[1440px] mx-auto px-[165px] pt-[330px] pb-12">
+      <div className="relative max-w-[1440px] mx-auto px-[165px] pt-[330px] pb-[59px]">
         <div className="bg-white rounded-[20px] px-[72px] py-[51px]">
           {/* Logo */}
           <p
