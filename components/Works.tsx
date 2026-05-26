@@ -22,43 +22,43 @@ export default function Works() {
   return (
     <section
       id="works"
-      className="relative bg-[#fcfaf2] overflow-hidden py-20"
+      className="relative bg-[#fcfaf2] overflow-hidden pt-[50px] pb-[144px]"
     >
       <div className="max-w-[1440px] mx-auto px-[56px]">
-        {/* Section label */}
+        {/* Section label — center at y=62px (pt=50 + h=24/2) */}
         <p
-          className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase mb-2"
+          className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase mb-3"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           WORKS
         </p>
 
         {/* Section heading */}
-        <div className="flex flex-col items-center mb-16">
+        <div className="flex flex-col items-center mb-[59px]">
           <h2
             className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
           >
             施工事例
           </h2>
-          <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-1" />
+          <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3" />
         </div>
 
         {/* Before / After container — 1328×877 card per Figma */}
         <div
-          className="relative rounded-[100px] overflow-hidden py-16 px-[110px]"
+          className="relative rounded-[100px] overflow-hidden pt-[72px] pb-[76px] px-[110px]"
           style={{ background: "#fff3bc" }}
         >
           <div className="flex gap-[40px] items-start justify-center">
             {/* Before */}
             <div className="flex-1 max-w-[484px]">
               <h3
-                className="text-[32px] font-bold tracking-[0.54px] text-black leading-[28.8px] mb-6"
+                className="text-[32px] font-bold tracking-[0.54px] text-black leading-[28.8px] mb-[13px]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Before
               </h3>
-              <div className="w-[159px] h-[2px] bg-[#2f7d4e] mb-6" />
+              <div className="w-[159px] h-[2px] bg-[#2f7d4e] mb-[29px]" />
               {/* Image frame: 484×453 per Figma node 1261:57 */}
               <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[20px] overflow-hidden h-[453px]">
                 {/* 1261:58 — Before image: 347×462 at (52, 29) within frame */}
@@ -70,7 +70,7 @@ export default function Works() {
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                   />
                 </div>
-                {/* 1261:71 — backdrop-blur strip (extended upward to cover full inscription) */}
+                {/* 1261:71 — backdrop-blur strip */}
                 <div
                   className="absolute pointer-events-none"
                   style={{
@@ -85,14 +85,14 @@ export default function Works() {
                 />
               </div>
               <p
-                className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] mt-6"
+                className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] mt-[14px]"
                 style={{ fontFamily: "var(--font-noto-sans-jp)" }}
               >
                 黒ずみやコケが目立ち、全体的にくすんだ状態。
               </p>
             </div>
 
-            {/* Arrow — centered at frame vertical midpoint */}
+            {/* Arrow — positioned at 27% from top of image frame per Figma */}
             <div className="flex items-start justify-center pt-[255px]">
               <CenterArrow />
             </div>
@@ -100,12 +100,12 @@ export default function Works() {
             {/* After */}
             <div className="flex-1 max-w-[478px]">
               <h3
-                className="text-[32px] font-bold tracking-[0.54px] text-black leading-[28.8px] mb-6"
+                className="text-[32px] font-bold tracking-[0.54px] text-black leading-[28.8px] mb-[10px]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 After
               </h3>
-              <div className="w-[159px] h-[2px] bg-[#2f7d4e] mb-6" />
+              <div className="w-[159px] h-[2px] bg-[#2f7d4e] mb-[27px]" />
               {/* Image frame: 478×453 per Figma node 1261:61 */}
               <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[20px] overflow-hidden h-[453px]">
                 {/* 1261:62 — After image: 308×403 at (103, 25), rotated 1.74deg */}
@@ -117,7 +117,7 @@ export default function Works() {
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                   />
                 </div>
-                {/* 1261:72 — backdrop-blur strip (extended upward to cover full inscription) */}
+                {/* 1261:72 — backdrop-blur strip */}
                 <div
                   className="absolute pointer-events-none"
                   style={{
@@ -132,7 +132,7 @@ export default function Works() {
                 />
               </div>
               <p
-                className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] mt-6"
+                className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] mt-[14px]"
                 style={{ fontFamily: "var(--font-noto-sans-jp)" }}
               >
                 丁寧な手洗いにより、自然な白さと輝きを取り戻した状態。
@@ -145,7 +145,7 @@ export default function Works() {
           </div>
 
           {/* More button — centered per Figma */}
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center mt-[33px]">
             <Link
               href="#works-all"
               className="relative inline-flex items-center gap-3 bg-[#edc920] border border-black rounded-full px-8 h-[68px] hover:bg-[#d4b31e] transition-colors"
