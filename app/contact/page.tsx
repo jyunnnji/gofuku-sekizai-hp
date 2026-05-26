@@ -23,7 +23,7 @@ export default function ContactPage() {
           </p>
 
           {/* Heading */}
-          <div className="flex flex-col items-center mb-[142px]">
+          <div className="flex flex-col items-center mb-[65px]">
             <h1
               className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
               style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
@@ -43,7 +43,7 @@ export default function ContactPage() {
           {/* Phone card */}
           <div className="bg-white rounded-[30px] px-[73px] py-[63px] mb-[98px]">
             <p
-              className="text-center text-[18px] text-[#2c2c2c] tracking-[1.4px] leading-[28px] mb-[26px]"
+              className="text-center text-[24px] font-medium text-[#2c2c2c] tracking-[1.8px] leading-[36px] mb-[26px]"
               style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
             >
               お電話でのお問い合わせ
@@ -98,7 +98,7 @@ export default function ContactPage() {
             </div>
 
             <p
-              className="text-center text-[13px] text-[#2c2c2c] tracking-[1.04px] leading-[26px]"
+              className="text-center text-[16px] text-[#2c2c2c] tracking-[1.04px] leading-[26px]"
               style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
             >
               受付時間：9:00〜17:00（不定休）
