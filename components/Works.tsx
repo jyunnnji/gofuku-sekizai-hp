@@ -147,7 +147,7 @@ export default function Works() {
           {/* More button — centered per Figma */}
           <div className="flex justify-center mt-[33px]">
             <Link
-              href="#works-all"
+              href="/works"
               className="group relative inline-flex items-center gap-3 bg-[#edc920] border border-black rounded-full px-8 h-[68px] hover:bg-[#d4b31e] transition-colors"
             >
               <span
