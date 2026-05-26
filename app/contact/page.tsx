@@ -225,21 +225,30 @@ export default function ContactPage() {
               </div>
 
               {/* プライバシーポリシー */}
-              <div className="flex items-center justify-center gap-[10px] mb-[40px]">
-                <input
-                  type="checkbox"
-                  id="privacy"
-                  checked={agreed}
-                  onChange={(e) => setAgreed(e.target.checked)}
-                  className="w-[18px] h-[18px] border border-[#767676] rounded-[2.5px] accent-[#2f7d4e] cursor-pointer"
-                />
-                <label
-                  htmlFor="privacy"
-                  className="text-[16px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] cursor-pointer"
+              <div className="flex flex-col items-center gap-[10px] mb-[40px]">
+                <div className="flex items-center gap-[10px]">
+                  <input
+                    type="checkbox"
+                    id="privacy"
+                    checked={agreed}
+                    onChange={(e) => setAgreed(e.target.checked)}
+                    className="w-[18px] h-[18px] border border-[#767676] rounded-[2.5px] accent-[#2f7d4e] cursor-pointer"
+                  />
+                  <label
+                    htmlFor="privacy"
+                    className="text-[16px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] cursor-pointer"
+                    style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+                  >
+                    プライバシーポリシーに同意する
+                  </label>
+                </div>
+                <Link
+                  href="/privacy"
+                  className="text-[14px] text-[#2f7d4e] underline hover:text-[#235e3a] transition-colors tracking-[0.8px]"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                 >
-                  プライバシーポリシーに同意する
-                </label>
+                  プライバシーポリシーについてはこちら
+                </Link>
               </div>
 
               {/* 送信ボタン */}
