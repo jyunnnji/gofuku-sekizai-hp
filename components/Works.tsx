@@ -138,7 +138,7 @@ export default function Works() {
                 丁寧な手洗いにより、自然な白さと輝きを取り戻した状態。
                 <br />
                 施工をすることで
-                <strong>お墓の寿命が長く</strong>
+                <strong style={{ background: "linear-gradient(to bottom, rgba(70,147,97,0) 50%, rgba(234,109,98,0.4) 50%)" }}>お墓の寿命が長く</strong>
                 なります。
               </p>
             </div>
