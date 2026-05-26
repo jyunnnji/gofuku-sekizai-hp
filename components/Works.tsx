@@ -135,7 +135,7 @@ export default function Works() {
                 className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] mt-[14px]"
                 style={{ fontFamily: "var(--font-noto-sans-jp)" }}
               >
-                丁寧な手洗いにより、自然な白さと輝きを取り戻した状態。
+                <span className="whitespace-nowrap">丁寧な手洗いにより、自然な白さと輝きを取り戻した状態。</span>
                 <br />
                 施工をすることで
                 <strong style={{ background: "linear-gradient(to bottom, rgba(70,147,97,0) 50%, rgba(234,109,98,0.4) 50%)" }}>お墓の寿命が長く</strong>
