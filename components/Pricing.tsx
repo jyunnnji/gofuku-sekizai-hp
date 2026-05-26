@@ -135,36 +135,42 @@ export default function Pricing() {
             </Link>
 
             {/* TEL (携帯) — top=193px */}
-            <div className="absolute top-[193px] left-[144px] w-[272px] h-[22px] flex items-center">
+            <a
+              href="tel:090-9406-2085"
+              className="absolute top-[193px] left-[144px] w-[272px] h-[22px] flex items-center group transition-colors"
+            >
               <span
-                className="w-[100px] shrink-0 text-[15.2px] font-bold text-[#2c2c2c] tracking-[0.787px] leading-[22.82px]"
+                className="w-[100px] shrink-0 text-[15.2px] font-bold text-[#2c2c2c] group-hover:text-[#2f7d4e] tracking-[0.787px] leading-[22.82px] transition-colors"
                 style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
               >
                 TEL（携帯）
               </span>
               <span
-                className="text-[20px] text-[#2c2c2c] tracking-[0.8px] leading-[27px]"
+                className="text-[20px] text-[#2c2c2c] group-hover:text-[#2f7d4e] tracking-[0.8px] leading-[27px] transition-colors"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 090-9406-2085
               </span>
-            </div>
+            </a>
 
             {/* TEL (固定) — top=221px */}
-            <div className="absolute top-[221px] left-[144px] w-[272px] h-[22px] flex items-center">
+            <a
+              href="tel:093-614-6573"
+              className="absolute top-[221px] left-[144px] w-[272px] h-[22px] flex items-center group transition-colors"
+            >
               <span
-                className="w-[100px] shrink-0 text-[15.2px] font-bold text-[#2c2c2c] tracking-[0.787px] leading-[22.82px]"
+                className="w-[100px] shrink-0 text-[15.2px] font-bold text-[#2c2c2c] group-hover:text-[#2f7d4e] tracking-[0.787px] leading-[22.82px] transition-colors"
                 style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
               >
                 TEL（固定）
               </span>
               <span
-                className="text-[20px] text-[#2c2c2c] tracking-[0.8px] leading-[27px]"
+                className="text-[20px] text-[#2c2c2c] group-hover:text-[#2f7d4e] tracking-[0.8px] leading-[27px] transition-colors"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 093-614-6573
               </span>
-            </div>
+            </a>
           </div>
 
         </div>
