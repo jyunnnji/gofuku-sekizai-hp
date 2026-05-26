@@ -174,9 +174,9 @@ export default function Hero() {
           >
             無料見積もりを依頼する
           </span>
-          <div className="relative w-[22px] h-[22px] overflow-hidden">
-            <Image src="/arrow-icon.svg" alt="" fill />
-          </div>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="#2f7d4e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </Link>
       </div>
 

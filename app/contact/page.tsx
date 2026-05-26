@@ -251,14 +251,17 @@ export default function ContactPage() {
                 </Link>
               </div>
 
-              {/* 送信ボタン */}
+              {/* 確認画面へボタン */}
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="w-[400px] h-[59px] bg-[#edc920] border border-black rounded-full text-[18px] font-medium text-black tracking-[2.25px] hover:bg-[#d4b31e] transition-colors"
+                  className="w-[320px] h-[59px] bg-[#edc920] border border-black rounded-full text-[18px] font-medium text-black tracking-[2.25px] hover:bg-[#d4b31e] transition-colors relative flex items-center justify-center"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                 >
-                  送信する
+                  確認画面へ
+                  <svg className="absolute right-[20px]" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </button>
               </div>
 
