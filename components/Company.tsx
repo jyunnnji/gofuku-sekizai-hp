@@ -13,7 +13,7 @@ export default function Company() {
   return (
     <section
       id="company"
-      className="relative pt-[63px] pb-[152px]"
+      className="relative pt-[63px] pb-[152px] scroll-mt-[100px]"
       style={{ background: "#fff3bc" }}
     >
       {/* Circle: 205px, top=-40px */}

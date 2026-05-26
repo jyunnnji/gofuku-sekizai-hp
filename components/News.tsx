@@ -33,7 +33,7 @@ export default function News() {
   return (
     <section
       id="news"
-      className="relative bg-[#fcfaf2] pt-[49px] pb-20"
+      className="relative bg-[#fcfaf2] pt-[49px] pb-20 scroll-mt-[100px]"
     >
       <div className="max-w-[1440px] mx-auto px-[165px]">
         {/* NEWS label — center at y=61px (pt=49 + 24/2=12 = 61) */}
