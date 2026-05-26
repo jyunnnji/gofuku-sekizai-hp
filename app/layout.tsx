@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "五福石材 | 北九州のお墓クリーニング・造園",
   description:
     "北九州地域・筑豊地域のお墓掃除は五福石材に。墓石クリーニング・造園を通じて、ご先祖様の安らかなお眠りをサポートします。",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
