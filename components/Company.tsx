@@ -1,5 +1,5 @@
 const mapImage =
-  "https://www.figma.com/api/mcp/asset/bb280a41-d0d1-47a7-8a1a-0ac32b98c8f8";
+  "https://www.figma.com/api/mcp/asset/619a9a08-5193-4cc2-abdc-f856558d8aba";
 
 const tableRows = [
   { label: "会社名", value: "五福石材", gray: true },
@@ -18,9 +18,9 @@ export default function Company() {
       className="relative pt-[63px] pb-[152px]"
       style={{ background: "#fff3bc" }}
     >
-      {/* Circle: 205px, top=-40px → 40px above section top, 165px inside */}
+      {/* Circle: 205px, top=-40px */}
       <div
-        className="absolute left-1/2 bg-[#fff3bc] rounded-full w-[205px] h-[205px] pointer-events-none"
+        className="absolute left-1/2 bg-[#fff3bc] rounded-full w-[205px] h-[205px] pointer-events-none z-0"
         style={{ top: -40, transform: "translateX(-50%)" }}
       />
 
@@ -31,30 +31,30 @@ export default function Company() {
         </svg>
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-[165px]">
-        {/* Section label — center at y=75px from section top */}
+      <div className="relative z-10 max-w-[1440px] mx-auto px-[165px]">
+        {/* COMPANY label — center at y=75px from section top (pt=63 + h=24/2 = 75) */}
         <p
-          className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase"
+          className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase leading-[24px]"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           COMPANY
         </p>
 
-        {/* Section heading — center at y=140px */}
-        <div className="flex flex-col items-center mt-[30px]">
+        {/* 会社概要 heading — center at y=140px (63+24+21+64/2=140) */}
+        <div className="flex flex-col items-center mt-[21px]">
           <h2
             className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
-            style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+            style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
           >
             会社概要
           </h2>
-          {/* Divider — at y=184px */}
-          <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-1" />
+          {/* Divider — top=184px (63+24+21+64+12=184) */}
+          <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3" />
         </div>
 
-        {/* White card — top=251px, h=1341px */}
+        {/* White card — top=251px (184+2+65=251) */}
         <div
-          className="bg-white rounded-[30px] overflow-clip mt-[64px]"
+          className="bg-white rounded-[30px] overflow-clip mt-[65px]"
           style={{ height: 1341 }}
         >
           {/* Table — pt=126px, left=127px, right=126px */}
@@ -69,17 +69,17 @@ export default function Company() {
                 {/* Label column: 191px wide (16px padding + content) */}
                 <div
                   className="w-[191px] pl-[16px] text-[18px] font-medium text-[#1a1a1a] tracking-[1.2px] shrink-0"
-                  style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+                  style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                 >
                   {row.label}
                 </div>
                 {/* Value */}
                 <div
-                  className="text-[18px] font-normal text-[#2c2c2c] tracking-[0.8px]"
+                  className="text-[18px] font-normal text-[#2c2c2c] tracking-[0.8px] leading-[27px]"
                   style={{
                     fontFamily: row.label.includes("電話") || row.label === "営業時間"
-                      ? "var(--font-inter), var(--font-noto-sans-jp)"
-                      : "var(--font-noto-sans-jp)",
+                      ? "var(--font-inter)"
+                      : "var(--font-inter), var(--font-noto-sans-jp)",
                   }}
                 >
                   {row.value}
@@ -89,23 +89,20 @@ export default function Company() {
           </div>
 
           {/* アクセス heading — center at card top=757px */}
-          {/* Table ends at 126+531.5=657.5px → mt=757-23-657.5≈77px */}
+          {/* Table ends at 126+75.5+76×6=657.5px → mt=734-657.5=76.5≈77px */}
           <div className="flex flex-col items-center mt-[77px]">
             <h3
               className="h-[46px] flex items-center text-[24px] font-medium text-[#1a1a1a] tracking-[4.8px]"
-              style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+              style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
             >
               アクセス
             </h3>
-            {/* Divider — at card top=780px (immediately after アクセス bottom) */}
+            {/* Divider — top=780px (right after アクセス bottom) */}
             <div className="w-[40px] h-[2px] bg-[#2f7d4e]" />
           </div>
 
           {/* Map — top=815px → mt=815-782=33px from divider bottom */}
-          <div
-            className="mt-[33px] mx-[127px] h-[400px] overflow-clip"
-            style={{ borderRadius: 0 }}
-          >
+          <div className="mt-[33px] mx-[127px] h-[400px] overflow-clip rounded-none">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={mapImage}
@@ -113,7 +110,6 @@ export default function Company() {
               className="w-full h-full object-cover"
             />
           </div>
-          {/* Remaining space to card bottom: 1341-(126+531.5+77+46+2+33+400)=125.5px */}
         </div>
       </div>
     </section>
