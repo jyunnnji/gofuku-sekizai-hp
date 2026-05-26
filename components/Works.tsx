@@ -1,9 +1,11 @@
 import Link from "next/link";
 
+// 1261:58 — Before image (ChatGPT_Image removebg)
 const imgBefore =
-  "https://www.figma.com/api/mcp/asset/e1c9fa17-1626-4f99-9a8b-3dedda5321e9";
+  "https://www.figma.com/api/mcp/asset/42d32aa1-fab3-44e6-b4b9-41e6c3c0f264";
+// 1261:62 — After image (IMG_3663 removebg)
 const imgAfter =
-  "https://www.figma.com/api/mcp/asset/9cb297f9-6c2a-4c43-8263-554555d0299b";
+  "https://www.figma.com/api/mcp/asset/df6689f6-07c2-4ba3-a29e-1910a7ac6f76";
 const imgButtonArrow =
   "https://www.figma.com/api/mcp/asset/fc8d1aa9-6663-481b-8e15-fab4420fa50e";
 
@@ -11,7 +13,6 @@ function CenterArrow() {
   return (
     <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="29" cy="29" r="29" fill="#F4C430" />
-      {/* Solid right-pointing arrow: shaft + arrowhead */}
       <path d="M12 24H32V18L46 29L32 40V34H12V24Z" fill="white" />
     </svg>
   );
@@ -58,17 +59,30 @@ export default function Works() {
                 Before
               </h3>
               <div className="w-[159px] h-[2px] bg-[#2f7d4e] mb-6" />
-              {/* Image frame: 484×453 per Figma */}
+              {/* Image frame: 484×453 per Figma node 1261:57 */}
               <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[20px] overflow-hidden h-[453px]">
-                {/* Image container: 347×462 at (52px, 29px) within frame per Figma */}
+                {/* 1261:58 — Before image: 347×462 at (52, 29) within frame */}
                 <div className="absolute left-[52px] top-[29px] w-[347px] h-[462px]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={imgBefore}
                     alt="施工前"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                   />
                 </div>
+                {/* 1261:71 — backdrop-blur strip: card(356,199) − frame(110,145) = frame-relative(246,54), 19×98px */}
+                <div
+                  className="absolute pointer-events-none"
+                  style={{
+                    left: 246,
+                    top: 54,
+                    width: 19,
+                    height: 98,
+                    backdropFilter: "blur(45px)",
+                    WebkitBackdropFilter: "blur(45px)",
+                    backgroundColor: "rgba(205,200,178,0.1)",
+                  }}
+                />
               </div>
               <p
                 className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] mt-6"
@@ -78,7 +92,7 @@ export default function Works() {
               </p>
             </div>
 
-            {/* Arrow — centered at frame midpoint (frames top ~79px, height 453px → center at 305px, arrow half=29px → pt=255px+flex-row offset) */}
+            {/* Arrow — centered at frame vertical midpoint */}
             <div className="flex items-start justify-center pt-[255px]">
               <CenterArrow />
             </div>
@@ -92,17 +106,30 @@ export default function Works() {
                 After
               </h3>
               <div className="w-[159px] h-[2px] bg-[#2f7d4e] mb-6" />
-              {/* Image frame: 478×453 per Figma */}
+              {/* Image frame: 478×453 per Figma node 1261:61 */}
               <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[20px] overflow-hidden h-[453px]">
-                {/* Image container: 308×403 at (103px, 25px) within frame, rotated 1.74deg per Figma */}
+                {/* 1261:62 — After image: 308×403 at (103, 25), rotated 1.74deg */}
                 <div className="absolute left-[103px] top-[25px] w-[308px] h-[403px] rotate-[1.74deg]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={imgAfter}
                     alt="施工後"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                   />
                 </div>
+                {/* 1261:72 — backdrop-blur strip: card(994,199) − frame(740,143) = frame-relative(254,56), 17×96px */}
+                <div
+                  className="absolute pointer-events-none"
+                  style={{
+                    left: 254,
+                    top: 56,
+                    width: 17,
+                    height: 96,
+                    backdropFilter: "blur(45px)",
+                    WebkitBackdropFilter: "blur(45px)",
+                    backgroundColor: "rgba(170,178,167,0.1)",
+                  }}
+                />
               </div>
               <p
                 className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] mt-6"
