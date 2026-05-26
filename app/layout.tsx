@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import "./globals.css";
+import SideMenu from "@/components/SideMenu";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const notoSansJP = Noto_Sans_JP({
@@ -33,7 +34,10 @@ export default function RootLayout({
       lang="ja"
       className={`${inter.variable} ${notoSansJP.variable} ${notoSerifJP.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <SideMenu />
+      </body>
     </html>
   );
 }
