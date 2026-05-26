@@ -1,10 +1,15 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const imgPhone =
   "https://www.figma.com/api/mcp/asset/2e464737-6571-4b9b-bebe-7964fc69ec33";
 
 export default function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const navHref = (hash: string) => isHome ? hash : `/${hash}`;
+
   return (
     /* 外枠: 100px 固定ヘッダー。ロゴ(194px)・電話(150px)は absolute で下にはみ出す */
     <header
@@ -96,15 +101,15 @@ export default function Header() {
         }}
       >
         {[
-          { label: "事業内容", href: "#services" },
-          { label: "選ばれる理由", href: "#why-us" },
-          { label: "施工事例", href: "#works" },
-          { label: "会社概要", href: "#company" },
-          { label: "お知らせ", href: "#news" },
+          { label: "事業内容", hash: "#services" },
+          { label: "選ばれる理由", hash: "#why-us" },
+          { label: "施工事例", hash: "#works" },
+          { label: "会社概要", hash: "#company" },
+          { label: "お知らせ", hash: "#news" },
         ].map((item) => (
           <Link
             key={item.label}
-            href={item.href}
+            href={navHref(item.hash)}
             className="whitespace-nowrap text-black hover:text-[#2f7d4e] transition-colors"
             style={{
               fontFamily: "var(--font-noto-sans-jp), sans-serif",
