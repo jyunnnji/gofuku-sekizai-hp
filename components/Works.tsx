@@ -70,14 +70,14 @@ export default function Works() {
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                   />
                 </div>
-                {/* 1261:71 — backdrop-blur strip: card(356,199) − frame(110,145) = frame-relative(246,54), 19×98px */}
+                {/* 1261:71 — backdrop-blur strip (extended upward to cover full inscription) */}
                 <div
                   className="absolute pointer-events-none"
                   style={{
                     left: 246,
-                    top: 54,
+                    top: 35,
                     width: 19,
-                    height: 98,
+                    height: 122,
                     backdropFilter: "blur(45px)",
                     WebkitBackdropFilter: "blur(45px)",
                     backgroundColor: "rgba(205,200,178,0.1)",
@@ -117,14 +117,14 @@ export default function Works() {
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                   />
                 </div>
-                {/* 1261:72 — backdrop-blur strip: card(994,199) − frame(740,143) = frame-relative(254,56), 17×96px */}
+                {/* 1261:72 — backdrop-blur strip (extended upward to cover full inscription) */}
                 <div
                   className="absolute pointer-events-none"
                   style={{
                     left: 254,
-                    top: 56,
+                    top: 35,
                     width: 17,
-                    height: 96,
+                    height: 122,
                     backdropFilter: "blur(45px)",
                     WebkitBackdropFilter: "blur(45px)",
                     backgroundColor: "rgba(170,178,167,0.1)",
