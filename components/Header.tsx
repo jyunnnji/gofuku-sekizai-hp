@@ -119,7 +119,7 @@ export default function Header() {
 
         {/* お問い合わせボタン */}
         <Link
-          href="#contact"
+          href="/contact"
           className="bg-[#2f7d4e] border border-black flex items-center justify-center hover:bg-[#235e3a] transition-colors"
           style={{
             gap: "10px",

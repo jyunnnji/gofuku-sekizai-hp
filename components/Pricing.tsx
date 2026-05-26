@@ -123,7 +123,7 @@ export default function Pricing() {
 
             {/* CTA button — top=105px, centered */}
             <Link
-              href="#form"
+              href="/contact"
               className="absolute top-[105px] left-1/2 -translate-x-1/2 w-[300px] h-[64px] flex items-center justify-center bg-[#2f7d4e] border border-black rounded-[30px] hover:bg-[#235e3a] transition-colors"
             >
               <span

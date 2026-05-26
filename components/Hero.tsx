@@ -160,7 +160,7 @@ export default function Hero() {
 
         {/* CTA Button (1278:634) — left edge 63px, top-[424px] */}
         <Link
-          href="#contact"
+          href="/contact"
           className="absolute top-[424px] w-[300px] h-[64px] flex items-center justify-center gap-2 bg-white border border-[#2f7d4e] rounded-[50px] hover:bg-[#f0faf4] transition-colors"
           style={{ left: "63px" }}
         >
