@@ -134,9 +134,9 @@ export default function Hero() {
             }}
           >
             <span className="text-[50px] leading-[46px]">ご先祖様の住居を</span>
-            <span className="text-[52px] leading-[46px]">{` "`}</span>
+            <span className="text-[52px] leading-[46px]">{` “`}</span>
             <span className="text-[52px] leading-[46px] text-[#2f7d4e] tracking-[2px]">綺麗に・美しく</span>
-            <span className="text-[52px] leading-[46px]">{`"`}</span>
+            <span className="text-[52px] leading-[46px]">{`”`}</span>
           </div>
         </div>
 
