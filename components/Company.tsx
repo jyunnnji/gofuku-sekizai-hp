@@ -1,5 +1,3 @@
-const mapImage =
-  "https://www.figma.com/api/mcp/asset/619a9a08-5193-4cc2-abdc-f856558d8aba";
 
 const tableRows = [
   { label: "会社名", value: "五福石材", gray: true },
@@ -103,11 +101,15 @@ export default function Company() {
 
           {/* Map — top=815px → mt=815-782=33px from divider bottom */}
           <div className="mt-[33px] mx-[127px] h-[400px] overflow-clip rounded-none">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={mapImage}
-              alt="アクセスマップ – 小倉北区高峰町3−12"
-              className="w-full h-full object-cover"
+            <iframe
+              src="https://maps.google.com/maps?q=福岡県北九州市小倉北区高峰町3-12&hl=ja&output=embed&z=16"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="五福石材 アクセスマップ"
             />
           </div>
         </div>
