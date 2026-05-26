@@ -11,9 +11,9 @@ const imgButtonArrow =
 
 function CenterArrow() {
   return (
-    <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="29" cy="29" r="29" fill="#F4C430" />
-      <path d="M12 24H32V18L46 29L32 40V34H12V24Z" fill="white" />
+    <svg width="88" height="88" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="50" fill="#F4C430" />
+      <path d="M21 41H55V31L79 50L55 69V59H21V41Z" fill="white" />
     </svg>
   );
 }
