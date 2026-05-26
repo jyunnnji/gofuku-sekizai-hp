@@ -1,25 +1,12 @@
 import Link from "next/link";
+import { newsItems as newsData } from "@/lib/newsData";
 
-const newsItems = [
-  {
-    date: "2026.03.01",
-    category: "お知らせ",
-    title: "ホームページを公開しました。",
-    href: "#",
-  },
-  {
-    date: "2026.02.15",
-    category: "お知らせ",
-    title: "春のお墓クリーニングキャンペーンを実施中です。",
-    href: "#",
-  },
-  {
-    date: "2026.01.10",
-    category: "お知らせ",
-    title: "年末年始の営業日のご案内。",
-    href: "#",
-  },
-];
+const newsItems = newsData.map((item) => ({
+  date: item.date,
+  category: item.category,
+  title: item.title,
+  href: `/news/${item.slug}`,
+}));
 
 function ArrowIcon() {
   return (
