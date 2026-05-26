@@ -70,7 +70,7 @@ export default function Hero() {
             left: "330px",
             top: "44.5px",
             transform: "translate(-50%, -50%)",
-            fontFamily: "var(--font-noto-sans-jp)",
+            fontFamily: "var(--font-inter)",
             letterSpacing: "1.5px",
             textShadow: whiteBorder,
           }}
@@ -147,7 +147,7 @@ export default function Hero() {
             left: "63px",
             top: "353px",
             transform: "translateY(-50%)",
-            fontFamily: "var(--font-noto-sans-jp)",
+            fontFamily: "var(--font-inter)",
             letterSpacing: "1.122px",
             lineHeight: "46px",
             textShadow: whiteBorder,
@@ -167,7 +167,7 @@ export default function Hero() {
           <span
             className="text-[17px] font-bold text-[#2f7d4e]"
             style={{
-              fontFamily: "var(--font-noto-sans-jp)",
+              fontFamily: "var(--font-inter)",
               letterSpacing: "2.25px",
               lineHeight: "30px",
             }}
@@ -197,8 +197,10 @@ export default function Hero() {
             SCROLL
           </p>
         </div>
-        {/* Vertical line */}
-        <div className="w-[2px] h-[61px] bg-white" />
+        {/* Vertical line: overflow-hidden で上から下へ流れるアニメーション */}
+        <div className="relative w-[2px] h-[61px] overflow-hidden">
+          <div className="absolute inset-x-0 h-full bg-white animate-scroll-line" />
+        </div>
       </div>
 
       {/* Back to top button — fixed to viewport */}
