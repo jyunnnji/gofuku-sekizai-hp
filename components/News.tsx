@@ -91,7 +91,7 @@ export default function News() {
         {/* もっと見る button — top=685px (643+42=685), right-aligned */}
         <div className="flex justify-end mt-[42px] pr-[29px]">
           <Link
-            href="#news-all"
+            href="/news"
             className="group inline-flex items-center gap-[13px] bg-[#edc920] border border-black rounded-full pl-[29px] pr-[25px] h-[44px] hover:bg-[#d4b31e] transition-colors"
           >
             <span
