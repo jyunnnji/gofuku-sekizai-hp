@@ -201,10 +201,10 @@ export default function Hero() {
         <div className="w-[2px] h-[61px] bg-white" />
       </div>
 
-      {/* Back to top button */}
+      {/* Back to top button — fixed to viewport */}
       <Link
         href="#top"
-        className="absolute bottom-[49px] right-[50px] w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] transition-colors"
+        className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] transition-colors"
         aria-label="ページ上部へ戻る"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
