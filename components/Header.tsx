@@ -19,31 +19,14 @@ export default function Header() {
   }, []);
 
   return (
+    /* 外枠: 100px 固定ヘッダー。ロゴ(194px)・電話(150px)は absolute で下にはみ出す */
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-transparent" : "bg-white"}`}
       style={{ height: "100px" }}
     >
-      {/* ── SP: シンプルなロゴバー ── */}
-      <div className="md:hidden flex items-center h-full px-5 bg-white border-b border-black">
-        <Link href="/" className="flex flex-col leading-tight">
-          <span
-            className="text-[22px] font-bold text-[#2f7d4e] tracking-[2px]"
-            style={{ fontFamily: "var(--font-noto-sans-jp)" }}
-          >
-            五福石材
-          </span>
-          <span
-            className="text-[13px] font-bold text-[#2f7d4e] tracking-[1.5px]"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
-            Gofuku Sekizai
-          </span>
-        </Link>
-      </div>
-
-      {/* ── PC: ロゴセクション ── */}
+      {/* ロゴセクション: absolute, h-194px, 左上起点 */}
       <div
-        className={`hidden md:flex absolute top-0 left-0 bg-white flex-col items-center justify-center px-[52px] rounded-br-[70px] transition-opacity duration-300 ${scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+        className={`absolute top-0 left-0 bg-white flex flex-col items-center justify-center px-[52px] rounded-br-[70px] transition-opacity duration-300 ${scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         style={{
           width: "338px",
           height: "194px",
@@ -110,9 +93,9 @@ export default function Header() {
         </Link>
       </div>
 
-      {/* ── PC: ナビエリア ── */}
+      {/* ナビエリア: ロゴ右ボーダーをヘッダー内で隠すためleft:337pxにしbg-whiteで上書き */}
       <nav
-        className={`hidden md:flex items-center justify-center bg-white transition-opacity duration-300 ${scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+        className={`flex items-center justify-center bg-white transition-opacity duration-300 ${scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         style={{
           position: "absolute",
           top: 0,
@@ -147,6 +130,7 @@ export default function Header() {
           </Link>
         ))}
 
+        {/* お問い合わせボタン */}
         <Link
           href="/contact"
           className="bg-[#2f7d4e] border border-black flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
@@ -176,10 +160,10 @@ export default function Header() {
         </Link>
       </nav>
 
-      {/* ── PC: 電話ボタン ── */}
+      {/* お電話はこちらから: absolute, 右上起点, h-150px で下にはみ出す */}
       <button
         onClick={() => setShowPhoneDialog(true)}
-        className="hidden md:block absolute top-0 right-0 bg-[#edc920] hover:bg-[#d4b31e] transition-colors"
+        className="absolute top-0 right-0 bg-[#edc920] hover:bg-[#d4b31e] transition-colors"
         style={{
           width: "155px",
           height: "150px",
@@ -188,6 +172,7 @@ export default function Header() {
           zIndex: 10,
         }}
       >
+        {/* 電話アイコン */}
         <div
           style={{
             position: "absolute",
@@ -200,6 +185,8 @@ export default function Header() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={imgPhone} alt="" className="absolute inset-0 w-full h-full block" />
         </div>
+
+        {/* テキスト */}
         <div
           style={{
             position: "absolute",
@@ -232,10 +219,11 @@ export default function Header() {
           onClick={() => setShowPhoneDialog(false)}
         >
           <div
-            className="relative bg-white rounded-[24px] w-[90vw] md:w-[560px] overflow-hidden"
+            className="relative bg-white rounded-[24px] w-[560px] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="pt-[40px] pb-[28px] px-6 md:px-[48px] text-center border-b border-[#e8e8e8]">
+            {/* ヘッダー部 */}
+            <div className="pt-[40px] pb-[28px] px-[48px] text-center border-b border-[#e8e8e8]">
               <p
                 className="text-[13px] text-[#2f7d4e] tracking-[3px] uppercase mb-[6px]"
                 style={{ fontFamily: "var(--font-inter)" }}
@@ -248,6 +236,7 @@ export default function Header() {
               >
                 お電話でのお問い合わせ
               </h2>
+              {/* 閉じるボタン */}
               <button
                 onClick={() => setShowPhoneDialog(false)}
                 className="absolute top-[16px] right-[16px] w-[36px] h-[36px] rounded-full bg-[#f0f0f0] flex items-center justify-center hover:bg-[#e0e0e0] transition-colors"
@@ -258,20 +247,53 @@ export default function Header() {
                 </svg>
               </button>
             </div>
-            <div className="px-6 md:px-[40px] py-[28px] flex flex-col gap-[12px]">
-              <a href="tel:090-9406-2085" className="flex items-center gap-[16px] px-[24px] h-[64px] md:h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group">
-                <span className="w-[48px] shrink-0 text-[14px] font-medium text-[#444444] tracking-[1px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>携帯</span>
+
+            {/* 電話番号リスト */}
+            <div className="px-[40px] py-[28px] flex flex-col gap-[12px]">
+              <a
+                href="tel:090-9406-2085"
+                className="flex items-center gap-[16px] px-[24px] h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group"
+              >
+                <span
+                  className="w-[48px] shrink-0 text-[14px] font-medium text-[#444444] tracking-[1px]"
+                  style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+                >
+                  携帯
+                </span>
                 <div className="w-[1px] h-[24px] bg-[#d9d9d9]" />
-                <span className="text-[22px] md:text-[28px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] transition-colors" style={{ fontFamily: "var(--font-inter)" }}>090-9406-2085</span>
+                <span
+                  className="text-[28px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] transition-colors"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  090-9406-2085
+                </span>
               </a>
-              <a href="tel:093-614-6573" className="flex items-center gap-[16px] px-[24px] h-[64px] md:h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group">
-                <span className="w-[48px] shrink-0 text-[14px] font-medium text-[#444444] tracking-[1px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>固定</span>
+              <a
+                href="tel:093-614-6573"
+                className="flex items-center gap-[16px] px-[24px] h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group"
+              >
+                <span
+                  className="w-[48px] shrink-0 text-[14px] font-medium text-[#444444] tracking-[1px]"
+                  style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+                >
+                  固定
+                </span>
                 <div className="w-[1px] h-[24px] bg-[#d9d9d9]" />
-                <span className="text-[22px] md:text-[28px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] transition-colors" style={{ fontFamily: "var(--font-inter)" }}>093-614-6573</span>
+                <span
+                  className="text-[28px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] transition-colors"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  093-614-6573
+                </span>
               </a>
             </div>
-            <div className="px-6 md:px-[40px] pb-[28px]">
-              <p className="text-center text-[13px] text-[#444444] tracking-[0.8px] py-[16px] border-t border-[#e8e8e8]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+
+            {/* フッター */}
+            <div className="px-[40px] pb-[28px]">
+              <p
+                className="text-center text-[13px] text-[#444444] tracking-[0.8px] py-[16px] border-t border-[#e8e8e8]"
+                style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+              >
                 受付時間：9:00〜17:00（不定休）
               </p>
             </div>

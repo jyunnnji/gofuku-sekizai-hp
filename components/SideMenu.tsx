@@ -27,28 +27,51 @@ export default function SideMenu() {
         />
       )}
 
-      {/* Toggle button — hamburger icon in header (SP only) */}
+      {/* Toggle button — fixed to right edge, centered vertically */}
       <button
         onClick={() => setIsOpen(true)}
         aria-label="メニューを開く"
-        className={`md:hidden fixed top-0 right-0 z-50 bg-white border-b border-black flex items-center justify-center transition-transform duration-300 ease-in-out ${
+        className={`fixed top-1/2 -translate-y-1/2 right-0 z-50 bg-white border border-r-0 border-black flex flex-col items-center justify-center gap-5 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-full" : "translate-x-0"
         }`}
-        style={{ width: "60px", height: "100px" }}
+        style={{ width: "80px", height: "200px", borderRadius: "16px 0 0 16px" }}
       >
-        {/* Hamburger icon — Figma asymmetric split-line pattern */}
+        {/* Hamburger icon — matches Figma asymmetric split-line pattern */}
         <div className="relative" style={{ width: "30px", height: "18px" }}>
           {/* top line left piece */}
-          <div className="absolute bg-[#1a1a1a] rounded-[1px]" style={{ left: 0, width: "12px", top: 0, height: "2px" }} />
+          <div
+            className="absolute bg-[#1a1a1a] rounded-[1px]"
+            style={{ left: 0, width: "12px", top: 0, height: "2px" }}
+          />
           {/* top line right piece */}
-          <div className="absolute bg-[#1a1a1a] rounded-[1px]" style={{ left: "16px", right: 0, top: 0, height: "2px" }} />
+          <div
+            className="absolute bg-[#1a1a1a] rounded-[1px]"
+            style={{ left: "16px", right: 0, top: 0, height: "2px" }}
+          />
           {/* middle full line */}
-          <div className="absolute bg-[#1a1a1a] rounded-[1px]" style={{ left: 0, right: 0, top: "8px", height: "2px" }} />
+          <div
+            className="absolute bg-[#1a1a1a] rounded-[1px]"
+            style={{ left: 0, right: 0, top: "8px", height: "2px" }}
+          />
           {/* bottom line left piece */}
-          <div className="absolute bg-[#1a1a1a] rounded-[1px]" style={{ left: 0, width: "18px", top: "16px", height: "2px" }} />
+          <div
+            className="absolute bg-[#1a1a1a] rounded-[1px]"
+            style={{ left: 0, width: "18px", top: "16px", height: "2px" }}
+          />
           {/* bottom line right piece */}
-          <div className="absolute bg-[#1a1a1a] rounded-[1px]" style={{ left: "22px", right: 0, top: "16px", height: "2px" }} />
+          <div
+            className="absolute bg-[#1a1a1a] rounded-[1px]"
+            style={{ left: "22px", right: 0, top: "16px", height: "2px" }}
+          />
         </div>
+
+        {/* "MENU OPEN" text — vertical writing mode */}
+        <span
+          className="text-[11px] font-medium tracking-[1.6px] uppercase text-[#1a1a1a]"
+          style={{ fontFamily: "var(--font-inter)", writingMode: "vertical-rl", textOrientation: "mixed" }}
+        >
+          Menu Open
+        </span>
       </button>
 
       {/* Slide-in panel */}

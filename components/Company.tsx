@@ -23,7 +23,7 @@ export default function Company() {
         style={{ top: -40, transform: "translateX(-50%)" }}
       />
 
-      {/* Bottom wave */}
+      {/* Bottom wave — pixel-traced from Figma node 1394:190 */}
       <div className="absolute bottom-0 left-0 right-0 h-[54px] overflow-hidden pointer-events-none">
         <svg viewBox="0 0 1440 54" className="w-full h-full" preserveAspectRatio="none">
           <path
@@ -33,8 +33,9 @@ export default function Company() {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-[165px]">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-[165px]">
         <FadeUp>
+        {/* COMPANY label — center at y=75px from section top (pt=63 + h=24/2 = 75) */}
         <p
           className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase leading-[24px]"
           style={{ fontFamily: "var(--font-inter)" }}
@@ -42,6 +43,7 @@ export default function Company() {
           COMPANY
         </p>
 
+        {/* 会社概要 heading — center at y=140px (63+24+21+64/2=140) */}
         <div className="flex flex-col items-center mt-[21px]">
           <h2
             className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
@@ -49,31 +51,36 @@ export default function Company() {
           >
             会社概要
           </h2>
+          {/* Divider — top=184px (63+24+21+64+12=184) */}
           <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3" />
         </div>
         </FadeUp>
 
+        {/* White card — top=251px (184+2+65=251) */}
         <FadeUp delay={0.1}>
-        <div className="bg-white rounded-[30px] overflow-clip mt-[65px]">
-          {/* Table */}
-          <div className="pt-8 md:pt-[126px] px-4 md:pl-[127px] md:pr-[126px]">
+        <div
+          className="bg-white rounded-[30px] overflow-clip mt-[65px]"
+          style={{ height: 1341 }}
+        >
+          {/* Table — pt=126px, left=127px, right=126px */}
+          <div className="pt-[126px] pl-[127px] pr-[126px]">
             {tableRows.map((row, i) => (
               <div
                 key={row.label}
-                className={`flex flex-col md:flex-row md:items-center border-b border-[#d9d9d9] py-3 md:py-0 ${
-                  i === 0 ? "md:h-[75.5px]" : "md:h-[76px]"
+                className={`flex items-center border-b border-[#d9d9d9] ${
+                  i === 0 ? "h-[75.5px]" : "h-[76px]"
                 } ${row.gray ? "bg-[#f5f5f5]" : "bg-white"}`}
               >
-                {/* Label */}
+                {/* Label column: 191px wide (16px padding + content) */}
                 <div
-                  className="md:w-[191px] md:pl-[16px] text-[14px] md:text-[18px] font-medium text-[#1a1a1a] tracking-[1.2px] md:shrink-0 mb-1 md:mb-0 text-[#888] md:text-[#1a1a1a]"
+                  className="w-[191px] pl-[16px] text-[18px] font-medium text-[#1a1a1a] tracking-[1.2px] shrink-0"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                 >
                   {row.label}
                 </div>
                 {/* Value */}
                 <div
-                  className="text-[15px] md:text-[18px] font-normal text-[#2c2c2c] tracking-[0.8px] leading-[27px]"
+                  className="text-[18px] font-normal text-[#2c2c2c] tracking-[0.8px] leading-[27px]"
                   style={{
                     fontFamily: row.label.includes("電話") || row.label === "営業時間"
                       ? "var(--font-inter)"
@@ -86,23 +93,25 @@ export default function Company() {
             ))}
           </div>
 
-          {/* アクセス heading */}
-          <div className="flex flex-col items-center mt-10 md:mt-[77px]">
+          {/* アクセス heading — center at card top=757px */}
+          {/* Table ends at 126+75.5+76×6=657.5px → mt=734-657.5=76.5≈77px */}
+          <div className="flex flex-col items-center mt-[77px]">
             <h3
               className="h-[46px] flex items-center text-[24px] font-medium text-[#1a1a1a] tracking-[4.8px]"
               style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
             >
               アクセス
             </h3>
+            {/* Divider — top=780px (right after アクセス bottom) */}
             <div className="w-[40px] h-[2px] bg-[#2f7d4e]" />
           </div>
 
-          {/* Map */}
-          <div className="mt-[33px] mx-4 md:mx-[127px] h-[240px] md:h-[400px] overflow-clip rounded-[12px] md:rounded-none mb-8 md:mb-0">
+          {/* Map — top=815px → mt=815-782=33px from divider bottom */}
+          <div className="mt-[33px] mx-[127px] h-[400px] overflow-clip rounded-none">
             <iframe
               src="https://maps.google.com/maps?q=福岡県北九州市小倉北区高峰町3-12&hl=ja&output=embed&z=16"
               width="100%"
-              height="100%"
+              height="400"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"

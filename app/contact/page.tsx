@@ -158,7 +158,7 @@ export default function ContactPage() {
       )}
       <Header />
       <main className="bg-[#fcfaf2] pt-[100px]">
-        <div className="max-w-[1440px] mx-auto px-4 md:px-[170px] pt-[60px] md:pt-[125px] pb-[80px] md:pb-[120px]">
+        <div className="max-w-[1440px] mx-auto px-[170px] pt-[125px] pb-[120px]">
 
           {/* ── STEP: FORM ── */}
           {step === "form" && (
@@ -166,7 +166,7 @@ export default function ContactPage() {
               {pageHeader}
 
               {/* Phone card */}
-              <div className="bg-white rounded-[30px] px-4 md:px-[73px] py-8 md:py-[63px] mb-[40px] md:mb-[98px]">
+              <div className="bg-white rounded-[30px] px-[73px] py-[63px] mb-[98px]">
                 <p
                   className="text-center text-[24px] font-medium text-[#2c2c2c] tracking-[1.8px] leading-[36px] mb-[26px]"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
@@ -180,13 +180,13 @@ export default function ContactPage() {
                   施工で外出していることが多いため、ご連絡は携帯電話までお願いいたします。
                 </p>
                 <div className="flex flex-col items-center gap-[10px] mb-[20px]">
-                  <a href="tel:090-9406-2085" className="flex items-center gap-[10px] md:gap-[16px] group">
-                    <span className="text-[16px] md:text-[20px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] md:tracking-[4px] leading-[48px] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>(携帯)</span>
-                    <span className="text-[26px] md:text-[40px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] md:tracking-[4px] leading-[48px] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter)" }}>090-9406-2085</span>
+                  <a href="tel:090-9406-2085" className="flex items-center gap-[16px] group">
+                    <span className="text-[20px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[4px] leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>(携帯)</span>
+                    <span className="text-[40px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[4px] leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter)" }}>090-9406-2085</span>
                   </a>
-                  <a href="tel:093-614-6573" className="flex items-center gap-[10px] md:gap-[16px] group">
-                    <span className="text-[16px] md:text-[20px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] md:tracking-[4px] leading-[48px] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>(固定)</span>
-                    <span className="text-[26px] md:text-[40px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] md:tracking-[4px] leading-[48px] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter)" }}>093-614-6573</span>
+                  <a href="tel:093-614-6573" className="flex items-center gap-[16px] group">
+                    <span className="text-[20px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[4px] leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>(固定)</span>
+                    <span className="text-[40px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[4px] leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter)" }}>093-614-6573</span>
                   </a>
                 </div>
                 <p
@@ -198,7 +198,7 @@ export default function ContactPage() {
               </div>
 
               {/* Form card */}
-              <div ref={formRef} className="bg-white rounded-[30px] px-4 md:px-[224px] py-8 md:py-[55px]">
+              <div ref={formRef} className="bg-white rounded-[30px] px-[224px] py-[55px]">
                 <h2
                   className="text-center text-[24px] font-medium text-[#2c2c2c] tracking-[1.8px] leading-[36px] mb-[40px]"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
@@ -353,7 +353,7 @@ export default function ContactPage() {
           {/* ── STEP: CONFIRM ── */}
           {step === "confirm" && (
             <>
-              <div className="bg-white rounded-[30px] px-4 md:px-[224px] py-8 md:py-[55px]">
+              <div className="bg-white rounded-[30px] px-[224px] py-[55px]">
                 <h2
                   className="text-center text-[24px] font-medium text-[#2c2c2c] tracking-[1.8px] leading-[36px] mb-[12px]"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
@@ -376,8 +376,8 @@ export default function ContactPage() {
                     { label: "お問い合わせ種別", value: categoryLabels[category] || "未選択" },
                     { label: "お問い合わせ内容", value: message },
                   ].map((row) => (
-                    <div key={row.label} className="flex flex-col md:flex-row gap-[8px] md:gap-[32px] py-[16px] md:py-[24px]">
-                      <div className="md:w-[200px] md:shrink-0 flex items-start pt-[2px]">
+                    <div key={row.label} className="flex gap-[32px] py-[24px]">
+                      <div className="w-[200px] shrink-0 flex items-start pt-[2px]">
                         <span
                           className="text-[16px] font-medium text-[#1a1a1a] tracking-[1.12px] leading-[28px]"
                           style={{ fontFamily: "var(--font-noto-sans-jp)" }}
@@ -396,7 +396,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[24px]">
+                <div className="flex items-center justify-center gap-[24px]">
                   <button
                     type="button"
                     onClick={handleBack}
@@ -427,7 +427,7 @@ export default function ContactPage() {
           {/* ── STEP: DONE ── */}
           {step === "done" && (
             <>
-              <div className="bg-white rounded-[30px] px-4 md:px-[224px] py-12 md:py-[80px] flex flex-col items-center">
+              <div className="bg-white rounded-[30px] px-[224px] py-[80px] flex flex-col items-center">
                 {/* Check icon */}
                 <div className="w-[72px] h-[72px] rounded-full bg-[#2f7d4e] flex items-center justify-center mb-[32px]">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">

@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import "./globals.css";
 import SideMenu from "@/components/SideMenu";
@@ -16,11 +16,6 @@ const notoSerifJP = Noto_Serif_JP({
   weight: ["400", "500", "600"],
   variable: "--font-noto-serif-jp",
 });
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-};
 
 export const metadata: Metadata = {
   title: "五福石材 | 北九州のお墓クリーニング・造園",
