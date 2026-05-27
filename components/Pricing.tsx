@@ -126,7 +126,7 @@ export default function Pricing() {
             {/* CTA button — top=105px, centered */}
             <Link
               href="/contact"
-              className="absolute top-[105px] left-1/2 -translate-x-1/2 w-[300px] h-[64px] flex items-center justify-center bg-[#2f7d4e] border border-black rounded-[30px] hover:bg-[#235e3a] transition-colors"
+              className="absolute top-[105px] left-1/2 -translate-x-1/2 w-[300px] h-[64px] flex items-center justify-center bg-[#2f7d4e] border border-black rounded-[30px] hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
             >
               <span
                 className="text-[18px] font-bold text-white tracking-[2.25px] leading-[30px]"

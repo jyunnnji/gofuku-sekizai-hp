@@ -134,7 +134,7 @@ export default function Header() {
         {/* お問い合わせボタン */}
         <Link
           href="/contact"
-          className="bg-[#2f7d4e] border border-black flex items-center justify-center hover:bg-[#235e3a] transition-colors"
+          className="bg-[#2f7d4e] border border-black flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
           style={{
             gap: "10px",
             height: "60px",

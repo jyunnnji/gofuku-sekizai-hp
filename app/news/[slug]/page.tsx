@@ -85,7 +85,7 @@ export default function NewsDetailPage({
       {/* Back to top */}
       <Link
         href="#top"
-        className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] transition-colors"
+        className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
         aria-label="ページ上部へ戻る"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">

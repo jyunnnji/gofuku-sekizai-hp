@@ -227,7 +227,7 @@ export default function ContactPage() {
                   <div className="flex justify-center">
                     <button
                       type="submit"
-                      className="w-[320px] h-[59px] bg-[#edc920] border border-black rounded-full text-[18px] font-medium text-black tracking-[2.25px] hover:bg-[#d4b31e] transition-colors relative flex items-center justify-center"
+                      className="w-[320px] h-[59px] bg-[#edc920] border border-black rounded-full text-[18px] font-medium text-black tracking-[2.25px] hover:bg-[#d4b31e] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative flex items-center justify-center"
                       style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                     >
                       確認画面へ
@@ -318,7 +318,7 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={handleSubmit}
-                    className="w-[220px] h-[59px] bg-[#edc920] border border-black rounded-full text-[18px] font-medium text-black tracking-[2.25px] hover:bg-[#d4b31e] transition-colors relative flex items-center justify-center"
+                    className="w-[220px] h-[59px] bg-[#edc920] border border-black rounded-full text-[18px] font-medium text-black tracking-[2.25px] hover:bg-[#d4b31e] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative flex items-center justify-center"
                     style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                   >
                     送信する
@@ -358,7 +358,7 @@ export default function ContactPage() {
                 </p>
                 <Link
                   href="/"
-                  className="w-[280px] h-[59px] bg-[#2f7d4e] border border-black rounded-full text-[18px] font-medium text-white tracking-[2px] hover:bg-[#235e3a] transition-colors flex items-center justify-center"
+                  className="w-[280px] h-[59px] bg-[#2f7d4e] border border-black rounded-full text-[18px] font-medium text-white tracking-[2px] hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 flex items-center justify-center"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                 >
                   トップページへ戻る
@@ -374,7 +374,7 @@ export default function ContactPage() {
       {/* Back to top */}
       <Link
         href="#top"
-        className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] transition-colors"
+        className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
         aria-label="ページ上部へ戻る"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">

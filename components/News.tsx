@@ -97,7 +97,7 @@ export default function News() {
         <div className="flex justify-end mt-[42px] pr-[29px]">
           <Link
             href="/news"
-            className="group inline-flex items-center gap-[13px] bg-[#edc920] border border-black rounded-full pl-[29px] pr-[25px] h-[44px] hover:bg-[#d4b31e] transition-colors"
+            className="group inline-flex items-center gap-[13px] bg-[#edc920] border border-black rounded-full pl-[29px] pr-[25px] h-[44px] hover:bg-[#d4b31e] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
           >
             <span
               className="text-[15px] font-bold text-black tracking-[1.1px] leading-[16.22px]"

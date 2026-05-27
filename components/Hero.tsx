@@ -209,7 +209,7 @@ export default function Hero() {
         >
         <Link
           href="/contact"
-          className="w-[300px] h-[64px] flex items-center justify-center gap-2 bg-white border border-[#2f7d4e] rounded-[50px] hover:bg-[#f0faf4] transition-colors"
+          className="w-[300px] h-[64px] flex items-center justify-center gap-2 bg-white border border-[#2f7d4e] rounded-[50px] hover:bg-[#f0faf4] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
         >
           <span
             className="text-[17px] font-bold text-[#2f7d4e]"
@@ -254,7 +254,7 @@ export default function Hero() {
       {/* Back to top button — fixed to viewport */}
       <Link
         href="#top"
-        className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] transition-colors"
+        className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
         aria-label="ページ上部へ戻る"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
