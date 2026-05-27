@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FadeUp from "@/components/ui/FadeUp";
 
 // 1261:58 — Before image (ChatGPT_Image removebg)
 const imgBefore =
@@ -25,6 +26,7 @@ export default function Works() {
       className="relative bg-[#fcfaf2] overflow-hidden pt-[50px] pb-[144px] scroll-mt-[100px]"
     >
       <div className="max-w-[1440px] mx-auto px-[56px]">
+        <FadeUp>
         {/* Section label — center at y=62px (pt=50 + h=24/2) */}
         <p
           className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase mb-3"
@@ -43,8 +45,10 @@ export default function Works() {
           </h2>
           <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3" />
         </div>
+        </FadeUp>
 
         {/* Before / After container — 1328×877 card per Figma */}
+        <FadeUp delay={0.1}>
         <div
           className="relative rounded-[100px] overflow-hidden pt-[72px] pb-[76px] px-[110px]"
           style={{ background: "#fff3bc" }}
@@ -168,6 +172,7 @@ export default function Works() {
             </Link>
           </div>
         </div>
+        </FadeUp>
       </div>
     </section>
   );

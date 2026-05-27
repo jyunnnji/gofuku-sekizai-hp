@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 // Figma CDN URLs（7日間有効。本番前にpublic/へ移行すること）
 const imgBg   = "https://www.figma.com/api/mcp/asset/a593d140-66b8-45b9-b447-504ed90dbf62";
 const imgMask  = "https://www.figma.com/api/mcp/asset/358cb449-27d5-40e6-b9b4-c24f3000d1be";
@@ -36,7 +39,13 @@ export default function Services() {
       </div>
 
       {/* ── コンテナ (1278:545): left=170 right=170 top=126 h=1369 ── */}
-      <div className="absolute left-[170px] right-[170px] top-[126px] h-[1369px]">
+      <motion.div
+        className="absolute left-[170px] right-[170px] top-[126px] h-[1369px]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+      >
 
         {/* Service ラベル (1278:546): center-y=12px */}
         <div
@@ -277,7 +286,7 @@ export default function Services() {
           </div>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 }

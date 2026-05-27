@@ -1,3 +1,5 @@
+import FadeUp from "@/components/ui/FadeUp";
+
 const imgEllipse1 =
   "https://www.figma.com/api/mcp/asset/554403ee-c83f-434f-a706-cff21a5f6d3d";
 const imgEllipse2 =
@@ -210,6 +212,7 @@ export default function WhyUs() {
 
       {/* Content container: left 175px, right 165px (asymmetric per Figma) */}
       <div className="max-w-[1440px] mx-auto pl-[175px] pr-[165px]">
+        <FadeUp>
         {/* Section label */}
         <p
           className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase"
@@ -228,8 +231,10 @@ export default function WhyUs() {
           </h2>
           <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-1" />
         </div>
+        </FadeUp>
 
         {/* Body text */}
+        <FadeUp delay={0.1}>
         <div
           className="text-center mt-[117px] mb-[124px] text-[18px] text-[#2c2c2c] tracking-[2.24px]"
           style={{ fontFamily: "var(--font-noto-sans-jp)" }}
@@ -264,8 +269,10 @@ export default function WhyUs() {
             対応いたします。
           </p>
         </div>
+        </FadeUp>
 
         {/* Steps white card — 1110px wide (content 1100px - 5px each side) */}
+        <FadeUp delay={0.15}>
         <div
           className="bg-white rounded-[20px] overflow-hidden relative"
           style={{ height: 713, marginLeft: -5, marginRight: -5 }}
@@ -349,6 +356,7 @@ export default function WhyUs() {
             </div>
           </div>
         </div>
+        </FadeUp>
       </div>
     </section>
   );

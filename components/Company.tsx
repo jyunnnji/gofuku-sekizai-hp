@@ -1,3 +1,4 @@
+import FadeUp from "@/components/ui/FadeUp";
 
 const tableRows = [
   { label: "会社名", value: "五福石材", gray: true },
@@ -33,6 +34,7 @@ export default function Company() {
       </div>
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-[165px]">
+        <FadeUp>
         {/* COMPANY label — center at y=75px from section top (pt=63 + h=24/2 = 75) */}
         <p
           className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase leading-[24px]"
@@ -52,8 +54,10 @@ export default function Company() {
           {/* Divider — top=184px (63+24+21+64+12=184) */}
           <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3" />
         </div>
+        </FadeUp>
 
         {/* White card — top=251px (184+2+65=251) */}
+        <FadeUp delay={0.1}>
         <div
           className="bg-white rounded-[30px] overflow-clip mt-[65px]"
           style={{ height: 1341 }}
@@ -116,6 +120,7 @@ export default function Company() {
             />
           </div>
         </div>
+        </FadeUp>
       </div>
     </section>
   );

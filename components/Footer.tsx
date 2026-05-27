@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FadeUp from "@/components/ui/FadeUp";
 
 const footerBg =
   "https://www.figma.com/api/mcp/asset/0863ccda-92e0-400e-8c26-64eee603d92a";
@@ -25,6 +26,7 @@ export default function Footer() {
 
       {/* Footer card */}
       <div className="relative max-w-[1440px] mx-auto px-[165px] pt-[330px] pb-[59px]">
+        <FadeUp>
         <div className="bg-white rounded-[20px] px-[72px] py-[51px]">
           {/* Logo */}
           <p
@@ -71,6 +73,7 @@ export default function Footer() {
             © 2026 五福石材 All Rights Reserved.
           </p>
         </div>
+        </FadeUp>
       </div>
     </footer>
   );

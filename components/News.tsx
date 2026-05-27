@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { newsItems as newsData } from "@/lib/newsData";
+import FadeUp from "@/components/ui/FadeUp";
 
 const newsItems = newsData.map((item) => ({
   date: item.date,
@@ -23,6 +24,7 @@ export default function News() {
       className="relative bg-[#fcfaf2] pt-[49px] pb-20 scroll-mt-[100px]"
     >
       <div className="max-w-[1440px] mx-auto px-[165px]">
+        <FadeUp>
         {/* NEWS label — center at y=61px (pt=49 + 24/2=12 = 61) */}
         <p
           className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase leading-[24px] mb-[21px]"
@@ -42,8 +44,10 @@ export default function News() {
           {/* Divider — top=170px (49+24+21+64+12=170) */}
           <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3" />
         </div>
+        </FadeUp>
 
         {/* White card — top=210px (170+2+38=210), h=433px */}
+        <FadeUp delay={0.1}>
         <div className="bg-white rounded-[30px] overflow-hidden h-[433px] pt-[76px]">
           {newsItems.map((item, i) => (
             <div key={i} className="flex pl-[176px] pr-[174px]">
@@ -87,6 +91,7 @@ export default function News() {
             </div>
           ))}
         </div>
+        </FadeUp>
 
         {/* もっと見る button — top=685px (643+42=685), right-aligned */}
         <div className="flex justify-end mt-[42px] pr-[29px]">

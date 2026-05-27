@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FadeUp from "@/components/ui/FadeUp";
 
 const pricingIcon =
   "https://www.figma.com/api/mcp/asset/0ca3db93-4b08-4511-9d6d-85d075936acb";
@@ -10,6 +11,7 @@ export default function Pricing() {
       className="bg-[#fcfaf2] pt-[55px] pb-[87px]"
     >
       <div className="max-w-[1440px] mx-auto px-[165px]">
+        <FadeUp>
         <div className="flex gap-[36px]">
 
           {/* 価格パネル — 532×267px, absolute positioning from Figma coords
@@ -174,6 +176,7 @@ export default function Pricing() {
           </div>
 
         </div>
+        </FadeUp>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 // 白枠：Figmaの不透明度(0.55)に合わせた8方向白シャドウ＋元のFigmaシャドウ
 const whiteBorder =
@@ -36,7 +37,12 @@ export default function Hero() {
   return (
     <section className="relative w-full h-[calc(100vh-100px)] overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0">
+      <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, ease: "easeOut" }}
+      >
         <Image
           src="/hero-bg.png"
           alt="五福石材 墓石クリーニング"
@@ -46,7 +52,7 @@ export default function Hero() {
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-white/40" />
-      </div>
+      </motion.div>
 
       {/* Text content area (1279:650)
           Figma: top-[261px] from artboard top (header overlapping from y=0)
@@ -64,27 +70,41 @@ export default function Hero() {
         <div className="absolute left-0 top-0 w-[765px] h-[560px] rounded-[240.5px] bg-[rgba(255,255,255,0.55)] blur-[50px]" />
 
         {/* Region label (1278:639) — center at (330px, 44.5px) */}
-        <p
+        <motion.p
           className="absolute text-[24px] font-medium text-[#1a1a1a] text-center whitespace-nowrap"
           style={{
             left: "330px",
             top: "44.5px",
-            transform: "translate(-50%, -50%)",
             fontFamily: "var(--font-inter)",
             letterSpacing: "1.5px",
             textShadow: whiteBorder,
           }}
+          transformTemplate={(_, generated) => `translate(-50%, -50%) ${generated}`}
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
         >
           北九州地域・筑豊地域のお墓掃除は五福石材に
-        </p>
+        </motion.p>
 
         {/* Divider line (1278:638) */}
-        <div className="absolute left-[63px] top-[84px] w-[608px] h-[1px]">
+        <motion.div
+          className="absolute left-[63px] top-[84px] w-[608px] h-[1px]"
+          style={{ transformOrigin: "left" }}
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.45 }}
+        >
           <Image src="/hero-divider-line.svg" alt="" fill />
-        </div>
+        </motion.div>
 
         {/* Title 1 container (1279:648) — w-[609px] h-[67px] */}
-        <div className="absolute left-[62px] top-[124px] w-[609px] h-[67px]">
+        <motion.div
+          className="absolute left-[62px] top-[124px] w-[609px] h-[67px]"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.55 }}
+        >
           {/* Yellow underline (1278:640) */}
           <div
             className="absolute h-[35px] top-[32px]"
@@ -109,10 +129,15 @@ export default function Hero() {
             <span className="text-[52px] leading-[46px]">{` `}</span>
             <span className="text-[52px] leading-[46px] text-[#2f7d4e]">丁寧に除去</span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Title 2 container (1279:649) — w-[857px] h-[66px] */}
-        <div className="absolute left-[64px] top-[221px] w-[857px] h-[66px]">
+        <motion.div
+          className="absolute left-[64px] top-[221px] w-[857px] h-[66px]"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.7 }}
+        >
           {/* Yellow underline (1278:641) */}
           <div
             className="absolute h-[35px] top-[31px]"
@@ -138,31 +163,40 @@ export default function Hero() {
             <span className="text-[52px] leading-[46px] text-[#2f7d4e] tracking-[2px]">綺麗に・美しく</span>
             <span className="text-[52px] leading-[46px]">{`”`}</span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Subtitle (1278:637) — left-[63px] center-y at 353px */}
-        <p
+        <motion.p
           className="absolute text-[22px] font-medium text-black whitespace-nowrap"
           style={{
             left: "63px",
             top: "353px",
-            transform: "translateY(-50%)",
             fontFamily: "var(--font-inter)",
             letterSpacing: "1.122px",
             lineHeight: "46px",
             textShadow: whiteBorder,
           }}
+          transformTemplate={(_, generated) => `translateY(-50%) ${generated}`}
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.85 }}
         >
           お墓の汚れや苔、劣化が気になる方へ。
           <br />
           専用の道具と技術で、心を込めて美しく仕上げます。
-        </p>
+        </motion.p>
 
         {/* CTA Button (1278:634) — left edge 63px, top-[424px] */}
+        <motion.div
+          className="absolute"
+          style={{ top: "424px", left: "63px" }}
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 1.0 }}
+        >
         <Link
           href="/contact"
-          className="absolute top-[424px] w-[300px] h-[64px] flex items-center justify-center gap-2 bg-white border border-[#2f7d4e] rounded-[50px] hover:bg-[#f0faf4] transition-colors"
-          style={{ left: "63px" }}
+          className="w-[300px] h-[64px] flex items-center justify-center gap-2 bg-white border border-[#2f7d4e] rounded-[50px] hover:bg-[#f0faf4] transition-colors"
         >
           <span
             className="text-[17px] font-bold text-[#2f7d4e]"
@@ -178,6 +212,7 @@ export default function Hero() {
             <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="#2f7d4e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </Link>
+        </motion.div>
       </div>
 
       {/* Scroll indicator — bottom aligns with section bottom */}
