@@ -25,15 +25,16 @@ export default function Header() {
       style={{ height: "100px" }}
     >
       {/* ── SP ヘッダーバー（md:未満のみ表示） ── */}
-      <div className="md:hidden flex items-center h-full px-5 bg-white border-b border-black">
-        <Link href="/" className="flex flex-col leading-none">
+      <div className="md:hidden flex items-center h-[100px] px-5 bg-white border-b border-black">
+        <Link href="/" className="flex flex-col gap-[10px]">
           <span
             style={{
               fontFamily: "var(--font-noto-sans-jp), var(--font-inter), sans-serif",
-              fontSize: "20px",
+              fontSize: "22px",
               fontWeight: 700,
-              letterSpacing: "2px",
+              letterSpacing: "3px",
               color: "#2f7d4e",
+              lineHeight: 1,
             }}
           >
             五福石材
@@ -41,10 +42,11 @@ export default function Header() {
           <span
             style={{
               fontFamily: "var(--font-inter), sans-serif",
-              fontSize: "12px",
+              fontSize: "11px",
               fontWeight: 700,
-              letterSpacing: "2px",
+              letterSpacing: "2.5px",
               color: "#2f7d4e",
+              lineHeight: 1,
             }}
           >
             Gofuku Sekizai
@@ -193,6 +195,19 @@ export default function Header() {
       </nav>
       </div>{/* end hidden md:block (PC nav) */}
 
+      {/* ── SP 電話ボタン（ハンバーガーの左隣に固定）── */}
+      <button
+        onClick={() => setShowPhoneDialog(true)}
+        aria-label="お電話でのお問い合わせ"
+        className="md:hidden fixed top-0 right-[64px] z-[60] bg-white border-b border-black flex items-center justify-center transition-colors"
+        style={{ width: "64px", height: "100px" }}
+      >
+        <div className="bg-[#edc920] hover:bg-[#d4b31e] flex items-center justify-center rounded-[6px] transition-colors" style={{ width: "44px", height: "44px" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={imgPhone} alt="" style={{ width: "22px", height: "22px" }} />
+        </div>
+      </button>
+
       {/* ── PC 電話ボタン ── */}
       <div className="hidden md:block">
       {/* お電話はこちらから: absolute, 右上起点, h-150px で下にはみ出す */}
@@ -255,11 +270,11 @@ export default function Header() {
           onClick={() => setShowPhoneDialog(false)}
         >
           <div
-            className="relative bg-white rounded-[24px] w-[560px] overflow-hidden"
+            className="relative bg-white rounded-[24px] w-[min(560px,92vw)] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* ヘッダー部 */}
-            <div className="pt-[40px] pb-[28px] px-[48px] text-center border-b border-[#e8e8e8]">
+            <div className="pt-[32px] md:pt-[40px] pb-[24px] md:pb-[28px] px-[24px] md:px-[48px] text-center border-b border-[#e8e8e8]">
               <p
                 className="text-[13px] text-[#2f7d4e] tracking-[3px] uppercase mb-[6px]"
                 style={{ fontFamily: "var(--font-inter)" }}
@@ -285,20 +300,20 @@ export default function Header() {
             </div>
 
             {/* 電話番号リスト */}
-            <div className="px-[40px] py-[28px] flex flex-col gap-[12px]">
+            <div className="px-[20px] md:px-[40px] py-[20px] md:py-[28px] flex flex-col gap-[10px] md:gap-[12px]">
               <a
                 href="tel:090-9406-2085"
-                className="flex items-center gap-[16px] px-[24px] h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group"
+                className="flex items-center gap-[12px] md:gap-[16px] px-[16px] md:px-[24px] h-[60px] md:h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group"
               >
                 <span
-                  className="w-[48px] shrink-0 text-[14px] font-medium text-[#444444] tracking-[1px]"
+                  className="w-[40px] md:w-[48px] shrink-0 text-[13px] md:text-[14px] font-medium text-[#444444] tracking-[1px]"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                 >
                   携帯
                 </span>
                 <div className="w-[1px] h-[24px] bg-[#d9d9d9]" />
                 <span
-                  className="text-[28px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] transition-colors"
+                  className="text-[20px] md:text-[28px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[1px] md:tracking-[2px] transition-colors"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   090-9406-2085
@@ -306,17 +321,17 @@ export default function Header() {
               </a>
               <a
                 href="tel:093-614-6573"
-                className="flex items-center gap-[16px] px-[24px] h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group"
+                className="flex items-center gap-[12px] md:gap-[16px] px-[16px] md:px-[24px] h-[60px] md:h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group"
               >
                 <span
-                  className="w-[48px] shrink-0 text-[14px] font-medium text-[#444444] tracking-[1px]"
+                  className="w-[40px] md:w-[48px] shrink-0 text-[13px] md:text-[14px] font-medium text-[#444444] tracking-[1px]"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                 >
                   固定
                 </span>
                 <div className="w-[1px] h-[24px] bg-[#d9d9d9]" />
                 <span
-                  className="text-[28px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] transition-colors"
+                  className="text-[20px] md:text-[28px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[1px] md:tracking-[2px] transition-colors"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   093-614-6573
@@ -325,7 +340,7 @@ export default function Header() {
             </div>
 
             {/* フッター */}
-            <div className="px-[40px] pb-[28px]">
+            <div className="px-[20px] md:px-[40px] pb-[20px] md:pb-[28px]">
               <p
                 className="text-center text-[13px] text-[#444444] tracking-[0.8px] py-[16px] border-t border-[#e8e8e8]"
                 style={{ fontFamily: "var(--font-noto-sans-jp)" }}
