@@ -38,7 +38,7 @@ export default function Footer() {
 
           {/* Tagline */}
           <p
-            className="text-center text-[18px] text-[#2c2c2c] tracking-[2.4px] mb-8"
+            className="text-center text-[18px] font-bold text-[#2c2c2c] tracking-[2.4px] mb-8"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
           >
             ご先祖様の安らかなお眠りをサポート
