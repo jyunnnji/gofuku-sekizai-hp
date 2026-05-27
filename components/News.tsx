@@ -105,9 +105,9 @@ export default function News() {
             >
               もっと見る
             </span>
-            <span className="w-[20.8px] h-[20.8px] rounded-[10.4px] bg-[#edc920] border border-black flex items-center justify-center shrink-0 transition-colors group-hover:bg-[#d4b31e] text-[#1a1a1a] group-hover:text-white">
-              <ArrowIcon />
-            </span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </Link>
         </div>
       </div>
