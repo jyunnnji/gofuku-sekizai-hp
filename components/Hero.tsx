@@ -209,10 +209,10 @@ export default function Hero() {
         >
         <Link
           href="/contact"
-          className="w-[300px] h-[64px] flex items-center justify-center gap-2 bg-white border border-[#2f7d4e] rounded-[50px] hover:bg-[#f0faf4] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+          className="group w-[300px] h-[64px] flex items-center justify-center gap-2 bg-white border border-[#2f7d4e] rounded-[50px] hover:bg-[#2f7d4e] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
         >
           <span
-            className="text-[17px] font-bold text-[#2f7d4e]"
+            className="text-[17px] font-bold text-[#2f7d4e] group-hover:text-white transition-colors duration-200"
             style={{
               fontFamily: "var(--font-inter)",
               letterSpacing: "2.25px",
@@ -221,8 +221,8 @@ export default function Hero() {
           >
             無料見積もりを依頼する
           </span>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="#2f7d4e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <svg className="transition-colors duration-200" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#2f7d4e] group-hover:text-white transition-colors duration-200" />
           </svg>
         </Link>
         </motion.div>
