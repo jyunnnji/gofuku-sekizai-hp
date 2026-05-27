@@ -18,7 +18,7 @@ export default function Works() {
   return (
     <section
       id="works"
-      className="relative bg-[#fcfaf2] overflow-hidden pt-[50px] pb-[144px]"
+      className="relative bg-[#fcfaf2] overflow-hidden pt-[50px] pb-12 md:pb-[144px]"
     >
       <div className="max-w-[1440px] mx-auto px-4 md:px-[56px]">
         <FadeUp>
@@ -31,9 +31,9 @@ export default function Works() {
         </p>
 
         {/* Section heading */}
-        <div className="flex flex-col items-center mb-[59px]">
+        <div className="flex flex-col items-center mb-6 md:mb-[59px]">
           <h2
-            className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
+            className="text-[26px] md:text-[40px] font-medium text-[#1a1a1a] tracking-[2px] md:tracking-[4.8px] leading-[40px] md:leading-[64px]"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
           >
             施工事例

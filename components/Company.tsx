@@ -14,7 +14,7 @@ export default function Company() {
   return (
     <section
       id="company"
-      className="relative pt-[63px] pb-[152px]"
+      className="relative pt-[63px] pb-12 md:pb-[152px]"
       style={{ background: "#fff3bc" }}
     >
       {/* Circle: 205px, top=-40px */}
@@ -46,7 +46,7 @@ export default function Company() {
         {/* 会社概要 heading — center at y=140px (63+24+21+64/2=140) */}
         <div className="flex flex-col items-center mt-[21px]">
           <h2
-            className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
+            className="text-[26px] md:text-[40px] font-medium text-[#1a1a1a] tracking-[2px] md:tracking-[4.8px] leading-[40px] md:leading-[64px]"
             style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
           >
             会社概要

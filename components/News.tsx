@@ -21,15 +21,15 @@ export default async function News() {
       <div className="max-w-[1440px] mx-auto px-4 md:px-[165px]">
         <FadeUp>
         <p
-          className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase leading-[24px] mb-[21px]"
+          className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase leading-[24px] mb-3 md:mb-[21px]"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           NEWS
         </p>
 
-        <div className="flex flex-col items-center mb-[38px]">
+        <div className="flex flex-col items-center mb-5 md:mb-[38px]">
           <h2
-            className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
+            className="text-[26px] md:text-[40px] font-medium text-[#1a1a1a] tracking-[2px] md:tracking-[4.8px] leading-[40px] md:leading-[64px]"
             style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
           >
             お知らせ
