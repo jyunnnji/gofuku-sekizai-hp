@@ -42,7 +42,7 @@ export default async function NewsListPage() {
                   </span>
 
                   {/* Category badge */}
-                  <span className="ml-[4px] bg-[#edc920] border border-black rounded-full h-[28px] w-[77px] flex items-center justify-center shrink-0">
+                  <span className="ml-[4px] bg-[#edc920] border border-black rounded-full h-[28px] px-[10px] flex items-center justify-center shrink-0">
                     <span
                       className="text-[13px] text-black tracking-[1.1px] leading-[22px]"
                       style={{ fontFamily: "var(--font-noto-sans-jp)" }}

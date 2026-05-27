@@ -42,7 +42,7 @@ export default async function NewsDetailPage({
               >
                 {formatDate(item.date)}
               </span>
-              <span className="bg-[#edc920] border border-black rounded-full h-[28px] w-[77px] flex items-center justify-center shrink-0">
+              <span className="bg-[#edc920] border border-black rounded-full h-[28px] px-[10px] flex items-center justify-center shrink-0">
                 <span
                   className="text-[13px] text-black tracking-[1.1px] leading-[22px]"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
@@ -60,13 +60,35 @@ export default async function NewsDetailPage({
               {item.title}
             </h2>
 
-            {/* Body */}
-            <p
-              className="text-[17px] text-[#2c2c2c] tracking-[0.8px] leading-[36px] whitespace-pre-wrap"
-              style={{ fontFamily: "var(--font-noto-sans-jp)" }}
-            >
-              {item.excerpt}
-            </p>
+            {/* Thumbnail image */}
+            {item.thumbnail && (
+              <div className="mb-[40px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.thumbnail.url}
+                  alt={item.title}
+                  width={item.thumbnail.width}
+                  height={item.thumbnail.height}
+                  className="max-w-[480px] w-full h-auto rounded-[16px] object-cover"
+                />
+              </div>
+            )}
+
+            {/* Body — HTMLリッチテキスト or プレーンテキスト */}
+            {item.content ? (
+              <div
+                className="text-[17px] text-[#2c2c2c] tracking-[0.8px] leading-[36px] news-content"
+                style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+                dangerouslySetInnerHTML={{ __html: item.content }}
+              />
+            ) : (
+              <p
+                className="text-[17px] text-[#2c2c2c] tracking-[0.8px] leading-[36px] whitespace-pre-wrap"
+                style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+              >
+                {item.excerpt}
+              </p>
+            )}
 
           </div>
 

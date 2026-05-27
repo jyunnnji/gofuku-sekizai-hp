@@ -26,6 +26,8 @@ export type News = MicroCMSListContent & {
   category: string[];
   date: string;
   excerpt: string;
+  content?: string;
+  thumbnail?: MicroCMSImage;
   isImportant: boolean;
 };
 
