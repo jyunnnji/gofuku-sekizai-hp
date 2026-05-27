@@ -227,7 +227,7 @@ export default function ContactPage() {
                   <div className="flex justify-center">
                     <button
                       type="submit"
-                      className="w-[320px] h-[59px] bg-[#edc920] border border-black rounded-full text-[18px] font-medium text-black tracking-[2.25px] hover:bg-[#d4b31e] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative flex items-center justify-center"
+                      className="w-[320px] h-[59px] bg-[#edc920] border border-black rounded-full text-[18px] font-medium text-black tracking-[2.25px] hover:bg-[#d4b31e] hover:text-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative flex items-center justify-center"
                       style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                     >
                       確認画面へ
@@ -318,7 +318,7 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={handleSubmit}
-                    className="w-[220px] h-[59px] bg-[#edc920] border border-black rounded-full text-[18px] font-medium text-black tracking-[2.25px] hover:bg-[#d4b31e] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative flex items-center justify-center"
+                    className="w-[220px] h-[59px] bg-[#edc920] border border-black rounded-full text-[18px] font-medium text-black tracking-[2.25px] hover:bg-[#d4b31e] hover:text-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative flex items-center justify-center"
                     style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                   >
                     送信する
