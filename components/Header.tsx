@@ -24,7 +24,36 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-transparent" : "bg-white"}`}
       style={{ height: "100px" }}
     >
-      {/* ロゴセクション: absolute, h-194px, 左上起点 */}
+      {/* ── SP ヘッダーバー（md:未満のみ表示） ── */}
+      <div className="md:hidden flex items-center h-full px-5 bg-white border-b border-black">
+        <Link href="/" className="flex flex-col leading-none">
+          <span
+            style={{
+              fontFamily: "var(--font-noto-sans-jp), var(--font-inter), sans-serif",
+              fontSize: "20px",
+              fontWeight: 700,
+              letterSpacing: "2px",
+              color: "#2f7d4e",
+            }}
+          >
+            五福石材
+          </span>
+          <span
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "12px",
+              fontWeight: 700,
+              letterSpacing: "2px",
+              color: "#2f7d4e",
+            }}
+          >
+            Gofuku Sekizai
+          </span>
+        </Link>
+      </div>
+
+      {/* ── PC ロゴセクション: absolute, h-194px, 左上起点 ── */}
+      <div className="hidden md:block">
       <div
         className={`absolute top-0 left-0 bg-white flex flex-col items-center justify-center px-[52px] rounded-br-[70px] transition-opacity duration-300 ${scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         style={{
@@ -92,7 +121,10 @@ export default function Header() {
           </div>
         </Link>
       </div>
+      </div>{/* end hidden md:block (PC logo) */}
 
+      {/* ── PC ナビエリア ── */}
+      <div className="hidden md:block">
       {/* ナビエリア: ロゴ右ボーダーをヘッダー内で隠すためleft:337pxにしbg-whiteで上書き */}
       <nav
         className={`flex items-center justify-center bg-white transition-opacity duration-300 ${scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
@@ -159,7 +191,10 @@ export default function Header() {
           </span>
         </Link>
       </nav>
+      </div>{/* end hidden md:block (PC nav) */}
 
+      {/* ── PC 電話ボタン ── */}
+      <div className="hidden md:block">
       {/* お電話はこちらから: absolute, 右上起点, h-150px で下にはみ出す */}
       <button
         onClick={() => setShowPhoneDialog(true)}
@@ -211,6 +246,7 @@ export default function Header() {
           <p>こちらから</p>
         </div>
       </button>
+      </div>{/* end hidden md:block (PC phone button) */}
 
       {/* 電話番号ダイアログ */}
       {showPhoneDialog && (

@@ -9,9 +9,51 @@ export default function Pricing() {
       id="contact"
       className="bg-[#fcfaf2] pt-[55px] pb-[87px]"
     >
-      <div className="max-w-[1440px] mx-auto px-[165px]">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-[165px]">
         <FadeUp>
-        <div className="flex gap-[36px]">
+
+        {/* ── SP レイアウト ── */}
+        <div className="md:hidden flex flex-col gap-4">
+          {/* Price card */}
+          <div className="bg-white rounded-[20px] p-6">
+            <div className="flex items-center gap-2 mb-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={pricingIcon} alt="" className="w-[32px] h-[32px] object-cover" />
+              <span className="text-[18px] font-bold text-[#2c2c2c]" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>価格</span>
+            </div>
+            <p className="text-[14px] font-bold text-[#2c2c2c] mb-2" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+              墓石クリーニング費用：最低
+              <span className="text-[28px] text-[#2f7d4e] mx-1" style={{ fontFamily: "var(--font-inter)" }}>5</span>
+              万円〜
+            </p>
+            <p className="text-[12px] text-[#444444]" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>
+              ※サイズ、汚れ、大きさ、要望、築年数により費用は変動いたします。
+            </p>
+          </div>
+          {/* CTA card */}
+          <div className="bg-white rounded-[20px] p-6 flex flex-col items-center gap-4">
+            <p className="text-[15px] text-[#2c2c2c] tracking-[0.8px]" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>
+              まずはお気軽にご相談ください。
+            </p>
+            <Link
+              href="/contact"
+              className="w-full max-w-[300px] h-[56px] flex items-center justify-center bg-[#2f7d4e] border border-black rounded-[30px] hover:bg-[#235e3a] transition-colors"
+            >
+              <span className="text-[16px] font-bold text-white tracking-[1.5px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+                無料見積もりを依頼する
+              </span>
+            </Link>
+            <a href="tel:090-9406-2085" className="text-[15px] text-[#2c2c2c] hover:text-[#2f7d4e] transition-colors" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>
+              <span className="font-bold">TEL（携帯）</span> 090-9406-2085
+            </a>
+            <a href="tel:093-614-6573" className="text-[15px] text-[#2c2c2c] hover:text-[#2f7d4e] transition-colors" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>
+              <span className="font-bold">TEL（固定）</span> 093-614-6573
+            </a>
+          </div>
+        </div>
+
+        {/* ── PC レイアウト ── */}
+        <div className="hidden md:flex gap-[36px]">
 
           {/* 価格パネル — 532×267px, absolute positioning from Figma coords
               Content group (440×106) sits at card (left=41, top=38).
@@ -174,7 +216,7 @@ export default function Pricing() {
             </a>
           </div>
 
-        </div>
+        </div>{/* end hidden md:flex (PC panels) */}
         </FadeUp>
       </div>
     </section>

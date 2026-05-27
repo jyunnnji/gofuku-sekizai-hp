@@ -20,7 +20,7 @@ export default function Works() {
       id="works"
       className="relative bg-[#fcfaf2] overflow-hidden pt-[50px] pb-[144px]"
     >
-      <div className="max-w-[1440px] mx-auto px-[56px]">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-[56px]">
         <FadeUp>
         {/* Section label — center at y=62px (pt=50 + h=24/2) */}
         <p
@@ -45,10 +45,53 @@ export default function Works() {
         {/* Before / After container — 1328×877 card per Figma */}
         <FadeUp delay={0.1}>
         <div
-          className="relative rounded-[100px] overflow-hidden pt-[72px] pb-[76px] px-[110px]"
+          className="relative rounded-[30px] md:rounded-[100px] overflow-hidden pt-8 md:pt-[72px] pb-8 md:pb-[76px] px-4 md:px-[110px]"
           style={{ background: "#fff3bc" }}
         >
-          <div className="flex gap-[40px] items-start justify-center">
+          {/* ── SP: 縦積みレイアウト ── */}
+          <div className="md:hidden flex flex-col gap-6">
+            {/* SP Before */}
+            <div>
+              <h3
+                className="text-[24px] font-bold tracking-[0.54px] text-black leading-[28.8px] mb-[8px]"
+                style={{ fontFamily: "var(--font-inter)" }}
+              >Before</h3>
+              <div className="w-[100px] h-[2px] bg-[#2f7d4e] mb-[14px]" />
+              <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[16px] overflow-hidden h-[240px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={imgBefore} alt="施工前" className="absolute inset-0 w-full h-full object-cover" />
+              </div>
+              <p className="text-[15px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] mt-[10px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+                黒ずみやコケが目立ち、全体的にくすんだ状態。
+              </p>
+            </div>
+            {/* SP Arrow (down) */}
+            <div className="flex justify-center">
+              <svg width="56" height="56" viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="50" r="50" fill="#F4C430" />
+                <path d="M41 21H59V55H69L50 79L31 55H41V21Z" fill="white" />
+              </svg>
+            </div>
+            {/* SP After */}
+            <div>
+              <h3
+                className="text-[24px] font-bold tracking-[0.54px] text-black leading-[28.8px] mb-[8px]"
+                style={{ fontFamily: "var(--font-inter)" }}
+              >After</h3>
+              <div className="w-[100px] h-[2px] bg-[#2f7d4e] mb-[14px]" />
+              <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[16px] overflow-hidden h-[240px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={imgAfter} alt="施工後" className="absolute inset-0 w-full h-full object-cover" />
+              </div>
+              <p className="text-[15px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] mt-[10px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+                丁寧な手洗いにより、自然な白さと輝きを取り戻した状態。
+                <br />施工をすることで<strong style={{ background: "linear-gradient(to bottom, rgba(70,147,97,0) 50%, rgba(234,109,98,0.4) 50%)" }}>お墓の寿命が長く</strong>なります。
+              </p>
+            </div>
+          </div>
+
+          {/* ── PC: 横並びレイアウト ── */}
+          <div className="hidden md:flex gap-[40px] items-start justify-center">
             {/* Before */}
             <div className="flex-1 max-w-[484px]">
               <h3

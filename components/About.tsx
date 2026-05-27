@@ -8,9 +8,48 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative w-full bg-[#fcfaf2] overflow-hidden"
-      style={{ height: "749px" }}
+      className="relative w-full bg-[#fcfaf2] overflow-hidden md:h-[749px]"
     >
+
+      {/* ── SP レイアウト ── */}
+      <div className="md:hidden px-5 pt-10 pb-10 flex flex-col gap-6">
+        {/* Images */}
+        <div className="flex gap-3">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={imgRight} alt="五福石材の施工風景" className="w-[48%] h-[180px] object-cover rounded-[12px]" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={imgLeft} alt="施工事例" className="w-[48%] h-[180px] object-cover rounded-[12px]" />
+        </div>
+        {/* Text */}
+        <div className="text-center">
+          <h2
+            className="text-[22px] font-bold tracking-[4px] mb-3"
+            style={{ fontFamily: "var(--font-noto-sans-jp)", color: "#2c2c2c" }}
+          >
+            <span>-</span>
+            <span className="text-[#2f7d4e]"> 五福石材</span>
+            <span>について -</span>
+          </h2>
+          <h3
+            className="text-[16px] font-medium text-[#2c2c2c] leading-[30px] tracking-[2px] mb-4"
+            style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+          >
+            ご先祖様の安らかなお眠りをサポートさせていただきます。
+          </h3>
+          <p
+            className="text-[14px] text-[#2c2c2c] leading-[26px] tracking-[0.8px]"
+            style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+          >
+            五福石材は、墓石クリーニング・造園を通じて、地域の皆さまの暮らしに寄り添ってまいりました。
+            ご先祖様を大切にする想い、住まいを美しく保ちたいという願い、人生の節目に寄り添う心。
+            私たちはその一つひとつに丁寧に向き合い、信頼と安心をお届けしています。
+            「頼んでよかった」――そう言っていただける仕事を、これからも。
+          </p>
+        </div>
+      </div>
+
+      {/* ── PC レイアウト ── */}
+      <div className="hidden md:block">
 
         {/* ── 画像1: 右上 (1279:656) ── left=1113px top=35px w=327px h=426px */}
         <motion.div
@@ -151,6 +190,7 @@ export default function About() {
             <p>「頼んでよかった」――そう言っていただける仕事を、これからも。</p>
           </div>
         </div>
+      </div>{/* end hidden md:block (PC layout) */}
     </section>
   );
 }

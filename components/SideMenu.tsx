@@ -27,11 +27,30 @@ export default function SideMenu() {
         />
       )}
 
-      {/* Toggle button — fixed to right edge, centered vertically */}
+      {/* ── SP ハンバーガーボタン（ヘッダー右端に固定）── */}
       <button
         onClick={() => setIsOpen(true)}
         aria-label="メニューを開く"
-        className={`fixed top-1/2 -translate-y-1/2 right-0 z-50 bg-white border border-r-0 border-black flex flex-col items-center justify-center gap-5 transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-0 right-0 z-[60] bg-white border-l border-b border-black flex items-center justify-center transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-full" : "translate-x-0"
+        }`}
+        style={{ width: "64px", height: "100px" }}
+      >
+        {/* Figma asymmetric split-line icon */}
+        <div className="relative" style={{ width: "30px", height: "18px" }}>
+          <div className="absolute bg-[#1a1a1a] rounded-[1px]" style={{ left: 0, width: "12px", top: 0, height: "2px" }} />
+          <div className="absolute bg-[#1a1a1a] rounded-[1px]" style={{ left: "16px", right: 0, top: 0, height: "2px" }} />
+          <div className="absolute bg-[#1a1a1a] rounded-[1px]" style={{ left: 0, right: 0, top: "8px", height: "2px" }} />
+          <div className="absolute bg-[#1a1a1a] rounded-[1px]" style={{ left: 0, width: "18px", top: "16px", height: "2px" }} />
+          <div className="absolute bg-[#1a1a1a] rounded-[1px]" style={{ left: "22px", right: 0, top: "16px", height: "2px" }} />
+        </div>
+      </button>
+
+      {/* ── PC トグルボタン（右端に縦中央固定）── */}
+      <button
+        onClick={() => setIsOpen(true)}
+        aria-label="メニューを開く"
+        className={`hidden md:flex fixed top-1/2 -translate-y-1/2 right-0 z-50 bg-white border border-r-0 border-black flex-col items-center justify-center gap-5 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-full" : "translate-x-0"
         }`}
         style={{ width: "80px", height: "200px", borderRadius: "16px 0 0 16px" }}

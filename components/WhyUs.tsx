@@ -186,22 +186,22 @@ export default function WhyUs() {
       id="why-us"
       className="relative bg-[#fcfaf2] overflow-hidden pt-[172px] pb-[90px]"
     >
-      {/* Decorative ellipses */}
+      {/* Decorative ellipses — PC only (overflow on SP) */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={imgEllipse1}
         alt=""
-        className="absolute left-[-113px] top-[20px] w-[323px] h-[323px] pointer-events-none"
+        className="hidden md:block absolute left-[-113px] top-[20px] w-[323px] h-[323px] pointer-events-none"
       />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={imgEllipse2}
         alt=""
-        className="absolute right-[-72px] top-[414px] w-[209px] h-[209px] pointer-events-none"
+        className="hidden md:block absolute right-[-72px] top-[414px] w-[209px] h-[209px] pointer-events-none"
       />
 
       {/* Content container: left 175px, right 165px (asymmetric per Figma) */}
-      <div className="max-w-[1440px] mx-auto pl-[175px] pr-[165px]">
+      <div className="max-w-[1440px] mx-auto px-4 md:pl-[175px] md:pr-[165px]">
         <FadeUp>
         {/* Section label */}
         <p
@@ -226,7 +226,7 @@ export default function WhyUs() {
         {/* Body text */}
         <FadeUp delay={0.1}>
         <div
-          className="text-center mt-[117px] mb-[124px] text-[18px] text-[#2c2c2c] tracking-[2.24px]"
+          className="text-center mt-8 md:mt-[117px] mb-8 md:mb-[124px] text-[16px] md:text-[18px] text-[#2c2c2c] tracking-[1.2px] md:tracking-[2.24px]"
           style={{ fontFamily: "var(--font-noto-sans-jp)" }}
         >
           <p className="leading-[37.5px] mb-0">
@@ -261,10 +261,41 @@ export default function WhyUs() {
         </div>
         </FadeUp>
 
-        {/* Steps white card — 1110px wide (content 1100px - 5px each side) */}
+        {/* Steps ── SP シンプルリスト */}
+        <div className="md:hidden grid grid-cols-2 gap-3 mb-8">
+          {steps.map((step) => (
+            <div key={step.num} className="bg-white rounded-[16px] p-4 flex flex-col items-center text-center">
+              <span
+                className="text-[36px] font-black text-[#edc920] leading-none mb-1"
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  textShadow: "-1px -1px 1px #575252,1px -1px 1px #575252,-1px 1px 1px #575252,1px 1px 1px #575252",
+                }}
+              >
+                {step.num}
+              </span>
+              <span
+                className="text-[14px] font-bold text-[#2c2c2c] mb-2"
+                style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+              >
+                {step.title}
+              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={step.img} alt={step.title} className="w-[80px] h-[60px] object-contain mb-2" />
+              <p
+                className="text-[12px] text-[#2c2c2c] leading-[20px]"
+                style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+              >
+                {step.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Steps white card — 1110px wide (content 1100px - 5px each side) — PC only */}
         <FadeUp delay={0.15}>
         <div
-          className="bg-white rounded-[20px] overflow-hidden relative"
+          className="hidden md:block bg-white rounded-[20px] overflow-hidden relative"
           style={{ height: 713, marginLeft: -5, marginRight: -5 }}
         >
           {/* POINT badge */}

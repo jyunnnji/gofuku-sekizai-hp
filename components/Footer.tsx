@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#fcfaf2] overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0 h-[497px]">
+      <div className="absolute inset-0 h-[220px] md:h-[497px]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={footerBg}
@@ -24,9 +24,9 @@ export default function Footer() {
       </div>
 
       {/* Footer card */}
-      <div className="relative max-w-[1440px] mx-auto px-[165px] pt-[330px] pb-[59px]">
+      <div className="relative max-w-[1440px] mx-auto px-4 md:px-[165px] pt-[100px] md:pt-[330px] pb-[40px] md:pb-[59px]">
         <FadeUp>
-        <div className="bg-white rounded-[20px] px-[72px] py-[51px]">
+        <div className="bg-white rounded-[20px] px-5 md:px-[72px] py-8 md:py-[51px]">
           {/* Logo */}
           <p
             className="text-center text-[35.5px] font-bold text-[#2f7d4e] tracking-[3.3px] leading-[44px] mb-4"

@@ -33,7 +33,7 @@ export default function Company() {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-[165px]">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-[165px]">
         <FadeUp>
         {/* COMPANY label — center at y=75px from section top (pt=63 + h=24/2 = 75) */}
         <p
@@ -59,28 +59,27 @@ export default function Company() {
         {/* White card — top=251px (184+2+65=251) */}
         <FadeUp delay={0.1}>
         <div
-          className="bg-white rounded-[30px] overflow-clip mt-[65px]"
-          style={{ height: 1341 }}
+          className="bg-white rounded-[30px] overflow-clip mt-[65px] h-auto md:h-[1341px]"
         >
           {/* Table — pt=126px, left=127px, right=126px */}
-          <div className="pt-[126px] pl-[127px] pr-[126px]">
+          <div className="pt-8 md:pt-[126px] px-4 md:pl-[127px] md:pr-[126px]">
             {tableRows.map((row, i) => (
               <div
                 key={row.label}
-                className={`flex items-center border-b border-[#d9d9d9] ${
-                  i === 0 ? "h-[75.5px]" : "h-[76px]"
+                className={`flex flex-col md:flex-row md:items-center border-b border-[#d9d9d9] py-3 md:py-0 ${
+                  i === 0 ? "md:h-[75.5px]" : "md:h-[76px]"
                 } ${row.gray ? "bg-[#f5f5f5]" : "bg-white"}`}
               >
                 {/* Label column: 191px wide (16px padding + content) */}
                 <div
-                  className="w-[191px] pl-[16px] text-[18px] font-medium text-[#1a1a1a] tracking-[1.2px] shrink-0"
+                  className="w-full md:w-[191px] pl-[4px] md:pl-[16px] text-[14px] md:text-[18px] font-medium text-[#2f7d4e] md:text-[#1a1a1a] tracking-[1.2px] shrink-0 mb-1 md:mb-0"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                 >
                   {row.label}
                 </div>
                 {/* Value */}
                 <div
-                  className="text-[18px] font-normal text-[#2c2c2c] tracking-[0.8px] leading-[27px]"
+                  className="text-[15px] md:text-[18px] font-normal text-[#2c2c2c] tracking-[0.8px] leading-[24px] md:leading-[27px] pl-[4px] md:pl-0"
                   style={{
                     fontFamily: row.label.includes("電話") || row.label === "営業時間"
                       ? "var(--font-inter)"
@@ -95,7 +94,7 @@ export default function Company() {
 
           {/* アクセス heading — center at card top=757px */}
           {/* Table ends at 126+75.5+76×6=657.5px → mt=734-657.5=76.5≈77px */}
-          <div className="flex flex-col items-center mt-[77px]">
+          <div className="flex flex-col items-center mt-8 md:mt-[77px]">
             <h3
               className="h-[46px] flex items-center text-[24px] font-medium text-[#1a1a1a] tracking-[4.8px]"
               style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
@@ -107,7 +106,7 @@ export default function Company() {
           </div>
 
           {/* Map — top=815px → mt=815-782=33px from divider bottom */}
-          <div className="mt-[33px] mx-[127px] h-[400px] overflow-clip rounded-none">
+          <div className="mt-[33px] mx-4 md:mx-[127px] h-[280px] md:h-[400px] overflow-clip rounded-none pb-0">
             <iframe
               src="https://maps.google.com/maps?q=福岡県北九州市小倉北区高峰町3-12&hl=ja&output=embed&z=16"
               width="100%"
@@ -119,6 +118,7 @@ export default function Company() {
               title="五福石材 アクセスマップ"
             />
           </div>
+          <div className="h-8 md:h-0" />{/* SP bottom spacer */}
         </div>
         </FadeUp>
       </div>

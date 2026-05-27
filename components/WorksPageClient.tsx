@@ -57,7 +57,7 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
       onClick={onClose}
     >
       <div
-        className="relative bg-white rounded-[24px] w-[min(900px,90vw)] max-h-[90vh] overflow-y-auto p-[48px]"
+        className="relative bg-white rounded-[24px] w-[min(900px,92vw)] max-h-[90vh] overflow-y-auto p-5 md:p-[48px]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -96,7 +96,7 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
         </h2>
 
         {/* Before / After images */}
-        <div className="grid grid-cols-2 gap-[20px] mb-[28px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[20px] mb-[28px]">
           <div>
             <p
               className="text-[14px] font-bold text-[#1a1a1a] tracking-[1px] mb-[10px]"
@@ -192,7 +192,7 @@ export default function WorksPageClient({ items }: { items: WorksPageItem[] }) {
     <>
       <Header />
       <main className="bg-[#fcfaf2] pt-[100px]">
-        <div className="max-w-[1440px] mx-auto px-[170px] pt-[125px] pb-[120px]">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-[170px] pt-[60px] md:pt-[125px] pb-[60px] md:pb-[120px]">
 
           <PageHeading
             label="WORKS"
@@ -200,8 +200,8 @@ export default function WorksPageClient({ items }: { items: WorksPageItem[] }) {
             titleFont="var(--font-noto-sans-jp)"
           />
 
-          {/* 3-column grid */}
-          <div className="grid grid-cols-3 gap-[32px]">
+          {/* Grid: SP=1col, PC=3col */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-[32px]">
             {items.map((item) => (
               <button
                 key={item.id}
@@ -290,7 +290,7 @@ export default function WorksPageClient({ items }: { items: WorksPageItem[] }) {
       {/* Back to top */}
       <Link
         href="#top"
-        className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+        className="fixed bottom-4 right-4 md:bottom-[49px] md:right-[50px] z-50 w-[44px] h-[44px] md:w-[48px] md:h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
         aria-label="ページ上部へ戻る"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
