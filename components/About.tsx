@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 // 画像URLはFigma CDNから取得（7日間有効）。本番運用前にpublic/へ移行すること
 const imgRight =
   "https://www.figma.com/api/mcp/asset/83ae37f1-3c3c-4ba8-a00d-71ca5a89142f";
@@ -13,7 +16,13 @@ export default function About() {
     >
 
         {/* ── 画像1: 右上 (1279:656) ── left=1113px top=35px w=327px h=426px */}
-        <div className="absolute right-0 top-[35px] w-[327px] h-[426px]">
+        <motion.div
+          className="absolute right-0 top-[35px] w-[327px] h-[426px]"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
           {/* 緑グラデーション背景: inset top=32 right=32 bottom=0 left=0 */}
           <div
             className="absolute inset-[32px_32px_0_0]"
@@ -37,10 +46,16 @@ export default function About() {
                 "linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.4))",
             }}
           />
-        </div>
+        </motion.div>
 
         {/* ── 画像2: 左中 (1279:657) ── left=0 top=348px w=268px h=348px */}
-        <div className="absolute left-0 top-[348px] w-[268px] h-[348px]">
+        <motion.div
+          className="absolute left-0 top-[348px] w-[268px] h-[348px]"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+        >
           {/* 緑グラデーション背景: inset top=0 right=0 bottom=20 left=0 */}
           <div
             className="absolute inset-[0_0_20px_0]"
@@ -64,7 +79,7 @@ export default function About() {
                 "linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.4))",
             }}
           />
-        </div>
+        </motion.div>
 
         {/* ── テキストコンテナ (1278:206) ── left=170px right=170px top=160px h=635px */}
         <div className="absolute left-[170px] right-[170px] top-[160px] h-[635px] text-center">
