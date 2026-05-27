@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -178,6 +178,15 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
 
 export default function WorksPageClient({ items }: { items: WorksPageItem[] }) {
   const [selected, setSelected] = useState<WorksPageItem | null>(null);
+
+  useEffect(() => {
+    if (selected) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [selected]);
 
   return (
     <>
