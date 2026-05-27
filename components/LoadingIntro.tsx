@@ -67,15 +67,13 @@ export default function LoadingIntro() {
 
       {/* タグライン */}
       <motion.p
-        className="relative text-center text-[14px] text-[#555555] tracking-[2px] leading-[2.2]"
+        className="relative text-center text-[24px] text-[#555555] tracking-[2px]"
         style={{ fontFamily: "var(--font-noto-sans-jp)" }}
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1], delay: 0 }}
       >
-        ご先祖様の安らかなお眠りを
-        <br />
-        サポートさせて頂きます
+        ご先祖様の安らかなお眠りをサポートさせて頂きます
       </motion.p>
 
       {/* 五福石材 ロゴ */}
