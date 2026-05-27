@@ -21,8 +21,37 @@ const categoryColors: Record<string, string> = {
   "造園": "bg-[#2f7d4e] text-white",
 };
 
-function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => void }) {
+function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
   return (
+    <div
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90"
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        className="absolute top-[20px] right-[20px] w-[44px] h-[44px] rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors"
+        aria-label="閉じる"
+      >
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M2 2L16 16M16 2L2 16" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+      </button>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt={alt}
+        className="max-w-[95vw] max-h-[95vh] object-contain rounded-[8px]"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  );
+}
+
+function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => void }) {
+  const [lightboxSrc, setLightboxSrc] = useState<{ src: string; alt: string } | null>(null);
+
+  return (
+    <>
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
       onClick={onClose}
@@ -75,13 +104,25 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
             >
               Before
             </p>
-            <div className="w-full aspect-[4/3] rounded-[12px] overflow-hidden bg-[#d9d9d9]">
+            <div
+              className="relative w-full aspect-[4/3] rounded-[12px] overflow-hidden bg-[#d9d9d9] cursor-pointer group"
+              onClick={() => setLightboxSrc({ src: item.beforeImageUrl, alt: "施工前" })}
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={item.beforeImageUrl}
                 alt="施工前"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
+              <button
+                className="absolute top-[10px] right-[10px] w-[32px] h-[32px] rounded-full bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/60"
+                aria-label="画像を拡大"
+                onClick={(e) => { e.stopPropagation(); setLightboxSrc({ src: item.beforeImageUrl, alt: "施工前" }); }}
+              >
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M8.5 1H13V5.5M13 1L8 6M5.5 13H1V8.5M1 13L6 8" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
             </div>
           </div>
           <div>
@@ -91,13 +132,25 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
             >
               After
             </p>
-            <div className="w-full aspect-[4/3] rounded-[12px] overflow-hidden bg-[#d9d9d9]">
+            <div
+              className="relative w-full aspect-[4/3] rounded-[12px] overflow-hidden bg-[#d9d9d9] cursor-pointer group"
+              onClick={() => setLightboxSrc({ src: item.afterImageUrl, alt: "施工後" })}
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={item.afterImageUrl}
                 alt="施工後"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
+              <button
+                className="absolute top-[10px] right-[10px] w-[32px] h-[32px] rounded-full bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/60"
+                aria-label="画像を拡大"
+                onClick={(e) => { e.stopPropagation(); setLightboxSrc({ src: item.afterImageUrl, alt: "施工後" }); }}
+              >
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M8.5 1H13V5.5M13 1L8 6M5.5 13H1V8.5M1 13L6 8" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -111,6 +164,15 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
         </p>
       </div>
     </div>
+
+    {lightboxSrc && (
+      <ImageLightbox
+        src={lightboxSrc.src}
+        alt={lightboxSrc.alt}
+        onClose={() => setLightboxSrc(null)}
+      />
+    )}
+    </>
   );
 }
 
@@ -143,7 +205,7 @@ export default function WorksPageClient({ items }: { items: WorksPageItem[] }) {
                   <img
                     src={item.thumbnailUrl}
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
 
@@ -180,6 +242,19 @@ export default function WorksPageClient({ items }: { items: WorksPageItem[] }) {
                   >
                     {item.description}
                   </p>
+
+                  {/* Detail link */}
+                  <div className="flex justify-end mt-[12px]">
+                    <span
+                      className="text-[12px] text-[#2f7d4e] tracking-[0.6px] flex items-center gap-[4px]"
+                      style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+                    >
+                      詳細を見る
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <path d="M2 8L8 2M8 2H4M8 2V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
               </button>
             ))}
