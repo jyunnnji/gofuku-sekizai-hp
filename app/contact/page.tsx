@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -92,12 +92,17 @@ export default function ContactPage() {
   const [message, setMessage] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
+  const [showToast, setShowToast] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
 
   const handleToConfirm = (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate(name, phone, email, message, agreed);
     if (Object.keys(errs).length > 0) {
       setErrors(errs);
+      setShowToast(true);
+      formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => setShowToast(false), 4000);
       return;
     }
     setErrors({});
@@ -133,6 +138,23 @@ export default function ContactPage() {
 
   return (
     <>
+      {/* トーストエラー */}
+      {showToast && (
+        <div className="fixed top-[24px] left-1/2 -translate-x-1/2 z-[9999] flex items-center gap-[12px] bg-white border border-[#f55555] rounded-[12px] px-[24px] py-[14px] shadow-lg">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
+            <circle cx="10" cy="10" r="9" stroke="#f55555" strokeWidth="1.5" />
+            <path d="M10 6V10M10 13.5V14" stroke="#f55555" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+          <p className="text-[14px] text-[#f55555] tracking-[0.8px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+            入力内容に不備があります。ご確認ください。
+          </p>
+          <button onClick={() => setShowToast(false)} className="ml-[4px] text-[#999999] hover:text-[#f55555] transition-colors">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+      )}
       <Header />
       <main className="bg-[#fcfaf2] pt-[100px]">
         <div className="max-w-[1440px] mx-auto px-[170px] pt-[125px] pb-[120px]">
@@ -175,7 +197,7 @@ export default function ContactPage() {
               </div>
 
               {/* Form card */}
-              <div className="bg-white rounded-[30px] px-[224px] py-[55px]">
+              <div ref={formRef} className="bg-white rounded-[30px] px-[224px] py-[55px]">
                 <h2
                   className="text-center text-[24px] font-medium text-[#2c2c2c] tracking-[1.8px] leading-[36px] mb-[40px]"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
