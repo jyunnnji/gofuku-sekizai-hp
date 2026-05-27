@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import PageHeading from "@/components/ui/PageHeading";
 
 type Step = "form" | "confirm" | "done";
 
@@ -45,30 +46,19 @@ export default function ContactPage() {
   };
 
   const pageHeader = (
-    <>
+    <PageHeading
+      label="Contact"
+      title="お問い合わせ"
+      dividerClassName="w-[40px] h-[2px] bg-[#2f7d4e] mt-3 mb-[62px]"
+    >
       <p
-        className="text-center text-[20px] text-[#2f7d4e] tracking-[3.6px] uppercase leading-[24px] mb-[24px]"
-        style={{ fontFamily: "var(--font-inter)" }}
+        className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] text-center"
+        style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
       >
-        Contact
+        ご質問・ご相談・お見積もりなど、お気軽にお問い合わせください。<br />
+        折り返しご連絡いたします。
       </p>
-      <div className="flex flex-col items-center mb-[65px]">
-        <h1
-          className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
-          style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
-        >
-          お問い合わせ
-        </h1>
-        <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3 mb-[62px]" />
-        <p
-          className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] text-center"
-          style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
-        >
-          ご質問・ご相談・お見積もりなど、お気軽にお問い合わせください。<br />
-          折り返しご連絡いたします。
-        </p>
-      </div>
-    </>
+    </PageHeading>
   );
 
   return (

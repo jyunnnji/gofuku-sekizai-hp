@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { worksItems, WorkItem } from "@/lib/worksData";
+import PageHeading from "@/components/ui/PageHeading";
 
 const categoryColors: Record<string, string> = {
   "墓石クリーニング": "bg-[#edc920] text-black",
@@ -110,24 +111,11 @@ export default function WorksListPage() {
       <main className="bg-[#fcfaf2] pt-[100px]">
         <div className="max-w-[1440px] mx-auto px-[170px] pt-[125px] pb-[120px]">
 
-          {/* WORKS label */}
-          <p
-            className="text-center text-[20px] text-[#2f7d4e] tracking-[3.6px] uppercase leading-[24px] mb-[24px]"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
-            WORKS
-          </p>
-
-          {/* Heading */}
-          <div className="flex flex-col items-center mb-[65px]">
-            <h1
-              className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
-              style={{ fontFamily: "var(--font-noto-sans-jp)" }}
-            >
-              施工事例
-            </h1>
-            <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3" />
-          </div>
+          <PageHeading
+            label="WORKS"
+            title="施工事例"
+            titleFont="var(--font-noto-sans-jp)"
+          />
 
           {/* 3-column grid */}
           <div className="grid grid-cols-3 gap-[32px]">

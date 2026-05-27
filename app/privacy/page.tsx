@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import PageHeading from "@/components/ui/PageHeading";
 
 const sections = [
   {
@@ -44,23 +45,11 @@ export default function PrivacyPage() {
       <main className="bg-[#fcfaf2] pt-[100px]">
         <div className="max-w-[1440px] mx-auto px-[170px] pt-[125px] pb-[120px]">
 
-          {/* Label */}
-          <p
-            className="text-center text-[20px] text-[#2f7d4e] tracking-[3.6px] uppercase leading-[24px] mb-[24px]"
-            style={{ fontFamily: "var(--font-inter)" }}
+          <PageHeading
+            label="Privacy Policy"
+            title="プライバシーポリシー"
+            dividerClassName="w-[40px] h-[2px] bg-[#2f7d4e] mt-3 mb-[40px]"
           >
-            Privacy Policy
-          </p>
-
-          {/* Heading */}
-          <div className="flex flex-col items-center mb-[65px]">
-            <h1
-              className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
-              style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
-            >
-              プライバシーポリシー
-            </h1>
-            <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3 mb-[40px]" />
             <p
               className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] text-center"
               style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
@@ -68,7 +57,7 @@ export default function PrivacyPage() {
               五福石材（以下「当社」）は、お客様の個人情報の保護を重要な責務と認識し、<br />
               以下のとおりプライバシーポリシーを定めます。
             </p>
-          </div>
+          </PageHeading>
 
           {/* Content card */}
           <div className="bg-white rounded-[30px] px-[80px] py-[64px]">

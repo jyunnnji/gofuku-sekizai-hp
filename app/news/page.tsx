@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { newsItems } from "@/lib/newsData";
+import PageHeading from "@/components/ui/PageHeading";
 
 function ArrowIcon() {
   return (
@@ -18,24 +19,7 @@ export default function NewsListPage() {
       <main className="bg-[#fcfaf2] pt-[100px]">
         <div className="max-w-[1440px] mx-auto px-[170px] pt-[125px] pb-[120px]">
 
-          {/* NEWS label */}
-          <p
-            className="text-center text-[20px] text-[#2f7d4e] tracking-[3.6px] uppercase leading-[24px] mb-[24px]"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
-            NEWS
-          </p>
-
-          {/* Heading */}
-          <div className="flex flex-col items-center mb-[65px]">
-            <h1
-              className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
-              style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
-            >
-              お知らせ
-            </h1>
-            <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3" />
-          </div>
+          <PageHeading label="NEWS" title="お知らせ" />
 
           {/* News list card */}
           <div className="bg-white rounded-[30px] overflow-hidden pt-[76px] pb-[76px]">
