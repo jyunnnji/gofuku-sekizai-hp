@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const imgPhone =
   "https://www.figma.com/api/mcp/asset/2e464737-6571-4b9b-bebe-7964fc69ec33";
@@ -10,17 +10,24 @@ export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [showPhoneDialog, setShowPhoneDialog] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navHref = (hash: string) => isHome ? hash : `/${hash}`;
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     /* 外枠: 100px 固定ヘッダー。ロゴ(194px)・電話(150px)は absolute で下にはみ出す */
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-white"
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-transparent" : "bg-white"}`}
       style={{ height: "100px" }}
     >
       {/* ロゴセクション: absolute, h-194px, 左上起点 */}
       <div
-        className="absolute top-0 left-0 bg-white flex flex-col items-center justify-center px-[52px] rounded-br-[70px]"
+        className={`absolute top-0 left-0 bg-white flex flex-col items-center justify-center px-[52px] rounded-br-[70px] transition-opacity duration-300 ${scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         style={{
           width: "338px",
           height: "194px",
@@ -89,7 +96,7 @@ export default function Header() {
 
       {/* ナビエリア: ロゴ右ボーダーをヘッダー内で隠すためleft:337pxにしbg-whiteで上書き */}
       <nav
-        className="flex items-center justify-center bg-white"
+        className={`flex items-center justify-center bg-white transition-opacity duration-300 ${scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         style={{
           position: "absolute",
           top: 0,
