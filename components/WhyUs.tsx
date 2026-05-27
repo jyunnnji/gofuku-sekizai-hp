@@ -1,26 +1,16 @@
 import FadeUp from "@/components/ui/FadeUp";
 
-const imgEllipse1 =
-  "https://www.figma.com/api/mcp/asset/554403ee-c83f-434f-a706-cff21a5f6d3d";
-const imgEllipse2 =
-  "https://www.figma.com/api/mcp/asset/43498684-25e2-4f00-9b94-9cab14f096d2";
-const img01 =
-  "https://www.figma.com/api/mcp/asset/f036a18a-cefb-456c-a0e5-91175f77823b";
-const img02 =
-  "https://www.figma.com/api/mcp/asset/239d4896-818a-4d28-a226-029757b55238";
-const img03 =
-  "https://www.figma.com/api/mcp/asset/46c6a949-080f-43af-80de-48f232e91665";
-const img04 =
-  "https://www.figma.com/api/mcp/asset/9c68a4bf-5488-4e08-bd27-f4ca3c64630a";
-const img05 =
-  "https://www.figma.com/api/mcp/asset/80808cd3-995c-4c81-85b3-d91465cabfc4";
-const img06 =
-  "https://www.figma.com/api/mcp/asset/3762980d-61a2-4cd2-b213-ad522374321b";
+const imgEllipse1 = "/whyus-ellipse1.svg";
+const imgEllipse2 = "/whyus-ellipse2.svg";
+const img01 = "/whyus-01.png";
+const img02 = "/whyus-02.png";
+const img03 = "/whyus-03.png";
+const img04 = "/whyus-04.png";
+const img05 = "/whyus-05.png";
+const img06 = "/whyus-06.png";
 // Vector1 = left-side arrows (col1→col2), Vector = right-side arrows (col2→col3)
-const imgVector1 =
-  "https://www.figma.com/api/mcp/asset/e5a3610f-a42d-438c-9873-55b007f35989";
-const imgVector =
-  "https://www.figma.com/api/mcp/asset/fb14cb8a-756a-4f44-9367-ba46a6bf484a";
+const imgVector1 = "/whyus-vector1.svg";
+const imgVector  = "/whyus-vector2.svg";
 
 const steps = [
   {

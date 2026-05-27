@@ -1,8 +1,7 @@
 import Link from "next/link";
 import FadeUp from "@/components/ui/FadeUp";
 
-const pricingIcon =
-  "https://www.figma.com/api/mcp/asset/0ca3db93-4b08-4511-9d6d-85d075936acb";
+const pricingIcon = "/pricing-icon.png";
 
 export default function Pricing() {
   return (

@@ -3,8 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
-const imgPhone =
-  "https://www.figma.com/api/mcp/asset/2e464737-6571-4b9b-bebe-7964fc69ec33";
+const imgPhone = "/phone-icon.svg";
 
 export default function Header() {
   const pathname = usePathname();

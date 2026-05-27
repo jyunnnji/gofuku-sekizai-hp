@@ -1,11 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 
-// 画像URLはFigma CDNから取得（7日間有効）。本番運用前にpublic/へ移行すること
-const imgRight =
-  "https://www.figma.com/api/mcp/asset/83ae37f1-3c3c-4ba8-a00d-71ca5a89142f";
-const imgLeft =
-  "https://www.figma.com/api/mcp/asset/6805e1cd-c0e9-48b7-9914-0dacf7fdc26f";
+const imgRight = "/about-right.png";
+const imgLeft = "/about-left.png";
 
 export default function About() {
   return (

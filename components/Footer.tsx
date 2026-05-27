@@ -1,8 +1,7 @@
 import Link from "next/link";
 import FadeUp from "@/components/ui/FadeUp";
 
-const footerBg =
-  "https://www.figma.com/api/mcp/asset/0863ccda-92e0-400e-8c26-64eee603d92a";
+const footerBg = "/footer-bg.png";
 
 export default function Footer() {
   return (

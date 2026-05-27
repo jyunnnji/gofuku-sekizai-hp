@@ -1,14 +1,9 @@
 import Link from "next/link";
 import FadeUp from "@/components/ui/FadeUp";
 
-// 1261:58 — Before image (ChatGPT_Image removebg)
-const imgBefore =
-  "https://www.figma.com/api/mcp/asset/42d32aa1-fab3-44e6-b4b9-41e6c3c0f264";
-// 1261:62 — After image (IMG_3663 removebg)
-const imgAfter =
-  "https://www.figma.com/api/mcp/asset/df6689f6-07c2-4ba3-a29e-1910a7ac6f76";
-const imgButtonArrow =
-  "https://www.figma.com/api/mcp/asset/fc8d1aa9-6663-481b-8e15-fab4420fa50e";
+const imgBefore      = "/works-before.png";
+const imgAfter       = "/works-after.png";
+const imgButtonArrow = "/works-button-arrow.svg";
 
 function CenterArrow() {
   return (
