@@ -20,6 +20,47 @@ const RequiredBadge = () => (
   </span>
 );
 
+type Errors = {
+  name?: string;
+  phone?: string;
+  email?: string;
+  message?: string;
+  agreed?: string;
+};
+
+function validate(name: string, phone: string, email: string, message: string, agreed: boolean): Errors {
+  const errors: Errors = {};
+
+  if (!name.trim()) {
+    errors.name = "お名前を入力してください";
+  }
+
+  if (phone.trim()) {
+    const digitsOnly = phone.replace(/[\-\(\)\s]/g, "");
+    if (!/^[\d\-\(\)\s]+$/.test(phone) || !/^\d+$/.test(digitsOnly)) {
+      errors.phone = "電話番号の形式が正しくありません（例：090-1234-5678）";
+    } else if (digitsOnly.length < 10 || digitsOnly.length > 11) {
+      errors.phone = "電話番号の形式が正しくありません（例：090-1234-5678）";
+    }
+  }
+
+  if (!email.trim()) {
+    errors.email = "メールアドレスを入力してください";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errors.email = "正しいメールアドレスを入力してください";
+  }
+
+  if (!message.trim()) {
+    errors.message = "お問い合わせ内容を入力してください";
+  }
+
+  if (!agreed) {
+    errors.agreed = "プライバシーポリシーへの同意が必要です";
+  }
+
+  return errors;
+}
+
 export default function ContactPage() {
   const [step, setStep] = useState<Step>("form");
   const [name, setName] = useState("");
@@ -28,9 +69,16 @@ export default function ContactPage() {
   const [category, setCategory] = useState("");
   const [message, setMessage] = useState("");
   const [agreed, setAgreed] = useState(false);
+  const [errors, setErrors] = useState<Errors>({});
 
   const handleToConfirm = (e: React.FormEvent) => {
     e.preventDefault();
+    const errs = validate(name, phone, email, message, agreed);
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs);
+      return;
+    }
+    setErrors({});
     setStep("confirm");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -124,12 +172,12 @@ export default function ContactPage() {
                     <input
                       type="text"
                       value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={(e) => { setName(e.target.value); setErrors((p) => ({ ...p, name: undefined })); }}
                       placeholder="例）山田 太郎"
-                      required
-                      className="w-full h-[54px] border border-[#d9d9d9] rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#444444] focus:outline-none focus:border-[#2f7d4e]"
+                      className={`w-full h-[54px] border rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#444444] focus:outline-none ${errors.name ? "border-[#f55555] focus:border-[#f55555]" : "border-[#d9d9d9] focus:border-[#2f7d4e]"}`}
                       style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                     />
+                    {errors.name && <p className="mt-[6px] text-[13px] text-[#f55555]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>{errors.name}</p>}
                   </div>
 
                   {/* 電話番号 */}
@@ -138,11 +186,12 @@ export default function ContactPage() {
                     <input
                       type="tel"
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      onChange={(e) => { setPhone(e.target.value); setErrors((p) => ({ ...p, phone: undefined })); }}
                       placeholder="例）090-0000-0000"
-                      className="w-full h-[54px] border border-[#d9d9d9] rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#444444] focus:outline-none focus:border-[#2f7d4e]"
+                      className={`w-full h-[54px] border rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#444444] focus:outline-none ${errors.phone ? "border-[#f55555] focus:border-[#f55555]" : "border-[#d9d9d9] focus:border-[#2f7d4e]"}`}
                       style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                     />
+                    {errors.phone && <p className="mt-[6px] text-[13px] text-[#f55555]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>{errors.phone}</p>}
                   </div>
 
                   {/* メールアドレス */}
@@ -152,14 +201,14 @@ export default function ContactPage() {
                       <RequiredBadge />
                     </div>
                     <input
-                      type="email"
+                      type="text"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e) => { setEmail(e.target.value); setErrors((p) => ({ ...p, email: undefined })); }}
                       placeholder="例）info@example.com"
-                      required
-                      className="w-full h-[54px] border border-[#d9d9d9] rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#444444] focus:outline-none focus:border-[#2f7d4e]"
+                      className={`w-full h-[54px] border rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#444444] focus:outline-none ${errors.email ? "border-[#f55555] focus:border-[#f55555]" : "border-[#d9d9d9] focus:border-[#2f7d4e]"}`}
                       style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                     />
+                    {errors.email && <p className="mt-[6px] text-[13px] text-[#f55555]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>{errors.email}</p>}
                   </div>
 
                   {/* お問い合わせ種別 */}
@@ -194,13 +243,13 @@ export default function ContactPage() {
                     </div>
                     <textarea
                       value={message}
-                      onChange={(e) => setMessage(e.target.value)}
+                      onChange={(e) => { setMessage(e.target.value); setErrors((p) => ({ ...p, message: undefined })); }}
                       placeholder="お問い合わせ内容をご記入ください"
                       rows={7}
-                      required
-                      className="w-full border border-[#d9d9d9] rounded-[10px] px-[16px] py-[14px] text-[18px] text-[#2c2c2c] placeholder-[#444444] resize-none focus:outline-none focus:border-[#2f7d4e]"
+                      className={`w-full border rounded-[10px] px-[16px] py-[14px] text-[18px] text-[#2c2c2c] placeholder-[#444444] resize-none focus:outline-none ${errors.message ? "border-[#f55555] focus:border-[#f55555]" : "border-[#d9d9d9] focus:border-[#2f7d4e]"}`}
                       style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                     />
+                    {errors.message && <p className="mt-[6px] text-[13px] text-[#f55555]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>{errors.message}</p>}
                   </div>
 
                   {/* プライバシーポリシー */}
@@ -210,8 +259,7 @@ export default function ContactPage() {
                         type="checkbox"
                         id="privacy"
                         checked={agreed}
-                        onChange={(e) => setAgreed(e.target.checked)}
-                        required
+                        onChange={(e) => { setAgreed(e.target.checked); setErrors((p) => ({ ...p, agreed: undefined })); }}
                         className="w-[18px] h-[18px] border border-[#767676] rounded-[2.5px] accent-[#2f7d4e] cursor-pointer"
                       />
                       <label htmlFor="privacy" className="text-[16px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] cursor-pointer" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
@@ -221,6 +269,7 @@ export default function ContactPage() {
                     <Link href="/privacy" className="text-[14px] text-[#2f7d4e] underline hover:text-[#235e3a] transition-colors tracking-[0.8px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
                       プライバシーポリシーについてはこちら
                     </Link>
+                    {errors.agreed && <p className="mt-[6px] text-[13px] text-[#f55555] text-center" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>{errors.agreed}</p>}
                   </div>
 
                   {/* 確認画面へボタン */}
