@@ -135,7 +135,7 @@ export default function WorksListPage() {
               <button
                 key={item.id}
                 onClick={() => setSelected(item)}
-                className="bg-white rounded-[24px] overflow-hidden flex flex-col text-left hover:shadow-lg transition-shadow cursor-pointer"
+                className="bg-white rounded-[24px] overflow-hidden flex flex-col text-left hover:shadow-lg hover:scale-[1.03] transition-[transform,box-shadow] duration-300 ease-out cursor-pointer"
               >
                 {/* Placeholder */}
                 <div className="w-full h-[200px] bg-[#d9d9d9]" />
