@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.figma.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.microcms-assets.io",
+      },
     ],
   },
 };

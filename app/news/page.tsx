@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { newsItems } from "@/lib/newsData";
+import { getNewsList, formatDate } from "@/lib/microcms";
 import PageHeading from "@/components/ui/PageHeading";
 
 function ArrowIcon() {
@@ -12,7 +12,9 @@ function ArrowIcon() {
   );
 }
 
-export default function NewsListPage() {
+export default async function NewsListPage() {
+  const { contents: newsItems } = await getNewsList({ limit: 100, orders: "-date" });
+
   return (
     <>
       <Header />
@@ -24,9 +26,9 @@ export default function NewsListPage() {
           {/* News list card */}
           <div className="bg-white rounded-[30px] overflow-hidden pt-[76px] pb-[76px]">
             {newsItems.map((item, i) => (
-              <div key={item.slug} className="flex pl-[176px] pr-[174px]">
+              <div key={item.id} className="flex pl-[176px] pr-[174px]">
                 <Link
-                  href={`/news/${item.slug}`}
+                  href={`/news/${item.id}`}
                   className={`group flex items-center w-full h-[97px] border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors mx-[-30px] px-[30px] ${
                     i === 0 ? "border-t border-b" : "border-b"
                   }`}
@@ -36,7 +38,7 @@ export default function NewsListPage() {
                     className="text-[15px] text-[#444444] tracking-[1.3px] leading-[26px] whitespace-nowrap w-[102px] shrink-0"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
-                    {item.date}
+                    {formatDate(item.date)}
                   </span>
 
                   {/* Category badge */}
@@ -45,7 +47,7 @@ export default function NewsListPage() {
                       className="text-[13px] text-black tracking-[1.1px] leading-[22px]"
                       style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                     >
-                      {item.category}
+                      {item.category[0]}
                     </span>
                   </span>
 
@@ -84,7 +86,6 @@ export default function NewsListPage() {
       </main>
       <Footer />
 
-      {/* Back to top button */}
       <Link
         href="#top"
         className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"

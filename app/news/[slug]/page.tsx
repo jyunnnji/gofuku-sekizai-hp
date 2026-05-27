@@ -2,19 +2,20 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { newsItems, getNewsItem } from "@/lib/newsData";
+import { getNewsDetail, getNewsList, formatDate } from "@/lib/microcms";
 import PageHeading from "@/components/ui/PageHeading";
 
-export function generateStaticParams() {
-  return newsItems.map((item) => ({ slug: item.slug }));
+export async function generateStaticParams() {
+  const { contents } = await getNewsList({ limit: 100, fields: ["id"] });
+  return contents.map((item) => ({ slug: item.id }));
 }
 
-export default function NewsDetailPage({
+export default async function NewsDetailPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const item = getNewsItem(params.slug);
+  const item = await getNewsDetail(params.slug).catch(() => null);
   if (!item) notFound();
 
   return (
@@ -34,14 +35,14 @@ export default function NewsDetailPage({
                 className="text-[15px] text-[#444444] tracking-[1.3px] leading-[26px]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
-                {item.date}
+                {formatDate(item.date)}
               </span>
               <span className="bg-[#edc920] border border-black rounded-full h-[28px] w-[77px] flex items-center justify-center shrink-0">
                 <span
                   className="text-[13px] text-black tracking-[1.1px] leading-[22px]"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                 >
-                  {item.category}
+                  {item.category[0]}
                 </span>
               </span>
             </div>
@@ -59,7 +60,7 @@ export default function NewsDetailPage({
               className="text-[17px] text-[#2c2c2c] tracking-[0.8px] leading-[36px] whitespace-pre-wrap"
               style={{ fontFamily: "var(--font-noto-sans-jp)" }}
             >
-              {item.body}
+              {item.excerpt}
             </p>
 
           </div>
@@ -67,7 +68,7 @@ export default function NewsDetailPage({
           {/* Back link */}
           <div className="flex justify-center mt-[48px]">
             <Link
-              href="/#news"
+              href="/news"
               className="inline-flex items-center gap-[10px] text-[16px] text-[#2f7d4e] hover:text-[#235e3a] tracking-[0.8px] transition-colors"
               style={{ fontFamily: "var(--font-noto-sans-jp)" }}
             >
@@ -82,7 +83,6 @@ export default function NewsDetailPage({
       </main>
       <Footer />
 
-      {/* Back to top */}
       <Link
         href="#top"
         className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
