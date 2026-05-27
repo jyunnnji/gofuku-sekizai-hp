@@ -55,7 +55,7 @@ export default function News() {
               >
                 {/* Date — left=0, w=102px */}
                 <span
-                  className="text-[15px] text-[#6b6b6b] tracking-[1.3px] leading-[26px] whitespace-nowrap w-[102px] shrink-0"
+                  className="text-[15px] text-[#444444] tracking-[1.3px] leading-[26px] whitespace-nowrap w-[102px] shrink-0"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {item.date}

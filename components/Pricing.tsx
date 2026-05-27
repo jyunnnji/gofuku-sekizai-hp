@@ -100,7 +100,7 @@ export default function Pricing() {
 
             {/* Disclaimer: w=438 h=22, left=2 center_y=95 → card left=43, top=122 */}
             <p
-              className="absolute text-[13px] text-[#6b6b6b] tracking-[0.787px] leading-[22.82px] whitespace-nowrap"
+              className="absolute text-[13px] text-[#444444] tracking-[0.787px] leading-[22.82px] whitespace-nowrap"
               style={{
                 top: 122,
                 left: 43,

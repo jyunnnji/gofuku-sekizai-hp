@@ -40,34 +40,34 @@ export default function SideMenu() {
         <div className="relative" style={{ width: "30px", height: "18px" }}>
           {/* top line left piece */}
           <div
-            className="absolute bg-[#222] rounded-[1px]"
+            className="absolute bg-[#1a1a1a] rounded-[1px]"
             style={{ left: 0, width: "12px", top: 0, height: "2px" }}
           />
           {/* top line right piece */}
           <div
-            className="absolute bg-[#222] rounded-[1px]"
+            className="absolute bg-[#1a1a1a] rounded-[1px]"
             style={{ left: "16px", right: 0, top: 0, height: "2px" }}
           />
           {/* middle full line */}
           <div
-            className="absolute bg-[#222] rounded-[1px]"
+            className="absolute bg-[#1a1a1a] rounded-[1px]"
             style={{ left: 0, right: 0, top: "8px", height: "2px" }}
           />
           {/* bottom line left piece */}
           <div
-            className="absolute bg-[#222] rounded-[1px]"
+            className="absolute bg-[#1a1a1a] rounded-[1px]"
             style={{ left: 0, width: "18px", top: "16px", height: "2px" }}
           />
           {/* bottom line right piece */}
           <div
-            className="absolute bg-[#222] rounded-[1px]"
+            className="absolute bg-[#1a1a1a] rounded-[1px]"
             style={{ left: "22px", right: 0, top: "16px", height: "2px" }}
           />
         </div>
 
         {/* "MENU OPEN" text — vertical writing mode */}
         <span
-          className="text-[11px] font-medium tracking-[1.6px] uppercase text-[#222]"
+          className="text-[11px] font-medium tracking-[1.6px] uppercase text-[#1a1a1a]"
           style={{ fontFamily: "var(--font-inter)", writingMode: "vertical-rl", textOrientation: "mixed" }}
         >
           Menu Open
@@ -190,7 +190,7 @@ export default function SideMenu() {
         {/* Footer — phone contact */}
         <div className="px-10 pt-6 pb-10 border-t border-[#e8e8e8]">
           <p
-            className="text-[12px] text-[#6b6b6b] tracking-[0.8px] mb-4"
+            className="text-[12px] text-[#444444] tracking-[0.8px] mb-4"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
           >
             受付時間：9:00〜17:00（不定休）

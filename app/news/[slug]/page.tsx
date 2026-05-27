@@ -47,7 +47,7 @@ export default function NewsDetailPage({
             {/* Meta */}
             <div className="flex items-center gap-[16px] mb-[32px]">
               <span
-                className="text-[15px] text-[#6b6b6b] tracking-[1.3px] leading-[26px]"
+                className="text-[15px] text-[#444444] tracking-[1.3px] leading-[26px]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 {item.date}

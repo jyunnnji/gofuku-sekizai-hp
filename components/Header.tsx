@@ -249,7 +249,7 @@ export default function Header() {
                 className="flex items-center gap-[16px] px-[24px] h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group"
               >
                 <span
-                  className="w-[48px] shrink-0 text-[14px] font-medium text-[#6b6b6b] tracking-[1px]"
+                  className="w-[48px] shrink-0 text-[14px] font-medium text-[#444444] tracking-[1px]"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                 >
                   携帯
@@ -267,7 +267,7 @@ export default function Header() {
                 className="flex items-center gap-[16px] px-[24px] h-[72px] bg-[#fcfaf2] rounded-[12px] hover:bg-[#edf7f1] transition-colors group"
               >
                 <span
-                  className="w-[48px] shrink-0 text-[14px] font-medium text-[#6b6b6b] tracking-[1px]"
+                  className="w-[48px] shrink-0 text-[14px] font-medium text-[#444444] tracking-[1px]"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                 >
                   固定
@@ -285,7 +285,7 @@ export default function Header() {
             {/* フッター */}
             <div className="px-[40px] pb-[28px]">
               <p
-                className="text-center text-[13px] text-[#6b6b6b] tracking-[0.8px] py-[16px] border-t border-[#e8e8e8]"
+                className="text-center text-[13px] text-[#444444] tracking-[0.8px] py-[16px] border-t border-[#e8e8e8]"
                 style={{ fontFamily: "var(--font-noto-sans-jp)" }}
               >
                 受付時間：9:00〜17:00（不定休）

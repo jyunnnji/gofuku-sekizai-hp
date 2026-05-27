@@ -40,7 +40,7 @@ function WorksModal({ item, onClose }: { item: WorkItem; onClose: () => void }) 
             {item.category}
           </span>
           <span
-            className="text-[13px] text-[#6b6b6b] tracking-[0.8px]"
+            className="text-[13px] text-[#444444] tracking-[0.8px]"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
           >
             {item.location}
@@ -151,7 +151,7 @@ export default function WorksListPage() {
                       {item.category}
                     </span>
                     <span
-                      className="text-[13px] text-[#6b6b6b] tracking-[0.8px]"
+                      className="text-[13px] text-[#444444] tracking-[0.8px]"
                       style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                     >
                       {item.location}
@@ -168,7 +168,7 @@ export default function WorksListPage() {
 
                   {/* Description */}
                   <p
-                    className="text-[14px] text-[#6b6b6b] tracking-[0.6px] leading-[24px] flex-1"
+                    className="text-[14px] text-[#444444] tracking-[0.6px] leading-[24px] flex-1"
                     style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                   >
                     {item.description}

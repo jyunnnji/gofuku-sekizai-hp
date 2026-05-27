@@ -92,7 +92,7 @@ export default function PrivacyPage() {
             </div>
 
             <p
-              className="text-[14px] text-[#6b6b6b] tracking-[0.8px] leading-[26px] text-right mt-[64px]"
+              className="text-[14px] text-[#444444] tracking-[0.8px] leading-[26px] text-right mt-[64px]"
               style={{ fontFamily: "var(--font-noto-sans-jp)" }}
             >
               制定日：2026年1月1日

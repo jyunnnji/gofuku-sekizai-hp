@@ -91,7 +91,7 @@ export default function ContactPage() {
                   お電話でのお問い合わせ
                 </p>
                 <p
-                  className="text-center text-[15px] text-[#6b6b6b] tracking-[2.4px] leading-[24px] mb-[26px] whitespace-nowrap"
+                  className="text-center text-[15px] text-[#444444] tracking-[2.4px] leading-[24px] mb-[26px] whitespace-nowrap"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                 >
                   施工で外出していることが多いため、ご連絡は携帯電話までお願いいたします。
@@ -137,7 +137,7 @@ export default function ContactPage() {
                       onChange={(e) => setName(e.target.value)}
                       placeholder="例）山田 太郎"
                       required
-                      className="w-full h-[54px] border border-[#d9d9d9] rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#757575] focus:outline-none focus:border-[#2f7d4e]"
+                      className="w-full h-[54px] border border-[#d9d9d9] rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#444444] focus:outline-none focus:border-[#2f7d4e]"
                       style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                     />
                   </div>
@@ -150,7 +150,7 @@ export default function ContactPage() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="例）090-0000-0000"
-                      className="w-full h-[54px] border border-[#d9d9d9] rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#757575] focus:outline-none focus:border-[#2f7d4e]"
+                      className="w-full h-[54px] border border-[#d9d9d9] rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#444444] focus:outline-none focus:border-[#2f7d4e]"
                       style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                     />
                   </div>
@@ -167,7 +167,7 @@ export default function ContactPage() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="例）info@example.com"
                       required
-                      className="w-full h-[54px] border border-[#d9d9d9] rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#757575] focus:outline-none focus:border-[#2f7d4e]"
+                      className="w-full h-[54px] border border-[#d9d9d9] rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#444444] focus:outline-none focus:border-[#2f7d4e]"
                       style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                     />
                   </div>
@@ -208,7 +208,7 @@ export default function ContactPage() {
                       placeholder="お問い合わせ内容をご記入ください"
                       rows={7}
                       required
-                      className="w-full border border-[#d9d9d9] rounded-[10px] px-[16px] py-[14px] text-[18px] text-[#2c2c2c] placeholder-[#757575] resize-none focus:outline-none focus:border-[#2f7d4e]"
+                      className="w-full border border-[#d9d9d9] rounded-[10px] px-[16px] py-[14px] text-[18px] text-[#2c2c2c] placeholder-[#444444] resize-none focus:outline-none focus:border-[#2f7d4e]"
                       style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                     />
                   </div>
@@ -278,7 +278,7 @@ export default function ContactPage() {
                   入力内容のご確認
                 </h2>
                 <p
-                  className="text-center text-[15px] text-[#6b6b6b] tracking-[0.8px] leading-[26px] mb-[48px]"
+                  className="text-center text-[15px] text-[#444444] tracking-[0.8px] leading-[26px] mb-[48px]"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                 >
                   以下の内容でよろしければ「送信する」を押してください。
@@ -317,7 +317,7 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={handleBack}
-                    className="w-[220px] h-[59px] bg-white border border-[#d9d9d9] rounded-full text-[18px] font-medium text-[#6b6b6b] tracking-[1.5px] hover:border-[#2f7d4e] hover:text-[#2f7d4e] transition-colors relative flex items-center justify-center"
+                    className="w-[220px] h-[59px] bg-white border border-[#d9d9d9] rounded-full text-[18px] font-medium text-[#444444] tracking-[1.5px] hover:border-[#2f7d4e] hover:text-[#2f7d4e] transition-colors relative flex items-center justify-center"
                     style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                   >
                     <svg className="absolute left-[20px]" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -359,7 +359,7 @@ export default function ContactPage() {
                   送信が完了しました
                 </h2>
                 <p
-                  className="text-[16px] text-[#6b6b6b] tracking-[0.8px] leading-[32px] text-center mb-[48px]"
+                  className="text-[16px] text-[#444444] tracking-[0.8px] leading-[32px] text-center mb-[48px]"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                 >
                   お問い合わせいただきありがとうございます。<br />

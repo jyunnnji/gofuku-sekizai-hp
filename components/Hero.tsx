@@ -65,7 +65,7 @@ export default function Hero() {
 
         {/* Region label (1278:639) — center at (330px, 44.5px) */}
         <p
-          className="absolute text-[24px] font-medium text-[#222] text-center whitespace-nowrap"
+          className="absolute text-[24px] font-medium text-[#1a1a1a] text-center whitespace-nowrap"
           style={{
             left: "330px",
             top: "44.5px",
