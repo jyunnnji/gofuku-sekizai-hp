@@ -20,6 +20,28 @@ const RequiredBadge = () => (
   </span>
 );
 
+function formatPhone(value: string): string {
+  const digits = value.replace(/\D/g, "").slice(0, 11);
+  const len = digits.length;
+  if (len <= 2) return digits;
+
+  if (/^(090|080|070|050)/.test(digits)) {
+    // 3-4-4（携帯・IP電話）
+    if (len <= 3) return digits;
+    if (len <= 7) return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+    return `${digits.slice(0, 3)}-${digits.slice(3, 7)}-${digits.slice(7)}`;
+  }
+  if (/^(03|06)/.test(digits)) {
+    // 2-4-4（東京・大阪など）
+    if (len <= 6) return `${digits.slice(0, 2)}-${digits.slice(2)}`;
+    return `${digits.slice(0, 2)}-${digits.slice(2, 6)}-${digits.slice(6)}`;
+  }
+  // 3-3-4（その他市外局番）
+  if (len <= 3) return digits;
+  if (len <= 6) return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+  return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
 type Errors = {
   name?: string;
   phone?: string;
@@ -38,9 +60,9 @@ function validate(name: string, phone: string, email: string, message: string, a
   if (phone.trim()) {
     const digitsOnly = phone.replace(/[\-\(\)\s]/g, "");
     if (!/^[\d\-\(\)\s]+$/.test(phone) || !/^\d+$/.test(digitsOnly)) {
-      errors.phone = "電話番号の形式が正しくありません（例：090-1234-5678）";
+      errors.phone = "電話番号の形式が正しくありません（例：090-0000-0000）";
     } else if (digitsOnly.length < 10 || digitsOnly.length > 11) {
-      errors.phone = "電話番号の形式が正しくありません（例：090-1234-5678）";
+      errors.phone = "電話番号の形式が正しくありません（例：090-0000-0000）";
     }
   }
 
@@ -186,7 +208,7 @@ export default function ContactPage() {
                     <input
                       type="tel"
                       value={phone}
-                      onChange={(e) => { setPhone(e.target.value); setErrors((p) => ({ ...p, phone: undefined })); }}
+                      onChange={(e) => { setPhone(formatPhone(e.target.value)); setErrors((p) => ({ ...p, phone: undefined })); }}
                       placeholder="例）090-0000-0000"
                       className={`w-full h-[54px] border rounded-[10px] px-[16px] text-[18px] text-[#2c2c2c] placeholder-[#444444] focus:outline-none ${errors.phone ? "border-[#f55555] focus:border-[#f55555]" : "border-[#d9d9d9] focus:border-[#2f7d4e]"}`}
                       style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
