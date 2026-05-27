@@ -12,11 +12,16 @@ export async function generateStaticParams() {
 
 export default async function NewsDetailPage({
   params,
+  searchParams,
 }: {
   params: { slug: string };
+  searchParams: { from?: string };
 }) {
   const item = await getNewsDetail(params.slug).catch(() => null);
   if (!item) notFound();
+
+  const backHref = searchParams.from === "top" ? "/#news" : "/news";
+  const backLabel = searchParams.from === "top" ? "トップページへ戻る" : "お知らせ一覧へ戻る";
 
   return (
     <>
@@ -68,14 +73,14 @@ export default async function NewsDetailPage({
           {/* Back link */}
           <div className="flex justify-center mt-[48px]">
             <Link
-              href="/news"
+              href={backHref}
               className="inline-flex items-center gap-[10px] text-[16px] text-[#2f7d4e] hover:text-[#235e3a] tracking-[0.8px] transition-colors"
               style={{ fontFamily: "var(--font-noto-sans-jp)" }}
             >
               <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
                 <path d="M7 1L2 6L7 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              お知らせ一覧へ戻る
+              {backLabel}
             </Link>
           </div>
 

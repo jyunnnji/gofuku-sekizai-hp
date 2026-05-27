@@ -39,11 +39,11 @@ export default async function News() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-        <div className="bg-white rounded-[30px] overflow-hidden h-[433px] pt-[76px]">
+        <div className="bg-white rounded-[30px] overflow-hidden pt-[76px] pb-[76px]">
           {newsItems.map((item, i) => (
             <div key={item.id} className="flex pl-[176px] pr-[174px]">
               <Link
-                href={`/news/${item.id}`}
+                href={`/news/${item.id}?from=top`}
                 className={`group flex items-center w-full h-[97px] border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors mx-[-30px] px-[30px] ${
                   i === 0 ? "border-t border-b" : "border-b"
                 }`}
