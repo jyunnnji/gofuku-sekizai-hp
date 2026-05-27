@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
-const imgPhone = "/phone-icon.svg";
+const imgPhone = "/icons/phone-icon.svg";
 
 export default function Header() {
   const pathname = usePathname();

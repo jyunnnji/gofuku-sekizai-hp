@@ -57,7 +57,7 @@ export default function Hero() {
         transition={{ duration: 1.4, ease: "easeOut" }}
       >
         <Image
-          src="/hero-bg.png"
+          src="/images/hero/hero-bg.png"
           alt="五福石材 墓石クリーニング"
           fill
           className="object-cover"
@@ -108,7 +108,7 @@ export default function Hero() {
           animate={animReady ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.45 }}
         >
-          <Image src="/hero-divider-line.svg" alt="" fill />
+          <Image src="/images/hero/hero-divider-line.svg" alt="" fill />
         </motion.div>
 
         {/* Title 1 container (1279:648) — w-[609px] h-[67px] */}

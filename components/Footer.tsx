@@ -1,7 +1,7 @@
 import Link from "next/link";
 import FadeUp from "@/components/ui/FadeUp";
 
-const footerBg = "/footer-bg.png";
+const footerBg = "/images/footer/footer-bg.png";
 
 export default function Footer() {
   return (

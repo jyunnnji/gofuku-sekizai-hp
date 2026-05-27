@@ -1,7 +1,7 @@
 import Link from "next/link";
 import FadeUp from "@/components/ui/FadeUp";
 
-const pricingIcon = "/pricing-icon.png";
+const pricingIcon = "/images/pricing/pricing-icon.png";
 
 export default function Pricing() {
   return (

@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 
 // Figma CDN URLs（7日間有効。本番前にpublic/へ移行すること）
-const imgBg     = "/services-bg.png";
-const imgMask   = "/services-mask.svg";
-const imgGrave  = "/services-grave.png";
-const imgGarden = "/services-garden.png";
+const imgBg     = "/images/services/services-bg.png";
+const imgMask   = "/images/services/services-mask.svg";
+const imgGrave  = "/images/services/services-grave.png";
+const imgGarden = "/images/services/services-garden.png";
 
 const greenUnderline = "linear-gradient(to bottom, rgba(70,147,97,0) 50%, rgba(70,147,97,0.4) 50%)";
 

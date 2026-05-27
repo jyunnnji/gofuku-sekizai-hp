@@ -1,8 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 
-const imgRight = "/about-right.png";
-const imgLeft = "/about-left.png";
+const imgRight = "/images/about/about-right.png";
+const imgLeft = "/images/about/about-left.png";
 
 export default function About() {
   return (

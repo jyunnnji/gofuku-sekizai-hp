@@ -1,9 +1,9 @@
 import Link from "next/link";
 import FadeUp from "@/components/ui/FadeUp";
 
-const imgBefore      = "/works-before.png";
-const imgAfter       = "/works-after.png";
-const imgButtonArrow = "/works-button-arrow.svg";
+const imgBefore      = "/images/works/works-before.png";
+const imgAfter       = "/images/works/works-after.png";
+const imgButtonArrow = "/images/works/works-button-arrow.svg";
 
 function CenterArrow() {
   return (

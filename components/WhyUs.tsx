@@ -1,16 +1,16 @@
 import FadeUp from "@/components/ui/FadeUp";
 
-const imgEllipse1 = "/whyus-ellipse1.svg";
-const imgEllipse2 = "/whyus-ellipse2.svg";
-const img01 = "/whyus-01.png";
-const img02 = "/whyus-02.png";
-const img03 = "/whyus-03.png";
-const img04 = "/whyus-04.png";
-const img05 = "/whyus-05.png";
-const img06 = "/whyus-06.png";
+const imgEllipse1 = "/images/whyus/whyus-ellipse1.svg";
+const imgEllipse2 = "/images/whyus/whyus-ellipse2.svg";
+const img01 = "/images/whyus/whyus-01.png";
+const img02 = "/images/whyus/whyus-02.png";
+const img03 = "/images/whyus/whyus-03.png";
+const img04 = "/images/whyus/whyus-04.png";
+const img05 = "/images/whyus/whyus-05.png";
+const img06 = "/images/whyus/whyus-06.png";
 // Vector1 = left-side arrows (col1→col2), Vector = right-side arrows (col2→col3)
-const imgVector1 = "/whyus-vector1.svg";
-const imgVector  = "/whyus-vector2.svg";
+const imgVector1 = "/images/whyus/whyus-vector1.svg";
+const imgVector  = "/images/whyus/whyus-vector2.svg";
 
 const steps = [
   {
