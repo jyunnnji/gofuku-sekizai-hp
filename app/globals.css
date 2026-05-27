@@ -16,6 +16,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Prevent body flash before LoadingIntro — inline script sets this class */
+html.js-intro-active {
+  background: #F7F6F2;
+}
+html.js-intro-active body {
+  opacity: 0;
+  pointer-events: none;
+}
+
 body {
   background-color: #ffffff;
   color: var(--text-dark);

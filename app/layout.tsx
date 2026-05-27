@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import "./globals.css";
 import SideMenu from "@/components/SideMenu";
+import LoadingIntro from "@/components/LoadingIntro";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const notoSansJP = Noto_Sans_JP({
@@ -34,7 +35,12 @@ export default function RootLayout({
       lang="ja"
       className={`${inter.variable} ${notoSansJP.variable} ${notoSerifJP.variable}`}
     >
+      <head>
+        {/* Runs before body renders — hides content until LoadingIntro takes over */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{if(!sessionStorage.getItem('gofuku_intro_played')&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('js-intro-active');document.documentElement.style.background='#F7F6F2';}}catch(e){}})();` }} />
+      </head>
       <body>
+        <LoadingIntro />
         {children}
         <SideMenu />
       </body>

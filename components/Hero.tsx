@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+const SESSION_KEY = "gofuku_intro_played";
+
 // 白枠：Figmaの不透明度(0.55)に合わせた8方向白シャドウ＋元のFigmaシャドウ
 const whiteBorder =
   "-1px -1px 0 rgba(255,255,255,0.55), 0px -1px 0 rgba(255,255,255,0.55), 1px -1px 0 rgba(255,255,255,0.55), -1px 0px 0 rgba(255,255,255,0.55), 1px 0px 0 rgba(255,255,255,0.55), -1px 1px 0 rgba(255,255,255,0.55), 0px 1px 0 rgba(255,255,255,0.55), 1px 1px 0 rgba(255,255,255,0.55), 0px 4px 4px rgba(255,255,255,0.55)";
@@ -17,6 +19,7 @@ const DESIGN_TEXT_TOP = 161;
 export default function Hero() {
   const [scale, setScale] = useState(1);
   const [textTop, setTextTop] = useState(DESIGN_TEXT_TOP);
+  const [animReady, setAnimReady] = useState(false);
 
   useEffect(() => {
     const update = () => {
@@ -34,13 +37,23 @@ export default function Hero() {
     return () => window.removeEventListener("resize", update);
   }, []);
 
+  useEffect(() => {
+    if (!sessionStorage.getItem(SESSION_KEY)) {
+      // ローディングアニメーション終了（2700ms）に合わせて開始
+      const t = setTimeout(() => setAnimReady(true), 2700);
+      return () => clearTimeout(t);
+    } else {
+      setAnimReady(true);
+    }
+  }, []);
+
   return (
     <section className="relative w-full h-[calc(100vh-100px)] overflow-hidden">
       {/* Background image */}
       <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={animReady ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1.4, ease: "easeOut" }}
       >
         <Image
@@ -81,7 +94,7 @@ export default function Hero() {
           }}
           transformTemplate={(_, generated) => `translate(-50%, -50%) ${generated}`}
           initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={animReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
         >
           北九州地域・筑豊地域のお墓掃除は五福石材に
@@ -92,7 +105,7 @@ export default function Hero() {
           className="absolute left-[63px] top-[84px] w-[608px] h-[1px]"
           style={{ transformOrigin: "left" }}
           initial={{ scaleX: 0, opacity: 0 }}
-          animate={{ scaleX: 1, opacity: 1 }}
+          animate={animReady ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.45 }}
         >
           <Image src="/hero-divider-line.svg" alt="" fill />
@@ -102,7 +115,7 @@ export default function Hero() {
         <motion.div
           className="absolute left-[62px] top-[124px] w-[609px] h-[67px]"
           initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={animReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.55 }}
         >
           {/* Yellow underline (1278:640) */}
@@ -135,7 +148,7 @@ export default function Hero() {
         <motion.div
           className="absolute left-[64px] top-[221px] w-[857px] h-[66px]"
           initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={animReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.7 }}
         >
           {/* Yellow underline (1278:641) */}
@@ -178,7 +191,7 @@ export default function Hero() {
           }}
           transformTemplate={(_, generated) => `translateY(-50%) ${generated}`}
           initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={animReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.85 }}
         >
           お墓の汚れや苔、劣化が気になる方へ。
@@ -191,7 +204,7 @@ export default function Hero() {
           className="absolute"
           style={{ top: "424px", left: "63px" }}
           initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={animReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 1.0 }}
         >
         <Link
