@@ -10,6 +10,10 @@ const SESSION_KEY = "gofuku_intro_played";
 const whiteBorder =
   "-1px -1px 0 rgba(255,255,255,0.55), 0px -1px 0 rgba(255,255,255,0.55), 1px -1px 0 rgba(255,255,255,0.55), -1px 0px 0 rgba(255,255,255,0.55), 1px 0px 0 rgba(255,255,255,0.55), -1px 1px 0 rgba(255,255,255,0.55), 0px 1px 0 rgba(255,255,255,0.55), 1px 1px 0 rgba(255,255,255,0.55), 0px 4px 4px rgba(255,255,255,0.55)";
 
+// SP専用：白枠 ＋ 淡いダークシャドウで明るい背景でも自然な可読性を確保
+const spTextShadow = `${whiteBorder}, 0 1px 6px rgba(0,0,0,0.13)`;
+const spHeadingShadow = `${whiteBorder}, 0 1px 8px rgba(0,0,0,0.16)`;
+
 // Figmaデザイン基準：1440×820px（ヘッダー100px込み）、セクション高720px
 // テキストコンテナはアートボードtop=261px → セクション内top=161px（261-100）
 const DESIGN_WIDTH = 1440;
@@ -48,7 +52,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full h-[calc(100vh-100px)] overflow-hidden">
+    <section className="relative w-full h-[calc(100vh-100px)] min-h-[92svh] md:min-h-0 overflow-hidden">
       {/* Background image */}
       <motion.div
         className="absolute inset-0"
@@ -78,41 +82,44 @@ export default function Hero() {
         <div className="absolute inset-0 rounded-[24px] bg-white/60 blur-[20px] -z-10" />
         <p
           className="text-[13px] font-medium text-[#1a1a1a] tracking-[1px] mb-3"
-          style={{ fontFamily: "var(--font-inter)", textShadow: whiteBorder }}
+          style={{ fontFamily: "var(--font-inter)", textShadow: spTextShadow }}
         >
           北九州地域・筑豊地域のお墓掃除は五福石材に
         </p>
         <h1
           className="text-[26px] font-medium text-black leading-[42px] mb-1 tracking-[1px]"
-          style={{ fontFamily: "var(--font-noto-serif-jp)", textShadow: whiteBorder }}
+          style={{ fontFamily: "var(--font-noto-serif-jp)", textShadow: spHeadingShadow }}
         >
           お墓の汚れを<span className="text-[#2f7d4e]">丁寧に除去</span>
         </h1>
         <h1
           className="text-[22px] font-medium text-black leading-[36px] mb-4 tracking-[1px]"
-          style={{ fontFamily: "var(--font-noto-serif-jp)", textShadow: whiteBorder }}
+          style={{ fontFamily: "var(--font-noto-serif-jp)", textShadow: spHeadingShadow }}
         >
-          ご先祖様の住居を&quot;<span className="text-[#2f7d4e]">綺麗に・美しく</span>&quot;
+          ご先祖様の住居を<br />&quot;<span className="text-[#2f7d4e]">綺麗に・美しく</span>&quot;
         </h1>
         <p
           className="text-[13px] font-medium text-black mb-6 leading-[24px]"
-          style={{ fontFamily: "var(--font-inter)", textShadow: whiteBorder }}
+          style={{ fontFamily: "var(--font-inter)", textShadow: spTextShadow }}
         >
           お墓の汚れや苔、劣化が気になる方へ。<br />
           専用の道具と技術で、心を込めて美しく仕上げます。
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center gap-2 w-full max-w-[280px] h-[52px] bg-white border border-[#2f7d4e] rounded-[50px] hover:bg-[#2f7d4e] hover:-translate-y-0.5 transition-all duration-200 group"
+          className="inline-flex items-center justify-center gap-2 w-full max-w-[280px] h-[52px] bg-white border border-[#2f7d4e] rounded-[50px] hover:bg-[#2f7d4e] hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[1.02] transition-all duration-300 group"
         >
           <span
-            className="text-[14px] font-bold text-[#2f7d4e] group-hover:text-white transition-colors duration-200 tracking-[1.5px]"
+            className="text-[14px] font-bold text-[#2f7d4e] group-hover:text-white transition-colors duration-300 tracking-[1.5px]"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             無料見積もりを依頼する
           </span>
-          <svg className="transition-colors duration-200" width="16" height="16" viewBox="0 0 18 18" fill="none">
-            <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#2f7d4e] group-hover:text-white transition-colors duration-200" />
+          <svg
+            className="transition-all duration-300 group-hover:translate-x-1 group-hover:text-white text-[#2f7d4e]"
+            width="16" height="16" viewBox="0 0 18 18" fill="none"
+          >
+            <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </Link>
       </motion.div>
