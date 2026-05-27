@@ -8,7 +8,6 @@ const img03 = "/images/whyus/whyus-03.png";
 const img04 = "/images/whyus/whyus-04.png";
 const img05 = "/images/whyus/whyus-05.png";
 const img06 = "/images/whyus/whyus-06.png";
-// Vector1 = left-side arrows (col1→col2), Vector = right-side arrows (col2→col3)
 const imgVector1 = "/images/whyus/whyus-vector1.svg";
 const imgVector  = "/images/whyus/whyus-vector2.svg";
 
@@ -93,6 +92,8 @@ const steps = [
   },
 ];
 
+const stepImages = [img01, img02, img03, img04, img05, img06];
+
 function StepItem({ step }: { step: (typeof steps)[number] }) {
   return (
     <div
@@ -105,7 +106,6 @@ function StepItem({ step }: { step: (typeof steps)[number] }) {
       }}
       className={step.borderRight ? "border-r border-dashed border-[#ddd]" : ""}
     >
-      {/* Number */}
       <span
         style={{
           position: "absolute",
@@ -124,7 +124,6 @@ function StepItem({ step }: { step: (typeof steps)[number] }) {
         {step.num}
       </span>
 
-      {/* Title */}
       <span
         style={{
           position: "absolute",
@@ -142,7 +141,6 @@ function StepItem({ step }: { step: (typeof steps)[number] }) {
         {step.title}
       </span>
 
-      {/* Image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={step.img}
@@ -157,7 +155,6 @@ function StepItem({ step }: { step: (typeof steps)[number] }) {
         }}
       />
 
-      {/* Description */}
       <p
         style={{
           position: "absolute",
@@ -186,24 +183,22 @@ export default function WhyUs() {
       id="why-us"
       className="relative bg-[#fcfaf2] overflow-hidden pt-[172px] pb-[90px]"
     >
-      {/* Decorative ellipses */}
+      {/* Decorative ellipses — hidden on SP */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={imgEllipse1}
         alt=""
-        className="absolute left-[-113px] top-[20px] w-[323px] h-[323px] pointer-events-none"
+        className="hidden md:block absolute left-[-113px] top-[20px] w-[323px] h-[323px] pointer-events-none"
       />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={imgEllipse2}
         alt=""
-        className="absolute right-[-72px] top-[414px] w-[209px] h-[209px] pointer-events-none"
+        className="hidden md:block absolute right-[-72px] top-[414px] w-[209px] h-[209px] pointer-events-none"
       />
 
-      {/* Content container: left 175px, right 165px (asymmetric per Figma) */}
-      <div className="max-w-[1440px] mx-auto pl-[175px] pr-[165px]">
+      <div className="max-w-[1440px] mx-auto px-4 md:pl-[175px] md:pr-[165px]">
         <FadeUp>
-        {/* Section label */}
         <p
           className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase"
           style={{ fontFamily: "var(--font-inter)" }}
@@ -211,10 +206,9 @@ export default function WhyUs() {
           WHY CHOOSE US
         </p>
 
-        {/* Section heading */}
         <div className="flex flex-col items-center mt-5 mb-0">
           <h2
-            className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
+            className="text-[28px] md:text-[40px] font-medium text-[#1a1a1a] tracking-[2px] md:tracking-[4.8px] leading-[44px] md:leading-[64px] text-center"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
           >
             五福石材が選ばれる理由
@@ -226,25 +220,25 @@ export default function WhyUs() {
         {/* Body text */}
         <FadeUp delay={0.1}>
         <div
-          className="text-center mt-[117px] mb-[124px] text-[18px] text-[#2c2c2c] tracking-[2.24px]"
+          className="text-center mt-[60px] md:mt-[117px] mb-[60px] md:mb-[124px] text-[15px] md:text-[18px] text-[#2c2c2c] tracking-[1px] md:tracking-[2.24px]"
           style={{ fontFamily: "var(--font-noto-sans-jp)" }}
         >
-          <p className="leading-[37.5px] mb-0">
+          <p className="leading-[32px] md:leading-[37.5px] mb-0">
             ご先祖様の背中を流すように。<br />
             私たちは、真心を込めて一基一基丁寧にクリーニングしております。
           </p>
-          <p className="leading-[37.5px] mb-0">
+          <p className="leading-[32px] md:leading-[37.5px] mb-0">
             お墓に関わる仕事に
             <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>30年以上</span>
             携わってきた経験を活かし、墓石の状態に合わせた丁寧な施工を行っております。
           </p>
-          <p className="leading-[37.5px] mb-0">
+          <p className="leading-[32px] md:leading-[37.5px] mb-0">
             高圧洗浄機などに頼りすぎず、原則として
             <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>手作業</span>
             で墓石を洗浄・研磨。<br />
             細かな汚れや水垢、コケまで時間をかけて磨き上げます。
           </p>
-          <p className="leading-[37.5px] mb-0">
+          <p className="leading-[32px] md:leading-[37.5px] mb-0">
             丁寧に施工することで、
             <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>墓石本来の美しさ</span>
             を取り戻すだけでなく、
@@ -253,7 +247,7 @@ export default function WhyUs() {
             <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>劣化の予防</span>
             にもつながります。
           </p>
-          <p className="leading-[37.5px]">
+          <p className="leading-[32px] md:leading-[37.5px]">
             「頼んでよかった」と感じていただけるよう、最後まで
             <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>心を込めて</span>
             対応いたします。
@@ -261,10 +255,12 @@ export default function WhyUs() {
         </div>
         </FadeUp>
 
-        {/* Steps white card — 1110px wide (content 1100px - 5px each side) */}
+        {/* Steps — PC: absolute-positioned card, SP: simple grid */}
         <FadeUp delay={0.15}>
+
+        {/* PC version */}
         <div
-          className="bg-white rounded-[20px] overflow-hidden relative"
+          className="hidden md:block bg-white rounded-[20px] overflow-hidden relative"
           style={{ height: 713, marginLeft: -5, marginRight: -5 }}
         >
           {/* POINT badge */}
@@ -284,68 +280,60 @@ export default function WhyUs() {
               }}
             />
           </div>
-
-          {/* List container: 965px wide at top=50, left=72 within the card */}
           <div
             className="absolute"
             style={{ top: 50, left: 72, right: 73, height: 613 }}
           >
-            {/* 6 step items */}
             {steps.map((step) => (
               <StepItem key={step.num} step={step} />
             ))}
-
-            {/* Arrows — container-query wrapper for correct rotated fill */}
-            {/* Row 1: col1→col2 (Vector1) */}
-            <div
-              className="absolute flex items-center justify-center"
-              style={{ top: "18.27%", bottom: "74.06%", left: "28.29%", right: "66.53%", containerType: "size" } as React.CSSProperties}
-            >
-              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90">
-                <div className="relative size-full">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector1} />
-                </div>
-              </div>
+            {/* Arrows row1 */}
+            <div className="absolute flex items-center justify-center" style={{ top: "18.27%", bottom: "74.06%", left: "28.29%", right: "66.53%", containerType: "size" } as React.CSSProperties}>
+              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90"><div className="relative size-full"><img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector1} /></div></div>
             </div>
-            {/* Row 1: col2→col3 (Vector) */}
-            <div
-              className="absolute flex items-center justify-center"
-              style={{ top: "18.27%", bottom: "74.06%", left: "66.63%", right: "28.19%", containerType: "size" } as React.CSSProperties}
-            >
-              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90">
-                <div className="relative size-full">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector} />
-                </div>
-              </div>
+            <div className="absolute flex items-center justify-center" style={{ top: "18.27%", bottom: "74.06%", left: "66.63%", right: "28.19%", containerType: "size" } as React.CSSProperties}>
+              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90"><div className="relative size-full"><img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector} /></div></div>
             </div>
-            {/* Row 2: col1→col2 (Vector1) */}
-            <div
-              className="absolute flex items-center justify-center"
-              style={{ top: "71.78%", bottom: "20.55%", left: "28.29%", right: "66.53%", containerType: "size" } as React.CSSProperties}
-            >
-              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90">
-                <div className="relative size-full">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector1} />
-                </div>
-              </div>
+            {/* Arrows row2 */}
+            <div className="absolute flex items-center justify-center" style={{ top: "71.78%", bottom: "20.55%", left: "28.29%", right: "66.53%", containerType: "size" } as React.CSSProperties}>
+              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90"><div className="relative size-full"><img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector1} /></div></div>
             </div>
-            {/* Row 2: col2→col3 (Vector) */}
-            <div
-              className="absolute flex items-center justify-center"
-              style={{ top: "71.78%", bottom: "20.55%", left: "66.63%", right: "28.19%", containerType: "size" } as React.CSSProperties}
-            >
-              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90">
-                <div className="relative size-full">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector} />
-                </div>
-              </div>
+            <div className="absolute flex items-center justify-center" style={{ top: "71.78%", bottom: "20.55%", left: "66.63%", right: "28.19%", containerType: "size" } as React.CSSProperties}>
+              <div className="flex-none h-[100cqw] w-[100cqh] rotate-90"><div className="relative size-full"><img alt="" className="absolute inset-0 block max-w-none size-full" src={imgVector} /></div></div>
             </div>
           </div>
         </div>
+
+        {/* SP version — simple card grid */}
+        <div className="md:hidden bg-white rounded-[20px] overflow-hidden p-6">
+          <div className="flex items-center justify-end mb-4">
+            <span className="text-[16px] font-bold text-[#ea6d62] tracking-[2px] border-[2px] border-[#ea6d62] rounded-[8px] px-3 py-1 uppercase" style={{ fontFamily: "var(--font-inter)" }}>point</span>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            {steps.map((step, i) => (
+              <div key={step.num} className="flex flex-col items-center text-center border border-dashed border-[#ddd] rounded-[12px] p-4">
+                <span
+                  className="text-[32px] font-black text-[#edc920] leading-none mb-1"
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    textShadow: "-1px -1px 1px #575252,1px -1px 1px #575252,-1px 1px 1px #575252,1px 1px 1px #575252",
+                  }}
+                >
+                  {step.num}
+                </span>
+                <p className="text-[13px] font-bold text-[#2c2c2c] tracking-[0.87px] mb-2" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+                  {step.title}
+                </p>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={stepImages[i]} alt={step.title} className="w-20 h-16 object-contain mb-2" />
+                <p className="text-[11px] text-[#2c2c2c] leading-[1.8]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         </FadeUp>
       </div>
     </section>

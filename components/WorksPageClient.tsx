@@ -57,7 +57,7 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
       onClick={onClose}
     >
       <div
-        className="relative bg-white rounded-[24px] w-[min(900px,90vw)] max-h-[90vh] overflow-y-auto p-[48px]"
+        className="relative bg-white rounded-[24px] w-[min(900px,90vw)] max-h-[90vh] overflow-y-auto p-5 md:p-[48px]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -96,7 +96,7 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
         </h2>
 
         {/* Before / After images */}
-        <div className="grid grid-cols-2 gap-[20px] mb-[28px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mb-[28px]">
           <div>
             <p
               className="text-[14px] font-bold text-[#1a1a1a] tracking-[1px] mb-[10px]"
@@ -192,7 +192,7 @@ export default function WorksPageClient({ items }: { items: WorksPageItem[] }) {
     <>
       <Header />
       <main className="bg-[#fcfaf2] pt-[100px]">
-        <div className="max-w-[1440px] mx-auto px-[170px] pt-[125px] pb-[120px]">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-[170px] pt-16 md:pt-[125px] pb-16 md:pb-[120px]">
 
           <PageHeading
             label="WORKS"
@@ -201,7 +201,7 @@ export default function WorksPageClient({ items }: { items: WorksPageItem[] }) {
           />
 
           {/* 3-column grid */}
-          <div className="grid grid-cols-3 gap-[32px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
             {items.map((item) => (
               <button
                 key={item.id}

@@ -27,11 +27,11 @@ export default function SideMenu() {
         />
       )}
 
-      {/* Toggle button — fixed to right edge, centered vertically */}
+      {/* Toggle button — fixed to right edge, centered vertically (SP only) */}
       <button
         onClick={() => setIsOpen(true)}
         aria-label="メニューを開く"
-        className={`fixed top-1/2 -translate-y-1/2 right-0 z-50 bg-white border border-r-0 border-black flex flex-col items-center justify-center gap-5 transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-1/2 -translate-y-1/2 right-0 z-50 bg-white border border-r-0 border-black flex flex-col items-center justify-center gap-5 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-full" : "translate-x-0"
         }`}
         style={{ width: "80px", height: "200px", borderRadius: "16px 0 0 16px" }}
