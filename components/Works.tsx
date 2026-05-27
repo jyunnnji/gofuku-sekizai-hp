@@ -23,7 +23,7 @@ export default function Works() {
   return (
     <section
       id="works"
-      className="relative bg-[#fcfaf2] overflow-hidden pt-[50px] pb-[144px] scroll-mt-[100px]"
+      className="relative bg-[#fcfaf2] overflow-hidden pt-[50px] pb-[144px]"
     >
       <div className="max-w-[1440px] mx-auto px-[56px]">
         <FadeUp>
