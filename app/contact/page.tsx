@@ -107,17 +107,17 @@ export default function ContactPage() {
     }
     setErrors({});
     setStep("confirm");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const handleSubmit = () => {
     setStep("done");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const handleBack = () => {
     setStep("form");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const pageHeader = (
@@ -135,6 +135,7 @@ export default function ContactPage() {
       </p>
     </PageHeading>
   );
+
 
   return (
     <>
@@ -352,7 +353,6 @@ export default function ContactPage() {
           {/* ── STEP: CONFIRM ── */}
           {step === "confirm" && (
             <>
-              {pageHeader}
               <div className="bg-white rounded-[30px] px-[224px] py-[55px]">
                 <h2
                   className="text-center text-[24px] font-medium text-[#2c2c2c] tracking-[1.8px] leading-[36px] mb-[12px]"
@@ -427,7 +427,6 @@ export default function ContactPage() {
           {/* ── STEP: DONE ── */}
           {step === "done" && (
             <>
-              {pageHeader}
               <div className="bg-white rounded-[30px] px-[224px] py-[80px] flex flex-col items-center">
                 {/* Check icon */}
                 <div className="w-[72px] h-[72px] rounded-full bg-[#2f7d4e] flex items-center justify-center mb-[32px]">
