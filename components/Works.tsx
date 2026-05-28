@@ -3,6 +3,9 @@ import FadeUp from "@/components/ui/FadeUp";
 
 const imgBefore      = "/images/works/works-before.png";
 const imgAfter       = "/images/works/works-after.png";
+// SP版：透明余白をトリミング済み（中央配置ズレ防止）
+const imgBeforeSP    = "/images/works/works-before-trimmed.png";
+const imgAfterSP     = "/images/works/works-after-trimmed.png";
 const imgButtonArrow = "/images/works/works-button-arrow.svg";
 
 function CenterArrow() {
@@ -18,7 +21,7 @@ export default function Works() {
   return (
     <section
       id="works"
-      className="relative bg-[#fcfaf2] overflow-hidden pt-[50px] pb-12 md:pb-[144px]"
+      className="relative bg-[#fcfaf2] overflow-hidden pt-[50px] pb-24 md:pb-[144px]"
     >
       <div className="max-w-[1440px] mx-auto px-4 md:px-[56px]">
         <FadeUp>
@@ -59,7 +62,7 @@ export default function Works() {
               <div className="w-[100px] h-[2px] bg-[#2f7d4e] mb-[14px]" />
               <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[16px] overflow-hidden h-[240px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={imgBefore} alt="施工前" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={imgBeforeSP} alt="施工前" className="absolute inset-0 w-full h-full object-contain object-center" />
               </div>
               <p className="text-[15px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] mt-[10px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
                 黒ずみやコケが目立ち、全体的にくすんだ状態。
@@ -81,7 +84,7 @@ export default function Works() {
               <div className="w-[100px] h-[2px] bg-[#2f7d4e] mb-[14px]" />
               <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[16px] overflow-hidden h-[240px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={imgAfter} alt="施工後" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={imgAfterSP} alt="施工後" className="absolute inset-0 w-full h-full object-contain object-center" />
               </div>
               <p className="text-[15px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] mt-[10px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
                 丁寧な手洗いにより、自然な白さと輝きを取り戻した状態。

@@ -66,20 +66,20 @@ export default function Company() {
             {tableRows.map((row, i) => (
               <div
                 key={row.label}
-                className={`flex flex-col md:flex-row md:items-center border-b border-[#d9d9d9] py-3 md:py-0 ${
+                className={`flex flex-col md:flex-row md:items-center border-b border-[#d9d9d9] py-5 md:py-0 ${
                   i === 0 ? "md:h-[75.5px]" : "md:h-[76px]"
                 } ${row.gray ? "bg-[#f5f5f5]" : "bg-white"}`}
               >
                 {/* Label column: 191px wide (16px padding + content) */}
                 <div
-                  className="w-full md:w-[191px] pl-[4px] md:pl-[16px] text-[14px] md:text-[18px] font-medium text-[#2f7d4e] md:text-[#1a1a1a] tracking-[1.2px] shrink-0 mb-1 md:mb-0"
+                  className="w-full md:w-[191px] pl-3 md:pl-[16px] text-[14px] md:text-[18px] font-medium text-[#2f7d4e] md:text-[#1a1a1a] tracking-[1.2px] shrink-0 mb-2 md:mb-0"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                 >
                   {row.label}
                 </div>
                 {/* Value */}
                 <div
-                  className="text-[15px] md:text-[18px] font-normal text-[#2c2c2c] tracking-[0.8px] leading-[24px] md:leading-[27px] pl-[4px] md:pl-0"
+                  className="text-[15px] md:text-[18px] font-normal text-[#2c2c2c] tracking-[0.8px] leading-[24px] md:leading-[27px] pl-3 md:pl-0"
                   style={{
                     fontFamily: row.label.includes("電話") || row.label === "営業時間"
                       ? "var(--font-inter)"
