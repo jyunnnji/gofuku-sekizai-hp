@@ -63,6 +63,18 @@ export default function Works() {
               <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[16px] overflow-hidden h-[240px] p-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={imgBeforeSP} alt="施工前" className="w-full h-full object-contain object-center" />
+                <div
+                  className="absolute pointer-events-none"
+                  style={{
+                    left: "calc(52% - 7px)",
+                    top: 18,
+                    width: 15,
+                    height: 65,
+                    backdropFilter: "blur(45px)",
+                    WebkitBackdropFilter: "blur(45px)",
+                    backgroundColor: "rgba(205,200,178,0.1)",
+                  }}
+                />
               </div>
               <p className="text-[15px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] mt-[10px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
                 黒ずみやコケが目立ち、全体的にくすんだ状態。
@@ -85,6 +97,18 @@ export default function Works() {
               <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[16px] overflow-hidden h-[240px] p-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={imgAfterSP} alt="施工後" className="w-full h-full object-contain object-center rotate-[1.5deg]" />
+                <div
+                  className="absolute pointer-events-none"
+                  style={{
+                    left: "calc(50% - 7px)",
+                    top: 18,
+                    width: 15,
+                    height: 65,
+                    backdropFilter: "blur(45px)",
+                    WebkitBackdropFilter: "blur(45px)",
+                    backgroundColor: "rgba(170,178,167,0.1)",
+                  }}
+                />
               </div>
               <p className="text-[15px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] mt-[10px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
                 丁寧な手洗いにより、自然な白さと輝きを取り戻した状態。
