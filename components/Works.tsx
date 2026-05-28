@@ -84,7 +84,7 @@ export default function Works() {
               <div className="w-[100px] h-[2px] bg-[#2f7d4e] mb-[14px]" />
               <div className="relative bg-[#fcfaf2] border-2 border-black rounded-[16px] overflow-hidden h-[240px] p-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={imgAfterSP} alt="施工後" className="w-full h-full object-contain object-center" />
+                <img src={imgAfterSP} alt="施工後" className="w-full h-full object-contain object-center rotate-[1.5deg]" />
               </div>
               <p className="text-[15px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] mt-[10px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
                 丁寧な手洗いにより、自然な白さと輝きを取り戻した状態。
