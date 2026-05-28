@@ -18,6 +18,9 @@ const steps = [
     title: "合掌・線香",
     desc: "まずは線香を炊き、手を合わせてから作業に入ります。",
     img: img01,
+    spImgClass: "w-[100px] h-[100px]",
+    spScale: 1.6,
+    spTranslateY: 0,
     imgH: 162,
     imgW: 243,
     imgTop: 55,
@@ -31,6 +34,9 @@ const steps = [
     title: "水を注ぐ",
     desc: "たっぷりの水かけて、大きな汚れを落としていきます。",
     img: img02,
+    spImgClass: "w-[100px] h-[100px]",
+    spScale: 1.6,
+    spTranslateY: 0,
     imgH: 162,
     imgW: 243,
     imgTop: 56,
@@ -44,6 +50,9 @@ const steps = [
     title: "研磨",
     desc: "器具は使用せず、原則、手で研磨を行います。",
     img: img03,
+    spImgClass: "w-[100px] h-[100px]",
+    spScale: 1.3,
+    spTranslateY: 0,
     imgH: 121,
     imgW: 201,
     imgTop: 65,
@@ -57,6 +66,9 @@ const steps = [
     title: "目地コーキング",
     desc: "コーキングを隙間に入れ直します。",
     img: img04,
+    spImgClass: "w-[100px] h-[100px]",
+    spScale: 0.85,
+    spTranslateY: 8,
     imgH: 82,
     imgW: 130,
     imgTop: 97,
@@ -70,6 +82,9 @@ const steps = [
     title: "墨入れ",
     desc: "墨入れの入れ直しを丁寧に行います。",
     img: img05,
+    spImgClass: "w-[100px] h-[100px]",
+    spScale: 1.3,
+    spTranslateY: 0,
     imgH: 134,
     imgW: 223,
     imgTop: 62,
@@ -83,6 +98,9 @@ const steps = [
     title: "仕上げ",
     desc: "最後に仕上げを行い、手を合わせて終了します。",
     img: img06,
+    spImgClass: "w-[100px] h-[100px]",
+    spScale: 1.3,
+    spTranslateY: 0,
     imgH: 134,
     imgW: 223,
     imgTop: 62,
@@ -184,7 +202,7 @@ export default function WhyUs() {
   return (
     <section
       id="why-us"
-      className="relative bg-[#fcfaf2] overflow-hidden pt-10 md:pt-[172px] pb-10 md:pb-[90px]"
+      className="relative bg-[#fcfaf2] overflow-hidden pt-[56px] md:pt-[172px] pb-[56px] md:pb-[90px]"
     >
       {/* Decorative ellipses — PC only (overflow on SP) */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -205,7 +223,7 @@ export default function WhyUs() {
         <FadeUp>
         {/* Section label */}
         <p
-          className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase"
+          className="text-center text-[13px] md:text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase mb-2 md:mb-0"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           WHY CHOOSE US
@@ -229,22 +247,22 @@ export default function WhyUs() {
           className="text-center mt-8 md:mt-[117px] mb-8 md:mb-[124px] text-[16px] md:text-[18px] text-[#2c2c2c] tracking-[1.2px] md:tracking-[2.24px] max-w-[300px] mx-auto md:max-w-full"
           style={{ fontFamily: "var(--font-noto-sans-jp)" }}
         >
-          <p className="leading-[30px] md:leading-[37.5px] mb-3 md:mb-0">
+          <p className="leading-[32px] md:leading-[37.5px] mb-3 md:mb-0">
             ご先祖様の背中を流すように。<br />
             私たちは、真心を込めて一基一基丁寧にクリーニングしております。
           </p>
-          <p className="leading-[30px] md:leading-[37.5px] mb-3 md:mb-0">
+          <p className="leading-[32px] md:leading-[37.5px] mb-3 md:mb-0">
             お墓に関わる仕事に
             <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>30年以上</span>
             携わってきた経験を活かし、墓石の状態に合わせた丁寧な施工を行っております。
           </p>
-          <p className="leading-[30px] md:leading-[37.5px] mb-3 md:mb-0">
+          <p className="leading-[32px] md:leading-[37.5px] mb-3 md:mb-0">
             高圧洗浄機などに頼りすぎず、原則として
             <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>手作業</span>
             で墓石を洗浄・研磨。<br />
             細かな汚れや水垢、コケまで時間をかけて磨き上げます。
           </p>
-          <p className="leading-[30px] md:leading-[37.5px] mb-3 md:mb-0">
+          <p className="leading-[32px] md:leading-[37.5px] mb-3 md:mb-0">
             丁寧に施工することで、
             <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>墓石本来の美しさ</span>
             を取り戻すだけでなく、
@@ -253,7 +271,7 @@ export default function WhyUs() {
             <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>劣化の予防</span>
             にもつながります。
           </p>
-          <p className="leading-[30px] md:leading-[37.5px]">
+          <p className="leading-[32px] md:leading-[37.5px]">
             「頼んでよかった」と感じていただけるよう、最後まで
             <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>心を込めて</span>
             対応いたします。
@@ -280,8 +298,15 @@ export default function WhyUs() {
               >
                 {step.title}
               </span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={step.img} alt={step.title} className="w-[80px] h-[60px] object-contain mb-2" />
+              <div className="w-[100px] h-[100px] mb-2 flex items-center justify-center overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={step.img}
+                  alt={step.title}
+                  className="w-[100px] h-[100px] object-contain"
+                  style={(step.spScale !== 1 || step.spTranslateY !== 0) ? { transform: `scale(${step.spScale}) translateY(${step.spTranslateY}px)`, transformOrigin: "center" } : undefined}
+                />
+              </div>
               <p
                 className="text-[12px] text-[#2c2c2c] leading-[20px]"
                 style={{ fontFamily: "var(--font-noto-sans-jp)" }}

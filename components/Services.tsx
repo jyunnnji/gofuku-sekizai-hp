@@ -46,16 +46,16 @@ export default function Services() {
           <div className="absolute inset-0 bg-white/50" />
         </div>
         {/* SP コンテンツ */}
-        <div className="relative px-5 pt-12 pb-16">
+        <div className="relative px-5 pt-[56px] pb-[56px]">
           {/* ラベル */}
-          <p className="text-center text-[16px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase mb-2" style={{ fontFamily: "var(--font-inter)" }}>Service</p>
+          <p className="text-center text-[13px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase mb-2" style={{ fontFamily: "var(--font-inter)" }}>Service</p>
           {/* 見出し */}
-          <div className="flex flex-col items-center mb-8">
-            <h2 className="text-[28px] font-medium text-[#1a1a1a] tracking-[3px] leading-[48px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>事業内容</h2>
+          <div className="flex flex-col items-center mb-6">
+            <h2 className="text-[26px] font-medium text-[#1a1a1a] tracking-[2px] leading-[42px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>事業内容</h2>
             <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-1" />
           </div>
           {/* 説明文 */}
-          <div className="text-[14px] text-[#2c2c2c] leading-[28px] tracking-[0.8px] text-center mb-10" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+          <div className="text-[14px] text-[#2c2c2c] leading-[32px] tracking-[0.8px] text-center mb-8" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
             <p className="mb-3">
               暮らしの中で気になる<br />
               お墓やお庭のお悩みに、<br />
@@ -73,15 +73,15 @@ export default function Services() {
           </div>
 
           {/* 墓石クリーニング */}
-          <div className="mb-10">
-            <div className="border-l-[4px] border-[#2f7d4e] pl-3 mb-4">
-              <h3 className="text-[22px] font-medium text-[#2c2c2c]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>墓石クリーニング</h3>
+          <div className="mb-8">
+            <div className="border-l-[4px] border-[#2f7d4e] pl-3 mb-3">
+              <h3 className="text-[20px] font-medium text-[#2c2c2c]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>墓石クリーニング</h3>
             </div>
-            <div className="mb-4">
+            <div className="mb-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={imgGrave} alt="墓石クリーニング" className="w-full h-[220px] object-cover rounded-[16px]" />
             </div>
-            <p className="text-[14px] text-[#2c2c2c] leading-[26px] tracking-[0.8px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+            <p className="text-[14px] text-[#2c2c2c] leading-[30px] tracking-[0.8px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
               年月とともに蓄積した汚れやコケ、水垢を丁寧に除去し、お墓本来の美しさを取り戻します。
               手作業によるやさしい洗浄と細部まで行き届いた仕上げで、ご先祖様への感謝の気持ちを形にするお手伝いをいたします。
               また、ご希望に応じて女性作業員の同行も可能です。
@@ -90,14 +90,14 @@ export default function Services() {
 
           {/* 造園 */}
           <div>
-            <div className="border-l-[4px] border-[#2f7d4e] pl-3 mb-4">
-              <h3 className="text-[22px] font-medium text-[#2c2c2c]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>造園</h3>
+            <div className="border-l-[4px] border-[#2f7d4e] pl-3 mb-3">
+              <h3 className="text-[20px] font-medium text-[#2c2c2c]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>造園</h3>
             </div>
-            <div className="mb-4">
+            <div className="mb-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={imgGarden} alt="造園" className="w-full h-[220px] object-cover rounded-[16px]" />
             </div>
-            <p className="text-[14px] text-[#2c2c2c] leading-[26px] tracking-[0.8px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+            <p className="text-[14px] text-[#2c2c2c] leading-[30px] tracking-[0.8px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
               女性作業員が丁寧に対応し、お庭のお手入れ・草刈り・除草作業を承ります。
               どんな小さなお悩みでも、お気軽にご相談ください。
             </p>

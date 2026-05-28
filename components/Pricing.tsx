@@ -13,7 +13,7 @@ export default function Pricing() {
         <FadeUp>
 
         {/* ── SP レイアウト ── */}
-        <div className="md:hidden flex flex-col gap-4">
+        <div className="md:hidden flex flex-col gap-5">
           {/* Price card */}
           <div className="bg-white rounded-[20px] p-6">
             <div className="flex items-center gap-2 mb-3">
@@ -31,13 +31,13 @@ export default function Pricing() {
             </p>
           </div>
           {/* CTA card */}
-          <div className="bg-white rounded-[20px] p-6 flex flex-col items-center gap-4">
-            <p className="text-[15px] text-[#2c2c2c] tracking-[0.8px]" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>
+          <div className="bg-white rounded-[20px] p-7 flex flex-col items-center gap-5">
+            <p className="text-[15px] text-[#2c2c2c] tracking-[0.8px] leading-[28px]" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>
               まずはお気軽にご相談ください。
             </p>
             <Link
               href="/contact"
-              className="w-full max-w-[300px] h-[56px] flex items-center justify-center bg-[#2f7d4e] border border-black rounded-[30px] hover:bg-[#235e3a] transition-colors"
+              className="w-full max-w-[320px] h-[60px] flex items-center justify-center bg-[#2f7d4e] border border-black rounded-[30px] hover:bg-[#235e3a] transition-colors"
             >
               <span className="text-[16px] font-bold text-white tracking-[1.5px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
                 無料見積もりを依頼する

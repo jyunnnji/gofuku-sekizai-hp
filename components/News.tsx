@@ -21,7 +21,7 @@ export default async function News() {
       <div className="max-w-[1440px] mx-auto px-4 md:px-[165px]">
         <FadeUp>
         <p
-          className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase leading-[24px] mb-3 md:mb-[21px]"
+          className="text-center text-[13px] md:text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase leading-[24px] mb-2 md:mb-[21px]"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           NEWS

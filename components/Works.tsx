@@ -27,7 +27,7 @@ export default function Works() {
         <FadeUp>
         {/* Section label — center at y=62px (pt=50 + h=24/2) */}
         <p
-          className="text-center text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase mb-3"
+          className="text-center text-[13px] md:text-[20px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase mb-2 md:mb-3"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           WORKS
