@@ -44,7 +44,7 @@ export default async function News() {
             <div key={item.id} className="px-4 md:px-0 md:flex md:pl-[176px] md:pr-[174px]">
               <Link
                 href={`/news/${item.id}?from=top`}
-                className={`group flex flex-wrap md:flex-nowrap items-center w-full border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors py-3 md:py-0 md:h-[97px] md:mx-[-30px] md:px-[30px] gap-x-2 gap-y-1 ${
+                className={`group relative flex flex-wrap md:flex-nowrap items-center w-full border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors py-3 pr-8 md:py-0 md:pr-0 md:h-[97px] md:mx-[-30px] md:px-[30px] gap-x-2 gap-y-1 ${
                   i === 0 ? "border-t border-b" : "border-b"
                 }`}
               >
@@ -65,13 +65,13 @@ export default async function News() {
                 </span>
 
                 <span
-                  className="text-[15px] md:text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[24px] md:leading-[27px] flex-1 w-full md:w-auto md:ml-[25px] order-last md:order-none"
+                  className="text-[15px] md:text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[24px] md:leading-[27px] w-full md:flex-1 md:w-auto md:ml-[25px] order-last md:order-none"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                 >
                   {item.title}
                 </span>
 
-                <div className="shrink-0 w-[24px] h-[24px] md:w-[28px] md:h-[28px] rounded-full bg-[#edc920] border border-[#6d6c6a] flex items-center justify-center transition-colors group-hover:bg-[#d4b31e] text-[#1a1a1a] group-hover:text-white">
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 md:static md:translate-y-0 shrink-0 w-[24px] h-[24px] md:w-[28px] md:h-[28px] rounded-full bg-[#edc920] border border-[#6d6c6a] flex items-center justify-center transition-colors group-hover:bg-[#d4b31e] text-[#1a1a1a] group-hover:text-white">
                   <ArrowIcon />
                 </div>
               </Link>
