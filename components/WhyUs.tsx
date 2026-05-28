@@ -53,6 +53,7 @@ const steps = [
     spImgClass: "w-[100px] h-[100px]",
     spScale: 1.3,
     spTranslateY: 0,
+    showPoint: true,
     imgH: 121,
     imgW: 201,
     imgTop: 65,
@@ -282,7 +283,24 @@ export default function WhyUs() {
         {/* Steps ── SP シンプルリスト */}
         <div className="md:hidden grid grid-cols-2 gap-3 mb-8">
           {steps.map((step) => (
-            <div key={step.num} className="bg-white rounded-[16px] p-4 flex flex-col items-center text-center">
+            <div key={step.num} className="bg-white rounded-[16px] p-4 flex flex-col items-center text-center relative">
+              {step.showPoint && (
+                <div className="absolute top-[-2px] right-[-14px] z-10 bg-white border-[2px] border-[#ea6d62] rounded-[6px] h-[22px] px-[6px] flex items-center">
+                  <span
+                    className="text-[11px] font-bold text-[#ea6d62] tracking-[1.2px] uppercase"
+                    style={{ fontFamily: "var(--font-inter)" }}
+                  >
+                    point
+                  </span>
+                  <div
+                    className="absolute bottom-[-9px] left-0 w-0 h-0"
+                    style={{
+                      borderTop: "9px solid #ea6d62",
+                      borderRight: "9px solid transparent",
+                    }}
+                  />
+                </div>
+              )}
               <span
                 className="text-[36px] font-black text-[#edc920] leading-none mb-1"
                 style={{
