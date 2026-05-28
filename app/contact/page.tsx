@@ -124,13 +124,13 @@ export default function ContactPage() {
     <PageHeading
       label="Contact"
       title="お問い合わせ"
-      dividerClassName="w-[40px] h-[2px] bg-[#2f7d4e] mt-3 mb-[62px]"
+      dividerClassName="w-[40px] h-[2px] bg-[#2f7d4e] mt-3 mb-6 md:mb-[62px]"
     >
       <p
-        className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] text-center"
+        className="text-[14px] md:text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] md:leading-[33px] text-center px-2 md:px-0"
         style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
       >
-        ご質問・ご相談・お見積もりなど、お気軽にお問い合わせください。<br />
+        ご質問・ご相談・お見積もりなど、お気軽にお問い合わせください。<br className="hidden md:inline" />
         折り返しご連絡いたします。
       </p>
     </PageHeading>

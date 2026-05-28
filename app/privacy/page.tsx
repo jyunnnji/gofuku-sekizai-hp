@@ -43,35 +43,35 @@ export default function PrivacyPage() {
     <>
       <Header />
       <main className="bg-[#fcfaf2] pt-[100px]">
-        <div className="max-w-[1440px] mx-auto px-[170px] pt-[125px] pb-[120px]">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-[170px] pt-[40px] md:pt-[125px] pb-[60px] md:pb-[120px]">
 
           <PageHeading
             label="Privacy Policy"
             title="プライバシーポリシー"
-            dividerClassName="w-[40px] h-[2px] bg-[#2f7d4e] mt-3 mb-[40px]"
+            dividerClassName="w-[40px] h-[2px] bg-[#2f7d4e] mt-3 mb-6 md:mb-[40px]"
           >
             <p
-              className="text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[33px] text-center"
+              className="text-[14px] md:text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] md:leading-[33px] text-center px-2 md:px-0"
               style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
             >
-              五福石材（以下「当社」）は、お客様の個人情報の保護を重要な責務と認識し、<br />
+              五福石材（以下「当社」）は、お客様の個人情報の保護を重要な責務と認識し、<br className="hidden md:inline" />
               以下のとおりプライバシーポリシーを定めます。
             </p>
           </PageHeading>
 
           {/* Content card */}
-          <div className="bg-white rounded-[30px] px-[80px] py-[64px]">
-            <div className="flex flex-col gap-[48px]">
+          <div className="bg-white rounded-[20px] md:rounded-[30px] px-5 md:px-[80px] py-8 md:py-[64px]">
+            <div className="flex flex-col gap-8 md:gap-[48px]">
               {sections.map((section) => (
                 <div key={section.title}>
                   <h2
-                    className="text-[18px] font-bold text-[#1a1a1a] tracking-[1.12px] leading-[28px] mb-[16px]"
+                    className="text-[16px] md:text-[18px] font-bold text-[#1a1a1a] tracking-[1.12px] leading-[28px] mb-3 md:mb-[16px]"
                     style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                   >
                     {section.title}
                   </h2>
                   <p
-                    className="text-[16px] text-[#2c2c2c] tracking-[0.8px] leading-[32px] whitespace-pre-line"
+                    className="text-[14px] md:text-[16px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] md:leading-[32px] whitespace-pre-line"
                     style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                   >
                     {section.body}
@@ -81,7 +81,7 @@ export default function PrivacyPage() {
             </div>
 
             <p
-              className="text-[14px] text-[#444444] tracking-[0.8px] leading-[26px] text-right mt-[64px]"
+              className="text-[13px] md:text-[14px] text-[#444444] tracking-[0.8px] leading-[26px] text-right mt-10 md:mt-[64px]"
               style={{ fontFamily: "var(--font-noto-sans-jp)" }}
             >
               制定日：2026年1月1日
@@ -89,10 +89,10 @@ export default function PrivacyPage() {
           </div>
 
           {/* Back to contact */}
-          <div className="flex justify-center mt-[48px]">
+          <div className="flex justify-center mt-10 md:mt-[48px]">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-[10px] text-[16px] text-[#2f7d4e] hover:text-[#235e3a] tracking-[0.8px] transition-colors"
+              className="inline-flex items-center gap-[10px] text-[14px] md:text-[16px] text-[#2f7d4e] hover:text-[#235e3a] tracking-[0.8px] transition-colors"
               style={{ fontFamily: "var(--font-noto-sans-jp)" }}
             >
               <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
@@ -109,7 +109,7 @@ export default function PrivacyPage() {
       {/* Back to top */}
       <Link
         href="#top"
-        className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+        className="fixed bottom-4 right-4 md:bottom-[49px] md:right-[50px] z-50 w-[44px] h-[44px] md:w-[48px] md:h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
         aria-label="ページ上部へ戻る"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">

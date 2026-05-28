@@ -27,12 +27,12 @@ export default async function NewsDetailPage({
     <>
       <Header />
       <main className="bg-[#fcfaf2] pt-[100px]">
-        <div className="max-w-[1440px] mx-auto px-[170px] pt-[125px] pb-[120px]">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-[170px] pt-[40px] md:pt-[125px] pb-[60px] md:pb-[120px]">
 
           <PageHeading label="NEWS" title="お知らせ" />
 
           {/* Article card */}
-          <div className="bg-white rounded-[30px] px-[80px] py-[64px]">
+          <div className="bg-white rounded-[20px] md:rounded-[30px] px-5 md:px-[80px] py-8 md:py-[64px]">
 
             {/* Meta */}
             <div className="flex items-center gap-[16px] mb-[32px]">
@@ -93,10 +93,10 @@ export default async function NewsDetailPage({
           </div>
 
           {/* Back link */}
-          <div className="flex justify-center mt-[48px]">
+          <div className="flex justify-center mt-10 md:mt-[48px]">
             <Link
               href={backHref}
-              className="inline-flex items-center gap-[10px] text-[16px] text-[#2f7d4e] hover:text-[#235e3a] tracking-[0.8px] transition-colors"
+              className="inline-flex items-center gap-[10px] text-[14px] md:text-[16px] text-[#2f7d4e] hover:text-[#235e3a] tracking-[0.8px] transition-colors"
               style={{ fontFamily: "var(--font-noto-sans-jp)" }}
             >
               <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
@@ -112,7 +112,7 @@ export default async function NewsDetailPage({
 
       <Link
         href="#top"
-        className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+        className="fixed bottom-4 right-4 md:bottom-[49px] md:right-[50px] z-50 w-[44px] h-[44px] md:w-[48px] md:h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
         aria-label="ページ上部へ戻る"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">

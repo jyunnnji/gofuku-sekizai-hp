@@ -16,13 +16,13 @@ export default function PageHeading({
   title,
   titleFont = "var(--font-inter), var(--font-noto-sans-jp)",
   dividerClassName = "w-[40px] h-[2px] bg-[#2f7d4e] mt-3",
-  containerClassName = "mb-[65px]",
+  containerClassName = "mb-8 md:mb-[65px]",
   children,
 }: Props) {
   return (
     <>
       <motion.p
-        className="text-center text-[20px] text-[#2f7d4e] tracking-[3.6px] uppercase leading-[24px] mb-[24px]"
+        className="text-center text-[13px] md:text-[20px] text-[#2f7d4e] tracking-[1.6px] md:tracking-[3.6px] uppercase leading-[20px] md:leading-[24px] mb-3 md:mb-[24px]"
         style={{ fontFamily: "var(--font-inter)" }}
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function PageHeading({
       </motion.p>
       <div className={`flex flex-col items-center ${containerClassName}`}>
         <motion.h1
-          className="text-[40px] font-medium text-[#1a1a1a] tracking-[4.8px] leading-[64px]"
+          className="text-[26px] md:text-[40px] font-medium text-[#1a1a1a] tracking-[2px] md:tracking-[4.8px] leading-[40px] md:leading-[64px]"
           style={{ fontFamily: titleFont }}
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}

@@ -19,48 +19,54 @@ export default async function NewsListPage() {
     <>
       <Header />
       <main className="bg-[#fcfaf2] pt-[100px]">
-        <div className="max-w-[1440px] mx-auto px-[170px] pt-[125px] pb-[120px]">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-[170px] pt-[40px] md:pt-[125px] pb-[60px] md:pb-[120px]">
 
           <PageHeading label="NEWS" title="お知らせ" />
 
           {/* News list card */}
-          <div className="bg-white rounded-[30px] overflow-hidden pt-[76px] pb-[76px]">
+          <div className="bg-white rounded-[20px] md:rounded-[30px] overflow-hidden pt-6 pb-6 md:pt-[76px] md:pb-[76px]">
             {newsItems.map((item, i) => (
-              <div key={item.id} className="flex pl-[176px] pr-[174px]">
+              <div key={item.id} className="px-4 md:px-0 md:pl-[176px] md:pr-[174px]">
                 <Link
                   href={`/news/${item.id}`}
-                  className={`group flex items-center w-full h-[97px] border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors mx-[-30px] px-[30px] ${
+                  className={`group flex flex-col md:flex-row md:items-center w-full py-4 md:h-[97px] md:py-0 border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors md:mx-[-30px] md:px-[30px] ${
                     i === 0 ? "border-t border-b" : "border-b"
                   }`}
                 >
-                  {/* Date */}
-                  <span
-                    className="text-[15px] text-[#444444] tracking-[1.3px] leading-[26px] whitespace-nowrap w-[102px] shrink-0"
-                    style={{ fontFamily: "var(--font-inter)" }}
-                  >
-                    {formatDate(item.date)}
-                  </span>
-
-                  {/* Category badge */}
-                  <span className="ml-[4px] bg-[#edc920] border border-black rounded-full h-[28px] px-[10px] flex items-center justify-center shrink-0">
+                  {/* SP: date + badge + arrow in one row / PC: becomes flex items via contents */}
+                  <div className="flex items-center gap-[8px] mb-[6px] md:mb-0 md:contents">
+                    {/* Date */}
                     <span
-                      className="text-[13px] text-black tracking-[1.1px] leading-[22px]"
-                      style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+                      className="text-[12px] md:text-[15px] text-[#444444] tracking-[1.3px] leading-[26px] whitespace-nowrap shrink-0 md:w-[102px]"
+                      style={{ fontFamily: "var(--font-inter)" }}
                     >
-                      {item.category[0]}
+                      {formatDate(item.date)}
                     </span>
-                  </span>
+                    {/* Category badge */}
+                    <span className="md:ml-[4px] bg-[#edc920] border border-black rounded-full h-[24px] md:h-[28px] px-[10px] flex items-center justify-center shrink-0">
+                      <span
+                        className="text-[11px] md:text-[13px] text-black tracking-[1.1px] leading-[22px]"
+                        style={{ fontFamily: "var(--font-noto-sans-jp)" }}
+                      >
+                        {item.category[0]}
+                      </span>
+                    </span>
+                    {/* Arrow: SP only */}
+                    <div className="ml-auto md:hidden shrink-0 w-[26px] h-[26px] rounded-full bg-[#edc920] border border-[#6d6c6a] flex items-center justify-center text-[#1a1a1a]">
+                      <ArrowIcon />
+                    </div>
+                  </div>
 
                   {/* Title */}
                   <span
-                    className="ml-[25px] text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[27px] flex-1"
+                    className="text-[14px] md:text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[24px] md:leading-[27px] flex-1 md:ml-[25px]"
                     style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                   >
                     {item.title}
                   </span>
 
-                  {/* Arrow */}
-                  <div className="shrink-0 w-[28px] h-[28px] rounded-full bg-[#edc920] border border-[#6d6c6a] flex items-center justify-center transition-colors group-hover:bg-[#d4b31e] text-[#1a1a1a] group-hover:text-white">
+                  {/* Arrow: PC only */}
+                  <div className="hidden md:flex shrink-0 w-[28px] h-[28px] rounded-full bg-[#edc920] border border-[#6d6c6a] items-center justify-center transition-colors group-hover:bg-[#d4b31e] text-[#1a1a1a] group-hover:text-white">
                     <ArrowIcon />
                   </div>
                 </Link>
@@ -69,10 +75,10 @@ export default async function NewsListPage() {
           </div>
 
           {/* Back to top */}
-          <div className="flex justify-center mt-[48px]">
+          <div className="flex justify-center mt-10 md:mt-[48px]">
             <Link
               href="/#news"
-              className="inline-flex items-center gap-[10px] text-[16px] text-[#2f7d4e] hover:text-[#235e3a] tracking-[0.8px] transition-colors"
+              className="inline-flex items-center gap-[10px] text-[14px] md:text-[16px] text-[#2f7d4e] hover:text-[#235e3a] tracking-[0.8px] transition-colors"
               style={{ fontFamily: "var(--font-noto-sans-jp)" }}
             >
               <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
@@ -88,7 +94,7 @@ export default async function NewsListPage() {
 
       <Link
         href="#top"
-        className="fixed bottom-[49px] right-[50px] z-50 w-[48px] h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+        className="fixed bottom-4 right-4 md:bottom-[49px] md:right-[50px] z-50 w-[44px] h-[44px] md:w-[48px] md:h-[48px] rounded-full bg-[#2f7d4e] flex items-center justify-center hover:bg-[#235e3a] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
         aria-label="ページ上部へ戻る"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
