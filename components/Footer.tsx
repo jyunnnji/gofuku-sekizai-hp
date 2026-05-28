@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="bg-white rounded-[20px] px-5 md:px-[72px] pt-6 pb-5 md:py-[51px]">
           {/* Logo */}
           <p
-            className="text-center text-[35.5px] font-bold text-[#2f7d4e] tracking-[3.3px] leading-[44px] mb-2 md:mb-4"
+            className="text-center text-[35.5px] font-bold text-[#2f7d4e] tracking-[3.3px] leading-[44px] mb-4 md:mb-4"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
           >
             五福石材
@@ -37,7 +37,7 @@ export default function Footer() {
 
           {/* Tagline */}
           <p
-            className="text-center text-[15px] md:text-[18px] font-bold text-[#2c2c2c] tracking-[1px] md:tracking-[2.4px] mb-5 md:mb-8 whitespace-nowrap"
+            className="text-center text-[15px] md:text-[18px] font-bold text-[#2c2c2c] tracking-[1px] md:tracking-[2.4px] mb-7 md:mb-8 whitespace-nowrap"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
           >
             ご先祖様の安らかなお眠りをサポート

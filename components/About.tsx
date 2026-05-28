@@ -12,7 +12,7 @@ export default function About() {
     >
 
       {/* ── SP レイアウト ── */}
-      <div className="md:hidden px-5 pt-10 pb-10 flex flex-col gap-6">
+      <div className="md:hidden px-5 pt-10 pb-12 flex flex-col gap-8">
         {/* Images */}
         <div className="flex gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -23,7 +23,7 @@ export default function About() {
         {/* Text */}
         <div className="text-center">
           <h2
-            className="text-[22px] font-bold tracking-[4px] mb-3"
+            className="text-[22px] font-bold tracking-[4px] mb-5"
             style={{ fontFamily: "var(--font-noto-sans-jp)", color: "#2c2c2c" }}
           >
             <span>-</span>
@@ -31,13 +31,13 @@ export default function About() {
             <span>について -</span>
           </h2>
           <h3
-            className="text-[16px] font-medium text-[#2c2c2c] leading-[30px] tracking-[2px] mb-4"
+            className="text-[16px] font-medium text-[#2c2c2c] leading-[30px] tracking-[2px] mb-6"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
           >
             ご先祖様の安らかなお眠りをサポートさせていただきます。
           </h3>
           <p
-            className="text-[14px] text-[#2c2c2c] leading-[26px] tracking-[0.8px]"
+            className="text-[14px] text-[#2c2c2c] leading-[28px] tracking-[0.8px]"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
           >
             五福石材は、墓石クリーニング・造園を通じて、地域の皆さまの暮らしに寄り添ってまいりました。
