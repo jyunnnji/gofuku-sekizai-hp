@@ -44,7 +44,7 @@ export default function Footer() {
           </p>
 
           {/* Nav links */}
-          <nav className="grid grid-cols-2 gap-x-8 gap-y-3 mb-5 md:flex md:items-center md:justify-center md:gap-8 md:flex-wrap md:mb-8">
+          <nav className="grid grid-cols-2 gap-x-8 gap-y-3 mb-5 pl-[26px] md:pl-0 md:flex md:items-center md:justify-center md:gap-8 md:flex-wrap md:mb-8">
             {[
               { label: "事業内容", href: "#services" },
               { label: "施工事例", href: "#works" },
