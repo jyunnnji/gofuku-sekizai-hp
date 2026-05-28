@@ -66,7 +66,7 @@ export default function Works() {
                 <div
                   className="absolute pointer-events-none"
                   style={{
-                    left: "calc(52% - 7px)",
+                    left: "calc(52% - 9px)",
                     top: 18,
                     width: 15,
                     height: 65,
@@ -100,7 +100,7 @@ export default function Works() {
                 <div
                   className="absolute pointer-events-none"
                   style={{
-                    left: "calc(50% - 7px)",
+                    left: "calc(50% - 1px)",
                     top: 18,
                     width: 15,
                     height: 65,
