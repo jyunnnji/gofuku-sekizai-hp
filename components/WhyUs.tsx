@@ -237,7 +237,7 @@ export default function WhyUs() {
           >
             五福石材が選ばれる理由
           </h2>
-          <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-1" />
+          <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3" />
         </div>
         </FadeUp>
 

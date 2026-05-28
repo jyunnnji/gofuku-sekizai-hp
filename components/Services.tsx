@@ -52,7 +52,7 @@ export default function Services() {
           {/* 見出し */}
           <div className="flex flex-col items-center mb-6">
             <h2 className="text-[26px] font-medium text-[#1a1a1a] tracking-[2px] leading-[42px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>事業内容</h2>
-            <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-1" />
+            <div className="w-[40px] h-[2px] bg-[#2f7d4e] mt-3" />
           </div>
           {/* 説明文 */}
           <div className="text-[14px] text-[#2c2c2c] leading-[32px] tracking-[0.8px] text-center mb-8" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
