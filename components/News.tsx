@@ -41,15 +41,15 @@ export default async function News() {
         <FadeUp delay={0.1}>
         <div className="bg-white rounded-[30px] overflow-hidden pt-8 md:pt-[76px] pb-8 md:pb-[76px]">
           {newsItems.map((item, i) => (
-            <div key={item.id} className="px-4 md:px-0 md:flex md:pl-[176px] md:pr-[174px]">
+            <div key={item.id} className="px-8 md:px-0 md:flex md:pl-[176px] md:pr-[174px]">
               <Link
                 href={`/news/${item.id}?from=top`}
-                className={`group relative flex flex-wrap md:flex-nowrap items-center w-full border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors py-3 pr-8 md:py-0 md:pr-0 md:h-[97px] md:mx-[-30px] md:px-[30px] gap-x-2 gap-y-1 ${
+                className={`group relative flex flex-wrap md:flex-nowrap items-center w-full border-[#d9d9d9] hover:bg-[#f9f9f9] transition-colors py-[14px] pr-[44px] md:py-0 md:pr-0 md:h-[97px] md:mx-[-30px] md:px-[30px] gap-x-2 gap-y-1 ${
                   i === 0 ? "border-t border-b" : "border-b"
                 }`}
               >
                 <span
-                  className="text-[13px] md:text-[15px] text-[#444444] tracking-[1.3px] leading-[26px] whitespace-nowrap w-[92px] md:w-[102px] shrink-0"
+                  className="inline-flex items-center text-[13px] md:text-[15px] text-[#444444] tracking-[1.3px] leading-none whitespace-nowrap w-[92px] md:w-[102px] shrink-0 h-[24px]"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {formatDate(item.date)}
@@ -57,7 +57,7 @@ export default async function News() {
 
                 <span className="bg-[#edc920] border border-black rounded-full h-[24px] md:h-[28px] px-[8px] md:px-[10px] flex items-center justify-center shrink-0 md:ml-[4px]">
                   <span
-                    className="text-[11px] md:text-[13px] text-black tracking-[1.1px] leading-[22px]"
+                    className="text-[11px] md:text-[13px] text-black tracking-[1.1px] leading-none"
                     style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                   >
                     {item.category[0]}
@@ -71,7 +71,7 @@ export default async function News() {
                   {item.title}
                 </span>
 
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 md:static md:translate-y-0 shrink-0 w-[24px] h-[24px] md:w-[28px] md:h-[28px] rounded-full bg-[#edc920] border border-[#6d6c6a] flex items-center justify-center transition-colors group-hover:bg-[#d4b31e] text-[#1a1a1a] group-hover:text-white">
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 md:static md:translate-y-0 shrink-0 w-[34px] h-[34px] md:w-[28px] md:h-[28px] rounded-full bg-[#edc920] border border-[#6d6c6a] flex items-center justify-center transition-colors group-hover:bg-[#d4b31e] text-[#1a1a1a] group-hover:text-white">
                   <ArrowIcon />
                 </div>
               </Link>
@@ -83,7 +83,7 @@ export default async function News() {
         <div className="flex justify-end mt-[42px] pr-[29px]">
           <Link
             href="/news"
-            className="group inline-flex items-center gap-[13px] bg-[#edc920] border border-black rounded-full pl-[29px] pr-[25px] h-[44px] hover:bg-[#d4b31e] hover:text-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+            className="group inline-flex items-center gap-[13px] bg-[#edc920] border border-black rounded-full pl-[39px] pr-[35px] md:pl-[29px] md:pr-[25px] h-[44px] hover:bg-[#d4b31e] hover:text-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
           >
             <span
               className="text-[15px] font-bold text-black group-hover:text-white tracking-[1.1px] leading-[16.22px] transition-colors duration-200"
