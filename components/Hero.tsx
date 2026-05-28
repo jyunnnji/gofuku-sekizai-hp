@@ -79,7 +79,8 @@ export default function Hero() {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
       >
         {/* ぼかし背景 */}
-        <div className="absolute inset-0 rounded-[24px] bg-white/60 blur-[20px] -z-10" />
+        <div className="absolute inset-0 rounded-[24px] bg-white/45 blur-[20px] z-0" />
+        <div className="relative z-[1]">
         <p
           className="text-[13px] font-medium text-[#1a1a1a] tracking-[1px] mb-3"
           style={{ fontFamily: "var(--font-inter)", textShadow: spTextShadow }}
@@ -122,6 +123,7 @@ export default function Hero() {
             <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </Link>
+        </div>
       </motion.div>
 
       {/* ── PC テキストコンテナ (1279:650) ── */}
