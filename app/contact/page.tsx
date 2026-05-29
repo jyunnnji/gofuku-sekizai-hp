@@ -130,7 +130,8 @@ export default function ContactPage() {
         className="text-[14px] md:text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] md:leading-[33px] text-center px-2 md:px-0"
         style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
       >
-        ご質問・ご相談・お見積もりなど、お気軽にお問い合わせください。<br className="hidden md:inline" />
+        ご質問・ご相談・お見積もりなど、<br />
+        お気軽にお問い合わせください。<br />
         折り返しご連絡いたします。
       </p>
     </PageHeading>
@@ -166,31 +167,31 @@ export default function ContactPage() {
               {pageHeader}
 
               {/* Phone card */}
-              <div className="bg-white rounded-[30px] px-5 md:px-[73px] py-8 md:py-[63px] mb-10 md:mb-[98px]">
+              <div className="bg-white rounded-[30px] px-5 md:px-[73px] py-5 md:py-[63px] mb-10 md:mb-[98px]">
                 <p
-                  className="text-center text-[24px] font-medium text-[#2c2c2c] tracking-[1.8px] leading-[36px] mb-[26px]"
+                  className="text-center text-[20px] md:text-[24px] font-medium text-[#2c2c2c] tracking-[1.8px] leading-[30px] md:leading-[36px] mb-3 md:mb-[26px]"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                 >
                   お電話でのお問い合わせ
                 </p>
                 <p
-                  className="text-center text-[15px] text-[#444444] tracking-[2.4px] leading-[24px] mb-[26px] whitespace-nowrap"
+                  className="text-center text-[13px] md:text-[15px] text-[#444444] tracking-[2.4px] leading-[24px] md:leading-[28px] mb-4 md:mb-[26px]"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                 >
-                  施工で外出していることが多いため、ご連絡は携帯電話までお願いいたします。
+                  施工で外出していることが多いため、<span className="md:hidden"><br /></span>ご連絡は携帯電話までお願いいたします。
                 </p>
-                <div className="flex flex-col items-center gap-[10px] mb-[20px]">
-                  <a href="tel:090-9406-2085" className="flex items-center gap-[8px] md:gap-[16px] group">
-                    <span className="text-[15px] md:text-[20px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] md:tracking-[4px] leading-[56px] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>(携帯)</span>
-                    <span className="text-[22px] md:text-[40px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[1px] md:tracking-[4px] leading-[56px] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter)" }}>090-9406-2085</span>
+                <div className="flex flex-col items-center gap-[4px] md:gap-[10px] mb-[14px] md:mb-[20px]">
+                  <a href="tel:090-9406-2085" className="w-full md:w-auto flex flex-col md:flex-row items-center justify-center gap-[2px] md:gap-[16px] group bg-[#f0f8f4] md:bg-transparent rounded-[14px] md:rounded-none py-3 md:py-0 mb-1 md:mb-0 active:bg-[#e0f0e8] transition-colors">
+                    <span className="text-[12px] md:text-[20px] font-medium text-[#2f7d4e] md:text-[#1a1a1a] md:group-hover:text-[#2f7d4e] tracking-[2px] md:tracking-[4px] leading-[1.4] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>(携帯)</span>
+                    <span className="text-[30px] md:text-[40px] font-medium text-[#2f7d4e] md:text-[#1a1a1a] md:group-hover:text-[#2f7d4e] tracking-[1px] md:tracking-[4px] leading-[1.2] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter)" }}>090-9406-2085</span>
                   </a>
-                  <a href="tel:093-614-6573" className="flex items-center gap-[8px] md:gap-[16px] group">
-                    <span className="text-[15px] md:text-[20px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[2px] md:tracking-[4px] leading-[56px] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>(固定)</span>
-                    <span className="text-[22px] md:text-[40px] font-medium text-[#1a1a1a] group-hover:text-[#2f7d4e] tracking-[1px] md:tracking-[4px] leading-[56px] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter)" }}>093-614-6573</span>
+                  <a href="tel:093-614-6573" className="w-full md:w-auto flex flex-col md:flex-row items-center justify-center gap-[2px] md:gap-[16px] group bg-[#f5f5f5] md:bg-transparent rounded-[14px] md:rounded-none py-3 md:py-0 active:bg-[#ebebeb] transition-colors">
+                    <span className="text-[12px] md:text-[20px] font-medium text-[#666666] md:text-[#1a1a1a] md:group-hover:text-[#2f7d4e] tracking-[2px] md:tracking-[4px] leading-[1.4] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>(固定)</span>
+                    <span className="text-[26px] md:text-[40px] font-medium text-[#444444] md:text-[#1a1a1a] md:group-hover:text-[#2f7d4e] tracking-[1px] md:tracking-[4px] leading-[1.2] md:leading-[80px] transition-colors" style={{ fontFamily: "var(--font-inter)" }}>093-614-6573</span>
                   </a>
                 </div>
                 <p
-                  className="text-center text-[16px] text-[#2c2c2c] tracking-[1.04px] leading-[26px]"
+                  className="text-center text-[13px] md:text-[16px] text-[#2c2c2c] tracking-[1.04px] leading-[22px] md:leading-[26px]"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                 >
                   受付時間：9:00〜17:00（不定休）
