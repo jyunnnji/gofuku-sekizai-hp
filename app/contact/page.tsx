@@ -130,7 +130,7 @@ export default function ContactPage() {
         className="text-[14px] md:text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] md:leading-[33px] text-center px-2 md:px-0"
         style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
       >
-        ご質問・ご相談・お見積もりなど、<br />
+        ご質問・ご相談・お見積もりなど、<br className="md:hidden" />
         お気軽にお問い合わせください。<br />
         折り返しご連絡いたします。
       </p>
@@ -365,7 +365,7 @@ export default function ContactPage() {
                   className="text-center text-[15px] text-[#444444] tracking-[0.8px] leading-[26px] mb-[48px]"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                 >
-                  以下の内容でよろしければ「送信する」を押してください。
+                  以下の内容でよろしければ「送信する」を<br className="md:hidden" />押してください。
                 </p>
 
                 {/* Confirm rows */}
@@ -397,14 +397,14 @@ export default function ContactPage() {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex items-center justify-center gap-[24px]">
+                <div className="flex items-center justify-center gap-[12px] md:gap-[24px]">
                   <button
                     type="button"
                     onClick={handleBack}
-                    className="w-[220px] h-[59px] bg-white border border-[#d9d9d9] rounded-full text-[18px] font-medium text-[#444444] tracking-[1.5px] hover:border-[#2f7d4e] hover:text-[#2f7d4e] transition-colors relative flex items-center justify-center"
+                    className="w-[148px] md:w-[220px] h-[48px] md:h-[59px] bg-white border border-[#d9d9d9] rounded-full text-[14px] md:text-[18px] font-medium text-[#444444] tracking-[1.5px] hover:border-[#2f7d4e] hover:text-[#2f7d4e] transition-colors relative flex items-center justify-center"
                     style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                   >
-                    <svg className="absolute left-[20px]" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <svg className="absolute left-[14px] md:left-[20px]" width="15" height="15" viewBox="0 0 18 18" fill="none">
                       <path d="M15 9H3M3 9L8 4M3 9L8 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     修正する
@@ -412,11 +412,11 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={handleSubmit}
-                    className="w-[220px] h-[59px] bg-[#edc920] border border-black rounded-full text-[18px] font-medium text-black tracking-[2.25px] hover:bg-[#d4b31e] hover:text-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative flex items-center justify-center"
+                    className="w-[148px] md:w-[220px] h-[48px] md:h-[59px] bg-[#edc920] border border-black rounded-full text-[14px] md:text-[18px] font-medium text-black tracking-[1px] md:tracking-[2.25px] hover:bg-[#d4b31e] hover:text-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative flex items-center justify-center"
                     style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                   >
                     送信する
-                    <svg className="absolute right-[20px]" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <svg className="absolute right-[14px] md:right-[20px]" width="15" height="15" viewBox="0 0 18 18" fill="none">
                       <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
