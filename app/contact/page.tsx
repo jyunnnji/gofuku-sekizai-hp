@@ -428,21 +428,36 @@ export default function ContactPage() {
           {/* ── STEP: DONE ── */}
           {step === "done" && (
             <>
-              <div className="bg-white rounded-[30px] px-4 md:px-[224px] py-12 md:py-[80px] flex flex-col items-center">
+              <div className="bg-white rounded-[30px] px-4 md:px-[224px] py-8 md:py-[80px] flex flex-col items-center">
                 {/* Check icon */}
-                <div className="w-[72px] h-[72px] rounded-full bg-[#2f7d4e] flex items-center justify-center mb-[32px]">
+                <div className="w-[72px] h-[72px] rounded-full bg-[#2f7d4e] flex items-center justify-center mb-5 md:mb-[32px]">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d="M7 16L13 22L25 10" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <h2
-                  className="text-[28px] font-medium text-[#1a1a1a] tracking-[2px] leading-[42px] mb-[16px]"
+                  className="text-[28px] font-medium text-[#1a1a1a] tracking-[2px] leading-[42px] mb-3 md:mb-[16px]"
                   style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                 >
                   送信が完了しました
                 </h2>
+
+                {/* SP: 3ブロック構成 */}
+                <div className="md:hidden text-center mb-[40px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+                  <p className="text-[16px] text-[#444444] tracking-[0.8px] leading-[32px] mb-[32px]">
+                    お問い合わせいただき<br />ありがとうございます。
+                  </p>
+                  <p className="text-[16px] text-[#444444] tracking-[0.8px] leading-[32px] mb-[24px]">
+                    内容を確認の上、<br />担当者より折り返しご連絡いたします。
+                  </p>
+                  <p className="text-[16px] text-[#444444] tracking-[0.8px] leading-[32px]">
+                    しばらくお待ちください。
+                  </p>
+                </div>
+
+                {/* PC: 変更なし */}
                 <p
-                  className="text-[16px] text-[#444444] tracking-[0.8px] leading-[32px] text-center mb-[48px]"
+                  className="hidden md:block text-[16px] text-[#444444] tracking-[0.8px] leading-[32px] text-center mb-[48px]"
                   style={{ fontFamily: "var(--font-noto-sans-jp)" }}
                 >
                   お問い合わせいただきありがとうございます。<br />
