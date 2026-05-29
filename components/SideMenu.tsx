@@ -102,8 +102,7 @@ export default function SideMenu() {
       >
         {/* Panel header */}
         <div
-          className="flex items-center justify-between px-10 pb-8 border-b border-[#e8e8e8]"
-          style={{ paddingTop: "120px" }}
+          className="flex items-center justify-between pl-10 pr-6 md:px-10 pt-6 md:pt-[120px] pb-8 border-b border-[#e8e8e8]"
         >
           <div>
             <p
