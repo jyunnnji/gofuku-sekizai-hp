@@ -54,7 +54,7 @@ export default function PrivacyPage() {
               className="text-[14px] md:text-[18px] text-[#2c2c2c] tracking-[0.8px] leading-[28px] md:leading-[33px] text-center px-2 md:px-0"
               style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
             >
-              五福石材（以下「当社」）は、お客様の個人情報の保護を重要な責務と認識し、<br className="hidden md:inline" />
+              五福石材（以下「当社」）は、<br className="md:hidden" />お客様の個人情報の保護を重要な責務と認識し、<br />
               以下のとおりプライバシーポリシーを定めます。
             </p>
           </PageHeading>
