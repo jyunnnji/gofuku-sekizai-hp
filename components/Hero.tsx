@@ -290,7 +290,7 @@ export default function Hero() {
 
       {/* Scroll indicator — bottom aligns with section bottom */}
       <div
-        className="absolute bottom-0 flex flex-col items-center h-[145px]"
+        className="absolute bottom-0 flex flex-col items-center h-[180px] md:h-[145px]"
         style={{ left: "50%", transform: "translateX(-50%)" }}
       >
         {/* SCROLL text: flex-1 area with rotate(90deg) centered inside */}
@@ -306,7 +306,7 @@ export default function Hero() {
           </p>
         </div>
         {/* Vertical line: overflow-hidden で上から下へ流れるアニメーション */}
-        <div className="relative w-[2px] h-[61px] overflow-hidden">
+        <div className="relative w-[2px] h-[96px] md:h-[61px] overflow-hidden">
           <div className="absolute inset-x-0 h-full bg-white animate-scroll-line" />
         </div>
       </div>

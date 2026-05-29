@@ -12,7 +12,7 @@ export default function About() {
     >
 
       {/* ── SP レイアウト ── */}
-      <div className="md:hidden px-5 pt-10 pb-12 flex flex-col gap-8">
+      <div className="md:hidden px-6 pt-10 pb-12 flex flex-col gap-8">
         {/* Images */}
         <div className="flex gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -34,17 +34,22 @@ export default function About() {
             className="text-[16px] font-medium text-[#2c2c2c] leading-[30px] tracking-[2px] mb-6"
             style={{ fontFamily: "var(--font-noto-sans-jp)" }}
           >
-            ご先祖様の安らかなお眠りをサポートさせていただきます。
+            ご先祖様の安らかなお眠りを<br />サポートさせていただきます。
           </h3>
-          <p
-            className="text-[14px] text-[#2c2c2c] leading-[28px] tracking-[0.8px]"
-            style={{ fontFamily: "var(--font-noto-sans-jp)" }}
-          >
-            五福石材は、墓石クリーニング・造園を通じて、地域の皆さまの暮らしに寄り添ってまいりました。
-            ご先祖様を大切にする想い、住まいを美しく保ちたいという願い、人生の節目に寄り添う心。
-            私たちはその一つひとつに丁寧に向き合い、信頼と安心をお届けしています。
-            「頼んでよかった」――そう言っていただける仕事を、これからも。
-          </p>
+          <div className="flex flex-col gap-5" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+            <p className="text-[14px] text-[#2c2c2c] leading-[29px] tracking-[0.8px] text-left">
+              五福石材は、墓石クリーニング・造園を通じて、地域の皆さまの暮らしに寄り添ってまいりました。
+            </p>
+            <p className="text-[14px] text-[#2c2c2c] leading-[29px] tracking-[0.8px] text-left">
+              ご先祖様を大切にする想い、住まいを美しく保ちたいという願い、人生の節目に寄り添う心。
+            </p>
+            <p className="text-[14px] text-[#2c2c2c] leading-[29px] tracking-[0.8px] text-left">
+              私たちはその一つひとつに丁寧に向き合い、信頼と安心をお届けしています。
+            </p>
+            <p className="text-[14px] text-[#2c2c2c] leading-[29px] tracking-[0.8px] text-center mt-4">
+              「頼んでよかった」――<br />そう言っていただける仕事を、<br />これからも。
+            </p>
+          </div>
         </div>
       </div>
 
