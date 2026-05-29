@@ -46,7 +46,7 @@ export default function Services() {
           <div className="absolute inset-0 bg-white/50" />
         </div>
         {/* SP コンテンツ */}
-        <div className="relative px-5 pt-[56px] pb-[56px]">
+        <div className="relative px-6 pt-[56px] pb-[56px]">
           {/* ラベル */}
           <p className="text-center text-[13px] font-medium text-[#2f7d4e] tracking-[1.6px] uppercase mb-2" style={{ fontFamily: "var(--font-inter)" }}>Service</p>
           {/* 見出し */}
@@ -58,8 +58,7 @@ export default function Services() {
           <div className="text-[14px] text-[#2c2c2c] leading-[32px] tracking-[0.8px] text-center mb-8" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
             <p className="mb-3">
               暮らしの中で気になる<br />
-              お墓やお庭のお悩みに、<br />
-              丁寧にお応えします。
+              お墓やお庭のお悩みに、丁寧にお応えします。
             </p>
             <p className="mb-3">
               お墓の汚れや劣化のケアから、<br />
@@ -67,25 +66,30 @@ export default function Services() {
             </p>
             <p>
               ご先祖様への想いを大切に、<br />
-              一つひとつ心を込めて<br />
-              仕上げます。
+              一つひとつ心を込めて仕上げます。
             </p>
           </div>
 
           {/* 墓石クリーニング */}
-          <div className="mb-8">
+          <div className="mb-10">
             <div className="border-l-[4px] border-[#2f7d4e] pl-3 mb-3">
               <h3 className="text-[20px] font-medium text-[#2c2c2c]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>墓石クリーニング</h3>
             </div>
-            <div className="mb-3">
+            <div className="mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={imgGrave} alt="墓石クリーニング" className="w-full h-[220px] object-cover rounded-[16px]" />
             </div>
-            <p className="text-[14px] text-[#2c2c2c] leading-[30px] tracking-[0.8px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
-              年月とともに蓄積した汚れやコケ、水垢を丁寧に除去し、お墓本来の美しさを取り戻します。
-              手作業によるやさしい洗浄と細部まで行き届いた仕上げで、ご先祖様への感謝の気持ちを形にするお手伝いをいたします。
-              また、ご希望に応じて女性作業員の同行も可能です。
-            </p>
+            <div className="flex flex-col gap-3" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+              <p className="text-[14px] text-[#2c2c2c] leading-[28px] tracking-[0.8px]">
+                年月とともに蓄積した汚れやコケ、水垢を丁寧に除去し、お墓本来の美しさを取り戻します。
+              </p>
+              <p className="text-[14px] text-[#2c2c2c] leading-[28px] tracking-[0.8px]">
+                手作業によるやさしい洗浄と細部まで行き届いた仕上げで、ご先祖様への感謝の気持ちを形にするお手伝いをいたします。
+              </p>
+              <p className="text-[14px] text-[#2c2c2c] leading-[28px] tracking-[0.8px]">
+                また、ご希望に応じて女性作業員の同行も可能です。
+              </p>
+            </div>
           </div>
 
           {/* 造園 */}
@@ -93,14 +97,18 @@ export default function Services() {
             <div className="border-l-[4px] border-[#2f7d4e] pl-3 mb-3">
               <h3 className="text-[20px] font-medium text-[#2c2c2c]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>造園</h3>
             </div>
-            <div className="mb-3">
+            <div className="mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={imgGarden} alt="造園" className="w-full h-[220px] object-cover rounded-[16px]" />
             </div>
-            <p className="text-[14px] text-[#2c2c2c] leading-[30px] tracking-[0.8px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
-              女性作業員が丁寧に対応し、お庭のお手入れ・草刈り・除草作業を承ります。
-              どんな小さなお悩みでも、お気軽にご相談ください。
-            </p>
+            <div className="flex flex-col gap-3" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+              <p className="text-[14px] text-[#2c2c2c] leading-[28px] tracking-[0.8px]">
+                女性作業員が丁寧に対応し、お庭のお手入れ・草刈り・除草作業を承ります。
+              </p>
+              <p className="text-[14px] text-[#2c2c2c] leading-[28px] tracking-[0.8px]">
+                どんな小さなお悩みでも、お気軽にご相談ください。
+              </p>
+            </div>
           </div>
         </div>
       </div>

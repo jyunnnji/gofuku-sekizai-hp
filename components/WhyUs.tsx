@@ -220,7 +220,7 @@ export default function WhyUs() {
       />
 
       {/* Content container: left 175px, right 165px (asymmetric per Figma) */}
-      <div className="max-w-[1440px] mx-auto px-4 md:pl-[175px] md:pr-[165px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:pl-[175px] md:pr-[165px]">
         <FadeUp>
         {/* Section label */}
         <p
@@ -245,36 +245,34 @@ export default function WhyUs() {
         {/* Body text */}
         <FadeUp delay={0.1}>
         <div
-          className="text-center mt-8 md:mt-[117px] mb-8 md:mb-[124px] text-[16px] md:text-[18px] text-[#2c2c2c] tracking-[1.2px] md:tracking-[2.24px] max-w-[300px] mx-auto md:max-w-full"
+          className="md:text-center mt-8 md:mt-[117px] mb-8 md:mb-[124px] text-[16px] md:text-[18px] text-[#2c2c2c] tracking-[1.2px] md:tracking-[2.24px]"
           style={{ fontFamily: "var(--font-noto-sans-jp)" }}
         >
-          <p className="leading-[32px] md:leading-[37.5px] mb-3 md:mb-0">
+          <p className="text-center leading-[32px] md:leading-[37.5px] mb-6 md:mb-0">
             ご先祖様の背中を流すように。<br />
-            私たちは、真心を込めて一基一基丁寧にクリーニングしております。
+            私たちは、真心を込めて<span className="md:hidden"><br /></span>一基一基丁寧にクリーニングしております。
           </p>
-          <p className="leading-[32px] md:leading-[37.5px] mb-3 md:mb-0">
+          <p className="leading-[32px] md:leading-[37.5px] mb-5 md:mb-0">
             お墓に関わる仕事に
-            <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>30年以上</span>
+            <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom", whiteSpace: "nowrap" }}>30年以上</span>
             携わってきた経験を活かし、墓石の状態に合わせた丁寧な施工を行っております。
           </p>
-          <p className="leading-[32px] md:leading-[37.5px] mb-3 md:mb-0">
+          <p className="leading-[32px] md:leading-[37.5px] mb-5 md:mb-0">
             高圧洗浄機などに頼りすぎず、原則として
-            <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>手作業</span>
+            <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom", whiteSpace: "nowrap" }}>手作業</span>
             で墓石を洗浄・研磨。<br />
             細かな汚れや水垢、コケまで時間をかけて磨き上げます。
           </p>
-          <p className="leading-[32px] md:leading-[37.5px] mb-3 md:mb-0">
+          <p className="leading-[32px] md:leading-[37.5px] mb-5 md:mb-0">
             丁寧に施工することで、
-            <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>墓石本来の美しさ</span>
+            <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom", whiteSpace: "nowrap" }}>墓石本来の美しさ</span>
             を取り戻すだけでなく、
-            <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>ひび割れ</span>
-            や
-            <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>劣化の予防</span>
+            <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom", whiteSpace: "nowrap" }}>ひび割れや劣化の予防</span>
             にもつながります。
           </p>
           <p className="leading-[32px] md:leading-[37.5px]">
             「頼んでよかった」と感じていただけるよう、最後まで
-            <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom" }}>心を込めて</span>
+            <span className="font-semibold" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(70,147,97,0.4) 50%)", backgroundRepeat: "no-repeat", backgroundSize: "100% 20px", backgroundPosition: "center bottom", whiteSpace: "nowrap" }}>心を込めて</span>
             対応いたします。
           </p>
         </div>
