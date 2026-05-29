@@ -16,7 +16,7 @@ export default async function News() {
   return (
     <section
       id="news"
-      className="relative bg-[#fcfaf2] pt-[49px] pb-10"
+      className="relative bg-[#fcfaf2] pt-[49px] pb-10 scroll-mt-[100px]"
     >
       <div className="max-w-[1440px] mx-auto px-4 md:px-[165px]">
         <FadeUp>
