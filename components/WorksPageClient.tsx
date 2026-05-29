@@ -24,7 +24,7 @@ const categoryColors: Record<string, string> = {
 function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90"
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-black/90"
       onClick={onClose}
     >
       <button
@@ -53,7 +53,7 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
   return (
     <>
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+      className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60"
       onClick={onClose}
     >
       <div
