@@ -31,7 +31,7 @@ export default function SideMenu() {
       <button
         onClick={() => setIsOpen(true)}
         aria-label="メニューを開く"
-        className={`md:hidden fixed top-0 right-0 z-[60] bg-white border-b border-black flex items-center justify-center transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-0 right-0 z-[50] bg-white border-b border-black flex items-center justify-center transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-full" : "translate-x-0"
         }`}
         style={{ width: "64px", height: "100px" }}
