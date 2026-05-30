@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getWorksList, getWorksDetailsList } from "@/lib/microcms";
 import WorksPageClient from "@/components/WorksPageClient";
 

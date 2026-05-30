@@ -1,14 +1,11 @@
+export const dynamic = "force-dynamic";
+
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { getNewsDetail, getNewsList, formatDate } from "@/lib/microcms";
+import { getNewsDetail, formatDate } from "@/lib/microcms";
 import PageHeading from "@/components/ui/PageHeading";
-
-export async function generateStaticParams() {
-  const { contents } = await getNewsList({ limit: 100, fields: ["id"] });
-  return contents.map((item) => ({ slug: item.id }));
-}
 
 export default async function NewsDetailPage({
   params,
