@@ -116,7 +116,7 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <button
-                className="absolute top-[10px] right-[10px] w-[32px] h-[32px] rounded-full bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/60"
+                className="absolute top-[10px] right-[10px] w-[32px] h-[32px] rounded-full bg-black/40 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/60"
                 aria-label="画像を拡大"
                 onClick={(e) => { e.stopPropagation(); setLightboxSrc({ src: item.beforeImageUrl, alt: "施工前" }); }}
               >
@@ -144,7 +144,7 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <button
-                className="absolute top-[10px] right-[10px] w-[32px] h-[32px] rounded-full bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/60"
+                className="absolute top-[10px] right-[10px] w-[32px] h-[32px] rounded-full bg-black/40 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/60"
                 aria-label="画像を拡大"
                 onClick={(e) => { e.stopPropagation(); setLightboxSrc({ src: item.afterImageUrl, alt: "施工後" }); }}
               >
@@ -179,6 +179,7 @@ function WorksModal({ item, onClose }: { item: WorksPageItem; onClose: () => voi
 
 export default function WorksPageClient({ items }: { items: WorksPageItem[] }) {
   const [selected, setSelected] = useState<WorksPageItem | null>(null);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 
   useEffect(() => {
     if (selected) {
@@ -210,13 +211,22 @@ export default function WorksPageClient({ items }: { items: WorksPageItem[] }) {
                 className="bg-white rounded-[24px] overflow-hidden flex flex-col text-left hover:shadow-lg hover:scale-[1.03] transition-[transform,box-shadow] duration-300 ease-out cursor-pointer"
               >
                 {/* Thumbnail */}
-                <div className="w-full h-[200px] bg-[#d9d9d9] overflow-hidden">
+                <div className="relative w-full h-[200px] bg-[#d9d9d9] overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={item.thumbnailUrl}
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
+                  <button
+                    className="md:hidden absolute top-[10px] right-[10px] w-[32px] h-[32px] rounded-full bg-black/40 flex items-center justify-center"
+                    aria-label="画像を拡大"
+                    onClick={(e) => { e.stopPropagation(); setLightbox({ src: item.thumbnailUrl, alt: item.title }); }}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M8.5 1H13V5.5M13 1L8 6M5.5 13H1V8.5M1 13L6 8" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
                 </div>
 
                 {/* Card body */}
@@ -292,6 +302,9 @@ export default function WorksPageClient({ items }: { items: WorksPageItem[] }) {
 
       {/* Modal */}
       {selected && <WorksModal item={selected} onClose={() => setSelected(null)} />}
+
+      {/* Thumbnail lightbox (SP card) */}
+      {lightbox && <ImageLightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
     </>
   );
 }

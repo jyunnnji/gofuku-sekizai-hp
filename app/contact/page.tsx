@@ -143,7 +143,7 @@ export default function ContactPage() {
     <>
       {/* トーストエラー */}
       {showToast && (
-        <div className="fixed top-[24px] left-1/2 -translate-x-1/2 z-[9999] flex items-center gap-[12px] bg-white border border-[#f55555] rounded-[12px] px-[24px] py-[14px] shadow-lg">
+        <div className="fixed top-[116px] md:top-[24px] left-1/2 -translate-x-1/2 z-[9999] flex items-center gap-[12px] bg-white border border-[#f55555] rounded-[12px] px-[16px] md:px-[24px] py-[14px] shadow-lg w-[calc(100%-32px)] md:w-auto">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
             <circle cx="10" cy="10" r="9" stroke="#f55555" strokeWidth="1.5" />
             <path d="M10 6V10M10 13.5V14" stroke="#f55555" strokeWidth="1.5" strokeLinecap="round" />
