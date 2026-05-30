@@ -97,7 +97,7 @@ export default function Hero() {
           className="text-[22px] font-medium text-black leading-[36px] mb-4 tracking-[1px]"
           style={{ fontFamily: "var(--font-noto-serif-jp)", textShadow: spHeadingShadow }}
         >
-          ご先祖様の住居を<br />&quot;<span className="text-[#2f7d4e]">綺麗に・美しく</span>&quot;
+          ご先祖様の住居を<br />{`“`}<span className="text-[#2f7d4e]">綺麗に・美しく</span>{`”`}
         </h1>
         <p
           className="text-[13px] font-medium text-black mb-6 leading-[24px]"
