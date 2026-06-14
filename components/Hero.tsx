@@ -86,7 +86,7 @@ export default function Hero() {
           className="text-[13px] font-medium text-[#1a1a1a] tracking-[1px] mb-3"
           style={{ fontFamily: "var(--font-inter)", textShadow: spTextShadow }}
         >
-          北九州地域・筑豊地域のお墓掃除は五福石材に
+          北九州・中間・遠賀・筑豊のお墓掃除なら五福石材へ
         </p>
         <h1
           className="text-[26px] font-medium text-black leading-[42px] mb-1 tracking-[1px]"
@@ -147,7 +147,7 @@ export default function Hero() {
         <motion.p
           className="absolute text-[24px] font-medium text-[#1a1a1a] text-center whitespace-nowrap"
           style={{
-            left: "330px",
+            left: "374px",
             top: "44.5px",
             fontFamily: "var(--font-inter)",
             letterSpacing: "1.5px",
@@ -158,7 +158,7 @@ export default function Hero() {
           animate={animReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
         >
-          北九州地域・筑豊地域のお墓掃除は五福石材に
+          北九州・中間・遠賀・筑豊のお墓掃除なら五福石材へ
         </motion.p>
 
         {/* Divider line (1278:638) */}
