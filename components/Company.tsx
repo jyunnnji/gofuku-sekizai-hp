@@ -2,12 +2,13 @@ import FadeUp from "@/components/ui/FadeUp";
 
 const tableRows = [
   { label: "会社名", value: "五福石材", gray: true },
-  { label: "所在地", value: "〒803-0826　小倉北区高峰町3−12", gray: false },
-  { label: "電話番号（携帯）", value: "090-9406-2085", gray: true },
-  { label: "電話番号（固定）", value: "093-614-6573", gray: false },
-  { label: "事業内容", value: "墓石クリーニング / 造園", gray: true },
-  { label: "保有資格", value: "墓地清掃士、遺品整理士", gray: false },
-  { label: "営業時間", value: "9:00〜17:00（不定休）", gray: true },
+  { label: "代表者氏名", value: "清川順次", gray: false },
+  { label: "所在地", value: "〒803-0826　小倉北区高峰町3−12", gray: true },
+  { label: "電話番号（携帯）", value: "090-9406-2085", gray: false },
+  { label: "電話番号（固定）", value: "093-614-6573", gray: true },
+  { label: "事業内容", value: "墓石クリーニング / 造園", gray: false },
+  { label: "保有資格", value: "墓地清掃士、遺品整理士", gray: true },
+  { label: "営業時間", value: "9:00〜17:00（不定休）", gray: false },
 ];
 
 export default function Company() {
