@@ -24,10 +24,10 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative w-full overflow-hidden md:h-[1599px] scroll-mt-[100px]"
+      className="relative w-full overflow-hidden md:h-[1681px] scroll-mt-[100px]"
     >
       {/* ── PC 背景画像 ── */}
-      <div className="hidden md:block absolute inset-0 h-[1599px]">
+      <div className="hidden md:block absolute inset-0 h-[1681px]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imgBg}
@@ -87,7 +87,10 @@ export default function Services() {
                 手作業によるやさしい洗浄と細部まで行き届いた仕上げで、ご先祖様への感謝の気持ちを形にするお手伝いをいたします。
               </p>
               <p className="text-[14px] text-[#2c2c2c] leading-[28px] tracking-[0.8px]">
-                また、ご希望に応じて女性作業員の同行も可能です。
+                また、墓石への文字の追加彫刻や、薄くなった文字への墨入れにも対応しております。ご希望に応じて女性作業員の同行も可能です。
+              </p>
+              <p className="text-[14px] text-[#2c2c2c] leading-[28px] tracking-[0.8px]">
+                小さな事でも承ります。<br />お墓のことはお気軽にご相談してください。
               </p>
             </div>
           </div>
@@ -116,7 +119,7 @@ export default function Services() {
       {/* ── PC コンテナ (1278:545): left=170 right=170 top=126 h=1369 ── */}
       <div className="hidden md:block">
       <motion.div
-        className="absolute left-[170px] right-[170px] top-[126px] h-[1369px]"
+        className="absolute left-[170px] right-[170px] top-[126px] h-[1451px]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -211,8 +214,8 @@ export default function Services() {
             />
           </div>
 
-          {/* テキストコンテナ (1280:671): left=582 right=0 top=0 h=374 overflow-clip */}
-          <div className="absolute left-[582px] right-0 top-0 h-[374px] overflow-hidden">
+          {/* テキストコンテナ (1280:671): left=582 right=0 top=0 h=480 */}
+          <div className="absolute left-[582px] right-0 top-0 h-[480px]">
 
             {/* 見出し: border-l-[5px] top=0 left=0 right=224 h=35 */}
             <div
@@ -238,21 +241,19 @@ export default function Services() {
               </div>
             </div>
 
-            {/* 緑アンダーライン1: top=151 left=0 right=71.26% */}
+            {/* 緑アンダーライン1: top=165 left=0 right=71.26% */}
             <div
               className="absolute h-[15px] left-0"
-              style={{ right: "71.26%", top: "151px", background: greenUnderline }}
+              style={{ right: "71.26%", top: "163px", background: greenUnderline }}
             />
 
-            {/* 説明文: center-y=225.5 w=535 h=231 */}
+            {/* 説明文: top=110 w=535 */}
             <div
-              className="absolute flex flex-col justify-center"
+              className="absolute flex flex-col"
               style={{
                 left: 0,
-                top: "225.5px",
+                top: "110px",
                 width: "535px",
-                height: "231px",
-                transform: "translateY(-50%)",
                 fontFamily: "var(--font-noto-sans-jp), sans-serif",
                 fontSize: "18px",
                 fontWeight: "400",
@@ -269,23 +270,27 @@ export default function Services() {
               </p>
               <p>ご先祖様への感謝の気持ちを形にするお手伝いをいたします。</p>
               <p>
-                また、ご希望に応じて女性作業員の同行も可能です。
+                また、墓石への文字の追加彫刻や、薄くなった文字への墨入れにも対応しております。
                 <br />
-                墓石クリーニング以外のお墓に関するお悩みも、
+                ご希望に応じて女性作業員の同行も可能です。
               </p>
-              <p>お気軽にご相談ください。</p>
+              <p>
+                小さな事でも承ります。
+                <br />
+                お墓のことはお気軽にご相談してください。
+              </p>
             </div>
 
-            {/* 緑アンダーライン2: top=259 left=32% right=34.67% */}
+            {/* 緑アンダーライン2: top=340 left=25% right=48% */}
             <div
               className="absolute h-[15px]"
-              style={{ left: "34%", right: "38%", top: "259px", background: greenUnderline }}
+              style={{ left: "24%", right: "48%", top: "342px", background: greenUnderline }}
             />
           </div>
         </div>
 
-        {/* ── 造園セクション (1280:660): left=0 top=918 w=full h=349 ── */}
-        <div className="absolute left-0 top-[918px] w-full h-[349px]">
+        {/* ── 造園セクション (1280:660): left=0 top=1000 w=full h=349 ── */}
+        <div className="absolute left-0 top-[1000px] w-full h-[349px]">
 
           {/* テキストコンテナ (1281:682): left=0 right=582 top=0 h=218 overflow-clip */}
           <div className="absolute left-0 top-0 h-[218px] overflow-hidden" style={{ right: "582px" }}>
