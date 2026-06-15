@@ -15,7 +15,7 @@ export default function Company() {
   return (
     <section
       id="company"
-      className="relative pt-[63px] pb-24 md:pb-[152px] scroll-mt-[100px]"
+      className="relative pt-[63px] pb-24 md:pb-[152px] scroll-mt-[100px] md:scroll-mt-0"
       style={{ background: "#fff3bc" }}
     >
       {/* Circle: 205px, top=-40px */}

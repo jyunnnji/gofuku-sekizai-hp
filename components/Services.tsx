@@ -24,7 +24,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative w-full overflow-hidden md:h-[1681px] scroll-mt-[100px]"
+      className="relative w-full overflow-hidden md:h-[1681px] scroll-mt-[100px] md:scroll-mt-0"
     >
       {/* ── PC 背景画像 ── */}
       <div className="hidden md:block absolute inset-0 h-[1681px]">

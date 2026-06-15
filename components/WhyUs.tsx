@@ -203,7 +203,7 @@ export default function WhyUs() {
   return (
     <section
       id="why-us"
-      className="relative bg-[#fcfaf2] overflow-hidden pt-[56px] md:pt-[172px] pb-[36px] md:pb-[90px] scroll-mt-[100px]"
+      className="relative bg-[#fcfaf2] overflow-hidden pt-[56px] md:pt-[172px] pb-[36px] md:pb-[90px] scroll-mt-[100px] md:scroll-mt-0"
     >
       {/* Decorative ellipses — PC only (overflow on SP) */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
