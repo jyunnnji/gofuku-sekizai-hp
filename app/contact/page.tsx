@@ -94,6 +94,8 @@ export default function ContactPage() {
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
   const [showToast, setShowToast] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const formRef = useRef<HTMLDivElement>(null);
 
   const handleToConfirm = (e: React.FormEvent) => {
@@ -111,9 +113,29 @@ export default function ContactPage() {
     window.scrollTo({ top: 0, behavior: "instant" });
   };
 
-  const handleSubmit = () => {
-    setStep("done");
-    window.scrollTo({ top: 0, behavior: "instant" });
+  const handleSubmit = async () => {
+    if (submitting) return;
+    setSubmitting(true);
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, email, category, message }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || "送信に失敗しました");
+      }
+      setStep("done");
+      window.scrollTo({ top: 0, behavior: "instant" });
+    } catch (err) {
+      setSubmitError(
+        "送信に失敗しました。お手数ですが時間をおいて再度お試しいただくか、お電話でお問い合わせください。"
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleBack = () => {
@@ -397,12 +419,20 @@ export default function ContactPage() {
                   ))}
                 </div>
 
+                {/* 送信エラー */}
+                {submitError && (
+                  <p className="text-center text-[14px] text-[#f55555] mb-[20px] leading-[24px]" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
+                    {submitError}
+                  </p>
+                )}
+
                 {/* Buttons */}
                 <div className="flex items-center justify-center gap-[12px] md:gap-[24px]">
                   <button
                     type="button"
                     onClick={handleBack}
-                    className="w-[148px] md:w-[220px] h-[48px] md:h-[59px] bg-white border border-[#d9d9d9] rounded-full text-[14px] md:text-[18px] font-medium text-[#444444] tracking-[1.5px] hover:border-[#2f7d4e] hover:text-[#2f7d4e] transition-colors relative flex items-center justify-center"
+                    disabled={submitting}
+                    className="w-[148px] md:w-[220px] h-[48px] md:h-[59px] bg-white border border-[#d9d9d9] rounded-full text-[14px] md:text-[18px] font-medium text-[#444444] tracking-[1.5px] hover:border-[#2f7d4e] hover:text-[#2f7d4e] transition-colors relative flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-[#d9d9d9] disabled:hover:text-[#444444]"
                     style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                   >
                     <svg className="absolute left-[14px] md:left-[20px]" width="15" height="15" viewBox="0 0 18 18" fill="none">
@@ -413,13 +443,16 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={handleSubmit}
-                    className="w-[148px] md:w-[220px] h-[48px] md:h-[59px] bg-[#edc920] border border-black rounded-full text-[14px] md:text-[18px] font-medium text-black tracking-[1px] md:tracking-[2.25px] hover:bg-[#d4b31e] hover:text-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative flex items-center justify-center"
+                    disabled={submitting}
+                    className="w-[148px] md:w-[220px] h-[48px] md:h-[59px] bg-[#edc920] border border-black rounded-full text-[14px] md:text-[18px] font-medium text-black tracking-[1px] md:tracking-[2.25px] hover:bg-[#d4b31e] hover:text-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative flex items-center justify-center disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-[#edc920] disabled:hover:text-black disabled:hover:translate-y-0 disabled:hover:shadow-none"
                     style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}
                   >
-                    送信する
-                    <svg className="absolute right-[14px] md:right-[20px]" width="15" height="15" viewBox="0 0 18 18" fill="none">
-                      <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                    {submitting ? "送信中..." : "送信する"}
+                    {!submitting && (
+                      <svg className="absolute right-[14px] md:right-[20px]" width="15" height="15" viewBox="0 0 18 18" fill="none">
+                        <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
                   </button>
                 </div>
               </div>
