@@ -1,9 +1,23 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import FadeUp from "@/components/ui/FadeUp";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const footerBg = "/images/footer/footer-bg.png";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const navHref = (hash: string) => (isHome ? hash : `/${hash}`);
+
+  const handleNavClick = (e: React.MouseEvent, hash: string) => {
+    if (isHome) {
+      e.preventDefault();
+      scrollToSection(hash);
+    }
+  };
+
   return (
     <footer className="relative bg-[#fcfaf2] overflow-hidden">
       {/* Background image */}
@@ -55,7 +69,8 @@ export default function Footer() {
             ].map((item) => (
               <Link
                 key={item.label}
-                href={item.href}
+                href={navHref(item.href)}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-[14px] md:text-[16px] text-[#2c2c2c] tracking-[1.04px] hover:text-[#2f7d4e] transition-colors"
                 style={{ fontFamily: "var(--font-noto-sans-jp)" }}
               >

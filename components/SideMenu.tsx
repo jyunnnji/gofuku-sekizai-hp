@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const navItems = [
   { label: "事業内容", hash: "#services" },
@@ -140,7 +141,13 @@ export default function SideMenu() {
             <Link
               key={item.label}
               href={navHref(item.hash)}
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => {
+                if (isHome) {
+                  e.preventDefault();
+                  scrollToSection(item.hash);
+                }
+                setIsOpen(false);
+              }}
               className="flex items-center justify-between py-5 border-b border-[#e8e8e8] group"
             >
               <span

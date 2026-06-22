@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { scrollToSection, scrollToHashOnLoad } from "@/lib/scrollToSection";
 
 const imgPhone = "/icons/phone-icon.svg";
 
@@ -12,11 +13,22 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const navHref = (hash: string) => isHome ? hash : `/${hash}`;
 
+  // 同一ページ内のセクションリンク：スクロールしつつ URL に「#」を残さない
+  const handleNavClick = (e: React.MouseEvent, hash: string) => {
+    if (isHome) {
+      e.preventDefault();
+      scrollToSection(hash);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // 別ページから「/#xxx」で来た／直接 URL を開いた場合：スクロールして「#」を消す
+  useEffect(() => scrollToHashOnLoad(), []);
 
   return (
     <>
@@ -153,6 +165,7 @@ export default function Header() {
           <Link
             key={item.label}
             href={navHref(item.hash)}
+            onClick={(e) => handleNavClick(e, item.hash)}
             className="whitespace-nowrap text-black hover:text-[#2f7d4e] transition-colors"
             style={{
               fontFamily: "var(--font-noto-sans-jp), sans-serif",
