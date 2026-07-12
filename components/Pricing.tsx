@@ -23,7 +23,7 @@ export default function Pricing() {
             </div>
             <p className="text-[14px] font-bold text-[#2c2c2c] mb-2" style={{ fontFamily: "var(--font-noto-sans-jp)" }}>
               墓石クリーニング費用：最低
-              <span className="text-[28px] text-[#2f7d4e] mx-1" style={{ fontFamily: "var(--font-inter)" }}>5</span>
+              <span className="text-[28px] text-[#2f7d4e] mx-1" style={{ fontFamily: "var(--font-inter)" }}>3</span>
               万円〜
             </p>
             <p className="text-[12px] text-[#444444]" style={{ fontFamily: "var(--font-inter), var(--font-noto-sans-jp)" }}>
@@ -113,7 +113,7 @@ export default function Pricing() {
               最低
             </span>
 
-            {/* "5": w=25 h=45, left=219 center_y=22.5 → card left=262, top=85 */}
+            {/* "3": w=25 h=45, left=219 center_y=22.5 → card left=262, top=85 */}
             <span
               className="absolute text-[37.5px] font-medium text-[#2f7d4e] leading-[46.9px]"
               style={{
@@ -124,7 +124,7 @@ export default function Pricing() {
                 fontFamily: "var(--font-inter)",
               }}
             >
-              5
+              3
             </span>
 
             {/* "万円〜": w=54 h=22, center group(272,23) → card left=288, top=97 */}
