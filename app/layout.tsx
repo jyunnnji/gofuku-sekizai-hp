@@ -27,7 +27,11 @@ export const metadata: Metadata = {
   description:
     "北九州・中間・遠賀・筑豊のお墓掃除なら五福石材へ。墓石クリーニング・造園を通じて、ご先祖様の安らかなお眠りをサポートします。",
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
   },
   verification: {
     google: "TxhFflzH8tWZph4R2EmQRCkr2oFlZnYtblO5eRIX_-c",
