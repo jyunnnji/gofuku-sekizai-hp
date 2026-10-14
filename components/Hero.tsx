@@ -30,9 +30,8 @@ export default function Hero() {
     const update = () => {
       const sectionH = window.innerHeight - 100;
       const scaleX = window.innerWidth / DESIGN_WIDTH;
-      // 高さ方向のスケール（1を超えても拡大しない）
-      const scaleY = Math.min(1, sectionH / DESIGN_SECTION_HEIGHT);
-      // 両軸の小さい方を採用してコンテンツがはみ出さないようにする
+      const scaleY = sectionH / DESIGN_SECTION_HEIGHT;
+      // 両軸の小さい方を採用し、画面幅・高さに比例して拡大/縮小する（コンテンツがはみ出さないように）
       setScale(Math.min(scaleX, scaleY));
       // topもscaleYに比例させることでFigmaの縦方向比率を維持
       setTextTop(DESIGN_TEXT_TOP * scaleY);
@@ -86,7 +85,9 @@ export default function Hero() {
           className="text-[13px] font-medium text-[#1a1a1a] tracking-[1px] mb-3"
           style={{ fontFamily: "var(--font-inter)", textShadow: spTextShadow }}
         >
-          北九州・中間・遠賀・筑豊のお墓掃除なら五福石材へ
+          北九州・中間・遠賀・筑豊の
+          <br />
+          お墓掃除なら五福石材へ
         </p>
         <h1
           className="text-[26px] font-medium text-black leading-[42px] mb-1 tracking-[1px]"

@@ -119,7 +119,7 @@ export default function Services() {
       {/* ── PC コンテナ (1278:545): left=170 right=170 top=126 h=1369 ── */}
       <div className="hidden md:block">
       <motion.div
-        className="absolute left-[170px] right-[170px] top-[126px] h-[1451px]"
+        className="absolute left-[170px] right-[170px] top-[126px] h-[1451px] max-w-[1100px] mx-auto"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}

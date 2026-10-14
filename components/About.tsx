@@ -171,7 +171,7 @@ export default function About() {
           <div
             className="absolute flex flex-col justify-center"
             style={{
-              left: "549.5px",
+              left: "50%",
               top: "385.5px",
               width: "919px",
               height: "225px",
